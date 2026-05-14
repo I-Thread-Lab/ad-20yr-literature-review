@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AD World Model · 20-Year Nature/Science Literature Review (2005–2026)</title>
+<meta name="description" content="139 篇 Nature/Science/Nature Medicine/Cell AD 顶刊文献综合，构建 AD 患者的世界模型与白空间分析">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #fbf9f4;
+    --paper-2: #f3efe6;
+    --rule: #2a2a2a;
+    --muted: #6a6a6a;
+    --accent: #0b4a8a;
+    --accent-soft: #d8e4f0;
+    --gap: #a94442;
+    --gap-soft: #f5e2e0;
+    --good: #2d5e2d;
+    --good-soft: #dae8da;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Charter", "Georgia", "Songti SC", "STSong", "Iowan Old Style", "Palatino Linotype", serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .ui { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", sans-serif; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  header.hero {
+    background: var(--ink); color: var(--paper); padding: 64px 0 56px;
+    border-bottom: 4px solid var(--accent);
+  }
+  header.hero h1 { font-size: 38px; line-height: 1.15; margin: 0 0 8px; font-weight: 700; letter-spacing: -0.5px; }
+  header.hero .sub { color: #c8c8c8; font-size: 18px; margin-bottom: 24px; }
+  header.hero .meta { font-family: -apple-system, sans-serif; font-size: 13px; color: #999; }
+  header.hero .meta span { margin-right: 18px; }
+  header.hero .pill { display: inline-block; background: var(--accent); color: white; font-size: 12px; padding: 3px 10px; border-radius: 12px; font-family: -apple-system, sans-serif; letter-spacing: 0.5px; margin-bottom: 14px; }
+  nav.toc {
+    background: var(--paper-2); border-bottom: 1px solid #ddd;
+    position: sticky; top: 0; z-index: 100;
+    padding: 10px 0; font-family: -apple-system, sans-serif; font-size: 13px;
+    overflow-x: auto; white-space: nowrap;
+  }
+  nav.toc a { color: var(--ink); text-decoration: none; margin-right: 16px; padding: 4px 0; border-bottom: 2px solid transparent; display: inline-block; }
+  nav.toc a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+  section { padding: 48px 0; border-bottom: 1px solid #e0dcd2; }
+  section h2 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.3px; }
+  section .lede { color: var(--muted); font-style: italic; margin-bottom: 24px; max-width: 820px; }
+  h3 { font-size: 20px; margin: 28px 0 10px; }
+  h4 { font-size: 16px; margin: 18px 0 8px; font-family: -apple-system, sans-serif; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; }
+  p, li { font-size: 16px; }
+  blockquote {
+    margin: 20px 0; padding: 16px 22px;
+    background: var(--accent-soft); border-left: 3px solid var(--accent);
+    font-size: 16px; color: var(--ink);
+  }
+  .callout-gap {
+    background: var(--gap-soft); border-left: 3px solid var(--gap);
+    padding: 14px 18px; margin: 16px 0; font-size: 15px;
+  }
+  .callout-good {
+    background: var(--good-soft); border-left: 3px solid var(--good);
+    padding: 14px 18px; margin: 16px 0; font-size: 15px;
+  }
+  .lit-controls { margin: 12px 0; font-family: -apple-system, sans-serif; font-size: 13px; }
+  .lit-controls input {
+    width: 320px; padding: 6px 10px; border: 1px solid #aaa; border-radius: 4px;
+    font-family: -apple-system, sans-serif; font-size: 13px;
+  }
+  table.lit {
+    width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px;
+    font-family: -apple-system, sans-serif;
+  }
+  table.lit th {
+    background: var(--paper-2); padding: 10px 8px; text-align: left;
+    border-bottom: 2px solid var(--rule); font-weight: 600; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+  table.lit td {
+    padding: 9px 8px; border-bottom: 1px solid #e3dfd5; vertical-align: top;
+    line-height: 1.45;
+  }
+  table.lit tr:hover { background: #f7f3ea; }
+  table.lit td.year { font-weight: 600; white-space: nowrap; color: var(--accent); }
+  table.lit td.journal { font-style: italic; white-space: nowrap; }
+  table.lit td.title { font-weight: 500; }
+  table.lit td.finding { color: #444; }
+  table.lit a { color: var(--accent); text-decoration: none; }
+  table.lit a:hover { text-decoration: underline; }
+  .badge { display: inline-block; font-size: 10px; padding: 2px 6px; border-radius: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; margin-left: 4px; }
+  .badge-nature { background: #1a1a1a; color: white; }
+  .badge-natmed { background: #c83b3b; color: white; }
+  .badge-cell { background: #006699; color: white; }
+  .badge-science { background: #b8860b; color: white; }
+  .badge-lancet { background: #2d5e2d; color: white; }
+  .badge-other { background: #888; color: white; }
+  .wm-diagram {
+    background: white; border: 1px solid #d0ccc0; padding: 24px; border-radius: 6px;
+    font-family: -apple-system, sans-serif; font-size: 13px; margin: 20px 0;
+    overflow-x: auto;
+  }
+  .wm-diagram pre {
+    font-family: "SF Mono", "Menlo", "Monaco", "Consolas", monospace;
+    font-size: 12px; line-height: 1.4; margin: 0; color: #2a2a2a;
+    white-space: pre;
+  }
+  .timeline { position: relative; padding-left: 30px; margin: 24px 0; }
+  .timeline::before {
+    content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--rule);
+  }
+  .tl-event { position: relative; margin-bottom: 22px; }
+  .tl-event::before {
+    content: ""; position: absolute; left: -30px; top: 6px;
+    width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 2px solid var(--paper);
+  }
+  .tl-event.gap::before { background: var(--gap); }
+  .tl-event.win::before { background: var(--good); }
+  .tl-event.focus::before { background: #d4a017; width: 18px; height: 18px; left: -32px; top: 4px; }
+  .tl-event .yr { font-weight: 700; color: var(--accent); font-size: 14px; font-family: -apple-system, sans-serif; }
+  .tl-event .what { display: block; font-size: 15.5px; font-weight: 600; margin-top: 2px; }
+  .tl-event .body { font-size: 14px; color: #3a3a3a; margin-top: 4px; line-height: 1.55; }
+  .tl-event .body i { color: var(--muted); }
+  .ws-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 24px 0;
+  }
+  .ws-card {
+    background: white; border: 1px solid #d0ccc0; padding: 18px; border-radius: 6px;
+  }
+  .ws-card h4 { margin-top: 0; color: var(--gap); text-transform: none; font-family: inherit; font-size: 16px; font-weight: 700; letter-spacing: 0; }
+  .ws-card .occupied { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  .ws-card .gap { font-size: 14px; color: var(--ink); font-weight: 500; }
+  .ws-card .you { font-size: 13px; color: var(--good); margin-top: 10px; padding-top: 10px; border-top: 1px dashed #d0ccc0; }
+  .position-stack {
+    background: var(--ink); color: var(--paper); padding: 28px; border-radius: 6px; margin: 18px 0;
+  }
+  .position-stack h3 { color: white; margin-top: 0; }
+  .position-stack ul { padding-left: 20px; }
+  .position-stack li { margin: 6px 0; }
+  .position-stack.alt { background: #3a3a3a; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 18px 0 28px; font-family: -apple-system, sans-serif; }
+  .stat { background: white; border-left: 3px solid var(--accent); padding: 12px 16px; border-radius: 0 4px 4px 0; }
+  .stat .n { font-size: 26px; font-weight: 700; color: var(--accent); }
+  .stat .l { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .open-q {
+    background: white; border: 1px solid #d0ccc0; padding: 16px 20px; margin: 14px 0;
+    border-left: 3px solid var(--accent);
+  }
+  .open-q .q { font-weight: 700; color: var(--accent); font-size: 16px; margin-bottom: 6px; font-family: -apple-system, sans-serif; }
+  .open-q .a { font-size: 14.5px; line-height: 1.6; color: #2a2a2a; }
+  .open-q .a b { color: var(--ink); }
+  footer { background: var(--ink); color: #ccc; padding: 28px 0; font-family: -apple-system, sans-serif; font-size: 13px; }
+  footer a { color: #6cb6ff; }
+  @media print {
+    nav.toc { display: none; }
+    section { page-break-inside: avoid; padding: 18px 0; }
+    table.lit { font-size: 10.5px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="pill ui">STRATEGIC LITERATURE REVIEW · v1.1</span>
+    <h1>The Alzheimer&#39;s Patient as a World Model</h1>
+    <p class="sub">20 年的 Nature / Science / Nature Medicine / Cell · 139 篇 · 一份 AD 患者的"世界模型"综述 + 白空间分析</p>
+    <div class="meta ui">
+      <span>Compiled: 2026-05-14</span>
+      <span>Scope: 2005–2026</span>
+      <span>Papers indexed: 139</span>
+      <span>Tables: 4</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc ui">
+  <div class="container">
+    <a href="#exec">摘要</a>
+    <a href="#world-model">AD 世界模型</a>
+    <a href="#timeline">20 年时间线</a>
+    <a href="#openquestions">医学未解</a>
+    <a href="#cure-vs-monitor">治愈与监测</a>
+    <a href="#lit-mech">机制·遗传 (27)</a>
+    <a href="#lit-bio">生物标志 (38)</a>
+    <a href="#lit-rx">治疗 (40)</a>
+    <a href="#lit-risk">风险·数字 (34)</a>
+    <a href="#whitespace">白空间地图</a>
+    <a href="#position">三个候选方向</a>
+  </div>
+</nav>
+
+<!-- ========================================= EXEC ========================================= -->
+<section id="exec">
+  <div class="container">
+    <h2>一、20 秒摘要</h2>
+    <p class="lede">这份文档不是引用罗列，而是把 20 年 AD 顶刊画成一个"哪里走通了、哪里走死了、哪里还空着"的地图，让我们可以基于客观文献来分析方向。</p>
+
+    <div class="stats">
+      <div class="stat"><div class="n">139</div><div class="l">顶刊文献 (2005–2026)</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">FDA 批准的疾病修饰药 (Lecanemab/Donanemab)</div></div>
+      <div class="stat"><div class="n">27–35%</div><div class="l">这两个药 18 个月减缓的认知衰退上限</div></div>
+      <div class="stat"><div class="n">~25 yr</div><div class="l">CSF Aβ 异常 vs 临床确诊的提前量 (DIAN)</div></div>
+    </div>
+
+    <h3>读完 139 篇之后的 5 点判断</h3>
+    <ol>
+      <li><b>分子端的胜利已经接近天花板</b>。Aβ 抗体让数十年争议落地，但 27%–35% 的减速是当前生物上限；BACE、γ-secretase、N-端 anti-tau 全军覆没；GLP-1（EVOKE 2025）是下一个赌注。</li>
+      <li><b>诊断端的胜利刚刚到来</b>。Plasma p-tau217（Palmqvist 2025, Nat Med）AUC ≥0.93，2024 NIA-AA 框架已经把血液 marker 接纳为 Core-1。AD 在生物学上已经"看得见"了。</li>
+      <li><b>但"行为/居家层"还是空白</b>。Apple/Biogen/Stanford Nat Med 2025 用智能手表证明 n=23,000 消费级设备能筛 MCI，<b>这是迄今唯一进入 Nature 系的可穿戴 AD 论文</b>。<b>多模态、生理耦合、闭环干预的可穿戴尚无 Nature 级论文</b>。</li>
+      <li><b>多智能体临床 AI 才刚出现</b>。DeepRare（Nature 2025）/ CARE-AD（npj DM 2025）都在静态 EHR/HPO 上推理，<b>没有人把多智能体接到连续 sensor 流 + 生成式患者模型</b>。</li>
+      <li><b>"闭环可穿戴 RCT"是真正的空白</b>。BPSD/sundowning 检测做到了（JMIR Aging 2025 提前 6 分钟），干预 RCT 做到了（音乐疗法 Cochrane 2025），<b>两边没人合拢</b>。</li>
+    </ol>
+
+    <blockquote>
+      <b>核心观察</b>：过去 20 年所有顶刊的累积让我们能写出一份完整的 AD 患者"世界模型"——但<b>没有人把这个世界模型从纸上的级联图变成一个可计算、可个体化、可被可穿戴驱动、可输出干预动作</b>的工程系统。这是 2026 年最大的白空间。
+    </blockquote>
+  </div>
+</section>
+
+<!-- ========================================= WORLD MODEL ========================================= -->
+<section id="world-model">
+  <div class="container">
+    <h2>二、AD 患者的世界模型（把 139 篇文献叠成一张图）</h2>
+    <p class="lede">这就是文献综合出来的"AD 是什么"——一个跨越 25 年的多层级联系统。</p>
+
+    <h3>2.1 时间轴：从 T-25 年到 T+15 年</h3>
+    <div class="wm-diagram">
+<pre>
+                临床前 (preclinical)         前驱 (prodromal)       痴呆 (dementia)
+  T-25y  T-20y  T-16y  T-15y  T-12y  T-10y  T-5y   T-3y    T=0     T+5y    T+10y   T+15y
+   │      │      │      │      │      │      │     │       │       │       │       │
+   ●      ●      ●      ●      ●      ●      ●     ●       ●       ●       ●       ●
+   │      │      │      │      │      │      │     │       │       │       │       │
+分子    glymph  NfL    海马   步速   p-tau   SCD   MCI    AD临床   BPSD   重度    舒缓
+ Aβ ↓   ↓      率变  萎缩   拐点   ↑       自评  ↓18%   平均迟    起    AD     护理
+CSF             16y           12y    可测   认知  MMSE   2-5年     爆     游走
+ 25y    Xie    Bateman Jack          Bate-  下降  灵敏              发     失能
+ Bate-  Sci    Nat Med  AT(N)        man    Stern        Lecane-   Iaboni
+ man    2013   2019    2018   Bura-  Nat    Lancet   <b>mab/Donanemab</b>  2022
+ NEJM                          cchio  Med    Commi-       窗口期已过
+ 2012                          2010   2026   ssion 2024
+   │
+   └──── 分子层 (Aβ→tau→neurodegen)
+              └──── 细胞层 (DAM microglia, RORB+ neurons, GFAP astrocytes)
+                          └──── 系统层 (sleep/glymphatic, autonomic, gait, language)
+                                       └──── 行为层 (BPSD, sundowning, agitation)
+                                                  └──── 社会层 (caregiver, isolation)
+</pre>
+    </div>
+
+    <h3>2.2 因果链：五层耦合系统</h3>
+    <div class="wm-diagram">
+<pre>
+┌─────────────────────────────────────────────────────────────────────────┐
+│ LAYER 1: MOLECULAR     Aβ 错折叠 → 寡聚体 → 斑块 → tau 高磷酸化           │
+│                        ↑                                  │              │
+│                  glymphatic ↓ (Xie 2013)              tangle 蔓延        │
+│                  sleep ↓                              (Frost 2009)       │
+└────────────────────────┬────────────────────────────────────────────────┘
+                         ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ LAYER 2: CELLULAR    DAM microglia (Keren-Shaul 2017, TREM2-dep)         │
+│                      RORB+ entorhinal 神经元先死 (Leng 2021)             │
+│                      GFAP+ astrocyte 反应 (Smith 2023, gates Aβ→tau)     │
+│                      C1q complement 突触修剪 (Hong 2016)                 │
+│                      APOE4 微胶质环路 (Shi 2017)                          │
+└────────────────────────┬────────────────────────────────────────────────┘
+                         ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ LAYER 3: SYSTEMS / PHYSIOLOGY                                            │
+│   ┌─────────────┬──────────────┬─────────────┬──────────────┐           │
+│   │ 睡眠/昼夜    │ 步态/运动     │ 自主神经     │ 语言/认知     │           │
+│   │ Lim 2013    │ Buracchio    │ HRV ↓       │ Yang 2024     │           │
+│   │ Spira 2013  │ Verghese     │ EDA 异常     │ Apple Nat Med│           │
+│   │ npj Aging   │ MCR 2013     │ Collins '12  │ 2025          │           │
+│   └─────────────┴──────────────┴─────────────┴──────────────┘           │
+│   ↑ 可穿戴设备 (EDA+PPG+IMU+mic) 实时读取的层                              │
+└────────────────────────┬────────────────────────────────────────────────┘
+                         ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ LAYER 4: BEHAVIORAL / BPSD                                               │
+│   激越 (50-70%) · 抑郁 (40-60%) · 淡漠 (50-70%) · 游荡 (40-60%)            │
+│   日落综合征 (20-45%) · 睡眠倒错 · 幻觉/妄想 (20-40%)                       │
+│   Iaboni 2022: EDA+HR+ACC → BPSD AUC 0.87                                │
+│   JMIR Aging 2025: 提前 6 min 预警 agitation                              │
+└────────────────────────┬────────────────────────────────────────────────┘
+                         ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ LAYER 5: SOCIAL / CAREGIVER                                              │
+│   ADI 2022: 全球 85% 患者无诊断后护理 · 护理者 burnout · 经济负担           │
+│   Lancet Commission 2024: 14 个可干预因素解释 45% AD                       │
+└─────────────────────────────────────────────────────────────────────────┘
+</pre>
+    </div>
+
+    <h3>2.3 文献综合出来的 5 个"硬事实"</h3>
+    <ol>
+      <li><b>AD 在临床确诊前 25 年就已经在分子上启动</b>（Bateman DIAN 2012, Preische 2019, Buracchio 2010）。</li>
+      <li><b>Aβ 是必要不充分</b>。所有 anti-Aβ 单抗只能慢 27%–35%（Lecanemab CLARITY-AD; Donanemab TRAILBLAZER）。下游 tau / 神经炎症 / 突触丢失是另一条战线。</li>
+      <li><b>风险因素是可干预的</b>。Lancet Commission 2024 把 14 个因素的 PAF 算到 45%。POINTER 2025 在美国队列验证了 FINGER。</li>
+      <li><b>诊断范式已经从临床切到生物</b>。NIA-AA 2024 把血液 p-tau217 / GFAP 接纳为 Core-1。Plasma p-tau217 AUC ≥0.93。</li>
+      <li><b>"行为/居家"这一层在分子和血液之间还是断裂的</b>。它在数据上最丰富（手机/手表 24/7），但在 Nature 顶刊里还几乎是空的。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========================================= TIMELINE ========================================= -->
+<section id="timeline">
+  <div class="container">
+    <h2>三、20 年里程碑时间线（详注版）</h2>
+    <p class="lede">每一条注解告诉你"发生了什么、为什么重要、它让后面的什么变得可能"。<b>生物学里程碑保持简洁</b>，<span style="color:#d4a017;font-weight:600;">★ 标记的是与可穿戴/多智能体方向直接相关的关键节点，做详细注释</span>。</p>
+
+    <div class="timeline">
+
+      <div class="tl-event">
+        <span class="yr">2002 · Science</span>
+        <span class="what">Hardy &amp; Selkoe: 修订版 Amyloid Cascade 假说</span>
+        <p class="body">把 Aβ 失衡定为级联上游、tau 和神经元死亡为下游。这是 20 年 AD 药物研发的总剧本——所有 anti-Aβ 抗体（Aducanumab/Lecanemab/Donanemab）都源自这一假说。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2004 · Ann Neurol</span>
+        <span class="what">Klunk: PiB Aβ-PET 首次活体成像</span>
+        <p class="body">在 AD 患者额叶看到 1.94× 的 PiB 摄取。<i>在此之前 AD 病理只能尸检验证。</i>这一篇是后来 AT(N) 框架、Lecanemab 入组标准、Donanemab 试验的影像基础。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2009 · J Biol Chem</span>
+        <span class="what">Frost &amp; Diamond: tau prion-like 传播假说</span>
+        <p class="body">细胞外 tau 聚集物能种入相邻细胞，引发胞内纤维化。<i>把 tau 从"神经元末期产物"重新定义为"可传播种子蛋白"</i>。2012 年 de Calignon 在 P301L 小鼠脑内证实活体传播，最终孕育了 BIIB080 这类 anti-tau ASO 治疗。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2012 · NEJM (DIAN)</span>
+        <span class="what">Bateman: AD 临床前期级联时间表 (25/15/10 年)</span>
+        <p class="body">通过 PSEN1/PSEN2/APP 突变携带者，第一次量化了 "症状前 25 年 CSF Aβ 下降、15 年海马萎缩、10 年认知改变"。<i>"临床前 AD"概念从此被科学化</i>。这是后来 Lecanemab/Donanemab 把治疗推前到 prodromal 阶段的科学基础。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2012 · Sci Transl Med + 2013 · Science</span>
+        <span class="what">Iliff / Xie / Nedergaard: glymphatic 系统 + 睡眠驱动 Aβ 清除</span>
+        <p class="body">大脑通过血管旁 AQP4 水通道实现 CSF-ISF 交换清除 Aβ；睡眠时这一过程被放大 60%。<i>把睡眠从 AD 的"症状"重新定义为"上游可干预因子"</i>。后续所有可穿戴睡眠监测 AD 工作的机制基础。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2013 · NEJM</span>
+        <span class="what">Guerreiro &amp; Jonsson: TREM2 R47H 罕见变异 → AD 风险 3×</span>
+        <p class="body">微胶质先天免疫成为 AD 核心通路。<i>从 Aβ 中心主义打开新战线</i>。2017 年 DAM 微胶质分型和 2022 年 Bellenguez GWAS 都建立在这条线上。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2015 · Lancet</span>
+        <span class="what">Ngandu (FINGER): 多领域生活方式 RCT 首次阳性</span>
+        <p class="body">饮食 + 运动 + 认知训练 + 血管监测组 NTB +25%。<i>第一个证明 AD 可被生活方式预防的 RCT</i>。催生 World-Wide FINGERS 全球复现网络 + 2025 年美国 POINTER 验证。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2016 · Nature</span>
+        <span class="what">Sevigny (Aducanumab PRIME): 抗体清斑首次人体证据</span>
+        <p class="body">PET 确证剂量依赖、时间依赖的 Aβ 斑块清除。<i>20 年 anti-Aβ 押注第一次有人体阳性</i>——尽管后续 EMERGE/ENGAGE 结果矛盾，最终撤回，但它打通了 Lecanemab/Donanemab 的路。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2016 · Science</span>
+        <span class="what">Hong (Stevens lab): 补体 + 微胶质介导早期突触丢失</span>
+        <p class="body">C1q/C3/CR3 抑制可救援 Aβ 寡聚体诱导的突触修剪。<i>突触丢失第一次有明确细胞机制</i>。后续 anti-C1q 药物（如 Annexon ANX005）来源于这条线。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2017 · Cell + Lancet</span>
+        <span class="what">Keren-Shaul: DAM 微胶质分型 + Livingston: Lancet Commission 9 因素</span>
+        <p class="body">细胞层和公共卫生层同年成立两个框架——DAM (Disease-Associated Microglia) 是 TREM2 依赖的两步活化程序；Lancet Commission 第一次把 9 个可干预风险因素的 PAF 量化到 35%。<i>分子和人群两端的因果建模同步起步</i>。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2018 · Alzheimer's &amp; Dementia</span>
+        <span class="what">Jack et al.: NIA-AA AT(N) 框架</span>
+        <p class="body">AD 第一次被"生物学定义"——Amyloid + Tau + Neurodegeneration。<i>临床表征不再是诊断的必要条件</i>。后来 2024 年的更新把血液 marker 接纳为 Core-1。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2019 · Nature + Nat Neurosci</span>
+        <span class="what">Mathys / Grubman: AD 单细胞 (单核 RNA) 图谱</span>
+        <p class="body">80,660 核（Mathys, Nature）+ 内嗅皮层细胞特异性 APOE 调控（Grubman, Nat Neurosci）。<i>病理走进单细胞分辨率</i>，使后续 2021 RORB+ 神经元（Leng）、2023 GFAP+ 星形胶质 gating（Smith）成为可能。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2019 · Nat Med</span>
+        <span class="what">Arboleda-Velasquez (Lopera lab): APOE3-Christchurch 抗 PSEN1 AD 30 年</span>
+        <p class="body">哥伦比亚 Paisa 家族携带 PSEN1 E280A 突变的女性同时纯合 APOE3-R136S，比家族其他人晚 30 年发病。<i>人体首证：APOE 通路可被改造来推迟 AD</i>。2023 年同组又发现 Reelin-COLBOS 第二个保护变异，启动 APOE/Reelin 通路药物研发。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2019 · NEJM × 多篇</span>
+        <span class="what">Verubecestat APECS + Lanabecestat: BACE / γ-secretase 类药全军覆没</span>
+        <p class="body">BACE1 抑制剂导致认知恶化、被迫停止；γ-secretase 也类似（Semagacestat 2013）。<i>小分子上游策略基本死亡</i>，剩下抗体 + ASO 两条线。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2020 · Nat Med + Lancet</span>
+        <span class="what">Janelidze: Plasma p-tau181 + Livingston: Lancet Commission 12 因素</span>
+        <p class="body">血液诊断（p-tau181 AUC 0.89–0.94 区分 AD vs 非 AD）+ 预防框架（12 个因素 PAF 40%）同步升级。<i>诊断和预防两端同时跨过新门槛</i>。</p>
+      </div>
+
+      <div class="tl-event win">
+        <span class="yr">2023 · NEJM</span>
+        <span class="what">van Dyck (CLARITY-AD): Lecanemab 27% 减速 CDR-SB</span>
+        <p class="body">1795 例早期 AD 双盲 RCT，18 月减缓 27% 临床衰退。<i>20 年 anti-Aβ 押注终于无歧义赢一次</i>。FDA 全批准 2023-07，但 ARIA-E/H 15–35% 副作用 + 每两周一次输注让落地受限。</p>
+      </div>
+
+      <div class="tl-event win">
+        <span class="yr">2023 · JAMA</span>
+        <span class="what">Sims (TRAILBLAZER-ALZ 2): Donanemab 35% 减速 iADRS</span>
+        <p class="body">1736 例，低/中 tau 亚组减缓 35%，76% 患者达到斑块清除。<i>第二个 anti-Aβ 胜利，FDA 全批准 2024-07</i>。但配套要求繁重（每 6 月 PET 复查 + 每 3 月 MRI 看 ARIA），临床落地需要可穿戴/血液 marker 来辅助监测。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2023 · NEJM (A4)</span>
+        <span class="what">Sperling: Solanezumab 在临床前期失败</span>
+        <p class="body">1169 例 amyloid+ 认知正常老人，240 周 PACC 无减缓。<i>"越早越好"假说被部分证伪</i>——只针对 soluble Aβ 不足，需要清斑级别的清除（Lecanemab/Donanemab）。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2024 · Nat Med</span>
+        <span class="what">Banerjee &amp; Collinge: Iatrogenic AD 通过尸源 GH 传播</span>
+        <p class="body">5 例 1958–1985 年用过尸源生长激素的患者出现早发 AD。<i>AD 病理首次在人体内显示 prion 样传播能力</i>。重新定义生物安全（外科器械、血液制品）框架。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2024 · Lancet</span>
+        <span class="what">Livingston (Commission): 14 因素覆盖 45% 痴呆风险</span>
+        <p class="body">新增 LDL 胆固醇 + 视力损失。<i>痴呆可预防的上限从 35% (2017) → 40% (2020) → 45% (2024) 不断上升</i>，公共卫生干预的科学依据进一步加强。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2024 · Nat Med</span>
+        <span class="what">Barthélemy / Bateman: Plasma p-tau217 ≥ CSF</span>
+        <p class="body">AUC ~0.94 匹配 FDA 批准的 CSF 检测。<i>腰穿可以退场了</i>。2024 年 NIA-AA 框架正式把血液 marker 列为 Core-1。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2024 · Nat Aging</span>
+        <span class="what">Guo (UK Biobank): 血浆蛋白组预测 14 年痴呆</span>
+        <p class="body">n=52,645 队列，GFAP/NEFL/GDF15/LTBP2 预测 14 年痴呆 AUC 0.891。<i>人群级"提前 10+ 年"的非临床预测做到了</i>。但仍需采血——可穿戴层面还没人做到这个 lead time。</p>
+      </div>
+
+      <div class="tl-event focus">
+        <span class="yr">2025 · Nature ★</span>
+        <span class="what">Zhao (DeepRare): 多智能体临床 AI 第一次进 Nature</span>
+        <p class="body"><b>详注（与你的方向直接相关）</b>：DeepRare 是一个面向罕见病诊断的多智能体系统，由一个 central host 协调 40+ 工具（HPO 表型库、文本检索、基因库、文献检索）。在多个外部测试集上首次尝试准确率 64.4%，超过资深医生的 54.6%；临床医生对 95.4% 的推理链表示认同。它部署在 600+ 机构。<i>意义</i>：(1) 多智能体临床 AI 首次以"可追溯推理"为核心论点进 Nature 主刊；(2) 它工作在<b>静态 HPO + 文本输入</b>上——患者表型描述是固定的快照。(3) <b>未做到的事</b>：没有连续多模态 sensor 流输入、没有生成式患者模型做反事实推演、没有干预动作输出。这定义了"可追溯多智能体"赛道的当前天花板，也告诉我们空间在哪里。</p>
+      </div>
+
+      <div class="tl-event focus">
+        <span class="yr">2025 · npj Digital Medicine ★</span>
+        <span class="what">Li (CARE-AD): 多智能体在 EHR 注释上预测 AD 提前 10 年</span>
+        <p class="body"><b>详注</b>：CARE-AD 部署专科 LLM agent (神经/精神/老年/全科) 团队，在纵向 EHR 注释（不是 sensor 流）上协同推理，预测 10 年后 AD 发病。准确率 0.53 vs 单 agent baseline 0.26–0.45。<i>意义</i>：多智能体范式正式从罕见病迁到 AD。<i>未做到的事</i>：(1) 输入仍是医生写的临床笔记，被动反映"医生看见的事"——而 AD 患者一年只来 2–3 次门诊，绝大多数轨迹缺失；(2) 没有 sensor 数据；(3) 没有生成式患者模型做 forward simulation；(4) 没有干预输出。<b>它定义了 multi-agent for AD 的当前位置，但留下的空白对可穿戴 + 世界模型的方向是完全空着的</b>。</p>
+      </div>
+
+      <div class="tl-event focus">
+        <span class="yr">2025 · Nature Medicine ★</span>
+        <span class="what">Chen / Dagum (Apple/Biogen/Stanford "Intuition"): 智能手表 + iPhone 远程 MCI 检测 n=23,000</span>
+        <p class="body"><b>详注（迄今唯一进入 Nature 系的可穿戴 AD 论文）</b>：18 个月队列，使用 Apple Watch 和 iPhone 被动 (心率/活动/睡眠) + 主动 (任务) 信号训练 MCI 分类器。<i>意义</i>：消费级可穿戴第一次在 AD 上达到 Nature Medicine 的规模门槛——n=23K 远超传统医院级研究。<i>未做到的事</i>：(1) 只用消费级 sensor (PPG+IMU+加速)，没有 EDA、没有麦克风、没有跨模态生理耦合；(2) 单一终点 = MCI 分类，不做 BPSD 预警、不做干预触发；(3) 数据是被动观察，没有生成式模型反推隐藏状态；(4) 没有闭环。<b>这定义了"可穿戴 AD"赛道的当前天花板：单模态行为信号 → 单点分类</b>。多模态 + 生理耦合 + 闭环干预这三条线没人做过 Nature 级工作。</p>
+      </div>
+
+      <div class="tl-event win">
+        <span class="yr">2025 · JAMA</span>
+        <span class="what">Baker (US POINTER): FINGER 在美国 n=2,111 复现</span>
+        <p class="body">结构化生活方式组优于自助组。<i>第一个美国大规模 FINGER 复现</i>，把多领域干预推到国家政策级。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2025 · Nat Med</span>
+        <span class="what">Palmqvist (BioFINDER): Plasma p-tau217 全自动平台</span>
+        <p class="body">Lumipulse 全自动免疫分析，AUC 0.93–0.96 准确率 85–91%，匹配 CSF。<i>第一个 FDA 可清通的 AD 血液检测工作流</i>。</p>
+      </div>
+
+      <div class="tl-event">
+        <span class="yr">2025 · Cell</span>
+        <span class="what">Xiong (Tsai lab): 多区域 AD 表观图谱</span>
+        <p class="body">6 个脑区染色质可及性图谱揭示细胞类型特异性调控重塑跟随认知韧性。<i>分子分辨率再升一级——从单细胞 → 单细胞 + 表观</i>。</p>
+      </div>
+
+      <div class="tl-event win">
+        <span class="yr">2026 · Nat Med</span>
+        <span class="what">Mattsson-Carlgren (BioFINDER): ProtAIDe-Dx 一管血鉴别 6 种痴呆</span>
+        <p class="body">n=17,187 队列，7,595 蛋白联合学习同时分类 AD/PD/FTD/ALS/卒中/对照，AD 准确率 81%，全部 AUC>0.78。<i>分子诊断从 "AD vs 非 AD" 推到 "AD vs 其他痴呆"鉴别诊断级</i>。</p>
+      </div>
+
+      <div class="tl-event win">
+        <span class="yr">2026 · Nat Med</span>
+        <span class="what">Janelidze: Plasma p-tau217 时钟预测发病年份</span>
+        <p class="body">血浆 %p-tau217 轨迹预测 AD 症状起病年龄，中位误差 3.0–3.7 年。<i>从 AD 二分类预测推到个体化预后时间预测</i>。</p>
+      </div>
+
+      <div class="tl-event gap">
+        <span class="yr">2026 (今) · 你的位置</span>
+        <span class="what">手套 (EDA+PPG+IMU+mic) + MIND pipeline + generator v2.1</span>
+        <p class="body"><i>行为/居家层 + 多智能体 + 生成式患者模型的交集还空着</i>。Apple/Biogen 占了消费级单模态规模，DeepRare/CARE-AD 占了静态多智能体，谁也没有把三者合成一个 stack。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================= OPEN QUESTIONS ========================================= -->
+<section id="openquestions">
+  <div class="container">
+    <h2>四、AD 在医学上还没搞清楚什么（客观盘点）</h2>
+    <p class="lede">这一节回答"AD 现在是不是已经搞清楚了"——文献证据显示，<b>它远没有</b>。下面列出当前主流共识承认的 8 个开放问题。</p>
+
+    <div class="open-q">
+      <div class="q">Q1 · Aβ 是 AD 的根因还是下游放大器？</div>
+      <div class="a">主流仍接受 Amyloid Cascade 假说（Hardy &amp; Selkoe 2002, 2016），但 Lecanemab/Donanemab 清掉 76% 斑块也只能减速 27–35%（NEJM 2023, JAMA 2023），<b>说明 Aβ 是必要不充分</b>。许多 Aβ 高负担的认知正常老人（A+T-）多年不发病，许多病理性 AD 的 Aβ 并不极端。当前正在重新评估：Aβ 是病因还是放大器？这关系到下一代靶点应该指向哪里。</div>
+    </div>
+
+    <div class="open-q">
+      <div class="q">Q2 · 为什么内嗅皮层先死，新皮层后死？</div>
+      <div class="a">Leng 2021（Nat Neurosci）发现内嗅皮层 RORB+ 兴奋性神经元最先累积 tangle，但<b>为什么是这一类细胞？</b>是脂代谢易损（Tsai 2024 Nature）？是 Reelin 信号失调（Mathys 2024 Nature）？是网络拓扑使然？目前都是部分解释，无统一机制。直接影响"早期干预靶点"的选择。</div>
+    </div>
+
+    <div class="open-q">
+      <div class="q">Q3 · 微胶质是 AD 的好人还是坏人？</div>
+      <div class="a">TREM2 R47H 提高 AD 风险 3×（Guerreiro/Jonsson 2013），DAM 微胶质（Keren-Shaul 2017）参与清除斑块——<b>这两个发现方向相反</b>。Wang/Colonna 2015 显示 Trem2-/- 微胶质无法聚集斑块并凋亡（暗示微胶质是好人）；Hong/Stevens 2016 显示补体 + 微胶质修剪突触（暗示坏人）。目前模型：早期保护、晚期有害——但<b>转换点在哪、能否调控仍未知</b>。</div>
+    </div>
+
+    <div class="open-q">
+      <div class="q">Q4 · 为什么女性 AD 更多更重？</div>
+      <div class="a">全球女男比 ~1.7（Lancet PH 2022）。Yan 2022（Cell）发现 X-linked USP11 逃逸 X 失活、去泛素化 tau，提供机制基础。但<b>是否还有雌激素轴、APOE-性别交互、寿命差异叠加？</b>未明。直接影响"是否应该按性别建模 + 是否需要性别特异性干预"。</div>
+    </div>
+
+    <div class="open-q">
+      <div class="q">Q5 · 多少 AD 是可预防的，剩下不可预防的来自哪里？</div>
+      <div class="a">Lancet Commission 2024 说 14 个因素覆盖 45% PAF。<b>剩下 55% 来自什么？</b>遗传（APOE/罕见变异）？随机蛋白错折叠累积？环境暴露未识别？这 55% 的成分会决定我们的研究是该往"预防"还是"早治"倾斜。</div>
+    </div>
+
+    <div class="open-q">
+      <div class="q">Q6 · 临床前 AD 的 25 年发生了什么？</div>
+      <div class="a">Bateman DIAN 2012 给出"症状前 25 年 Aβ 下降、15 年萎缩、10 年认知变化"的级联，<b>但这些步骤之间的因果关系、个体变异、亚型分化都是黑箱</b>。同样 Aβ+ 的人为什么有的 5 年后发病、有的 30 年不发病？认知储备 + 微胶质响应 + 心血管健康都参与了，但权重未知。</div>
+    </div>
+
+    <div class="open-q">
+      <div class="q">Q7 · AD 是一个病还是多个亚型？</div>
+      <div class="a">越来越多证据指向<b>至少 3–5 个生物学亚型</b>：典型海马型 vs 后部皮层萎缩型 vs 内嗅皮层主导型 vs Limbic-predominant AD 等。Gockley 2024（Nat Genet）空间转录证据进一步显示散发 vs APOE4 vs PSEN1 分子签名不同。<b>如果 AD 是多亚型，治疗、监测、试验入组都需要重新分层</b>。</div>
+    </div>
+
+    <div class="open-q">
+      <div class="q">Q8 · 行为/睡眠/运动指标究竟反映 AD 的哪一层？</div>
+      <div class="a">Xie 2013（Science）证实睡眠驱动 Aβ 清除——所以睡眠紊乱<b>是上游因子还是下游表征？</b>步速下降（Buracchio 2010）比 MMSE 早 12 年——但反映海马、还是基底节、还是脑白质退化？<b>可穿戴信号到底映射到哪一层病理至今未明</b>，这正是 inverse mapping 的开放空间。</div>
+    </div>
+
+    <blockquote>
+      <b>综合判断</b>：2026 年的 AD 既不是"完全没搞清楚"，也不是"已经搞清楚"。生物学上有<b>清晰的级联框架 + 单细胞分辨率图谱 + 血液诊断</b>，但 8 个核心问题没有共识。临床上有<b>2 个 disease-modifying drugs</b>，但都是减速器不是治愈，且只在窄窗口期有效。<b>"AD 是什么"的世界模型是一张半透明的网——粗框架清楚，节点和参数仍在被填</b>。
+    </blockquote>
+  </div>
+</section>
+
+<!-- ========================================= CURE vs MONITOR ========================================= -->
+<section id="cure-vs-monitor">
+  <div class="container">
+    <h2>五、治愈与监测：医学现状 + 不同类型工作能填的位置</h2>
+    <p class="lede">这一节客观盘点：AD 现在能不能治、能治到什么程度、监测/可穿戴可以在哪些层做事。</p>
+
+    <h3>5.1 治愈现状：目前没有"治愈"，只有"减速"</h3>
+    <p>截至 2026 年 5 月，AD 没有任何被批准的"治愈"药物。所有现有治疗按机制和阶段可分为：</p>
+
+    <div class="wm-diagram">
+<pre>
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 类别                  代表药/方法            效果上限              批准状态   │
+├──────────────────────────────────────────────────────────────────────────┤
+│ 症状改善药             胆碱酯酶抑制剂          认知 +1-3 月           FDA 批准    │
+│ (cholinesterase inh.)  (多奈哌齐/利斯的明)     (短期)                 1996-      │
+│                                                                            │
+│ NMDA 拮抗剂            美金刚                  中重度认知改善         FDA 批准    │
+│                                                (有限)                 2003       │
+│                                                                            │
+│ Aβ 单抗（清斑）        Lecanemab               18 月 CDR-SB           FDA 全批准 │
+│  ★ 唯一改变病程        Donanemab               减缓 27-35%            2023/2024  │
+│                                                                            │
+│ Anti-tau ASO           BIIB080 (MAPT-Rx)       CSF tau 减半           Phase 1b   │
+│  (实验性)              (Mummery Nat Med 2023)  (无认知数据)           尚未批准   │
+│                                                                            │
+│ GLP-1 重定向           Semaglutide EVOKE       未知（2025-26 读出）    Phase 3    │
+│  (实验性)              Liraglutide ELAD         脑容量丢失减缓         读出中     │
+│                                                                            │
+│ BPSD 抗精神病药        非典型抗精神病药         症状抑制               黑框警告    │
+│                                                (老年死亡率 ↑1.7×)                │
+│                                                                            │
+│ 非药物干预             音乐 / 光照 / 运动      BPSD / 情绪改善         A 级证据    │
+│  (Cochrane 2025)       认知训练                 个体差异大              (临床推荐) │
+│                                                                            │
+│ 生活方式预防           FINGER / POINTER         多领域 NTB +25%        国家政策    │
+│  (RCT 阳性)            14 因素干预              45% PAF                推荐       │
+│                                                                            │
+│ 试验阶段创新           FUS BBB 开放             增强 mAb 递送          Phase 2-3  │
+│                        Anti-Aβ 疫苗             探索中                                │
+└──────────────────────────────────────────────────────────────────────────┘
+</pre>
+    </div>
+
+    <p><b>核心事实</b>：到 2026 年，AD 治疗能做的事是：</p>
+    <ol>
+      <li><b>减速</b>：Aβ 单抗，但有 ARIA 副作用、严格入组、IV 输注。窗口期：MCI–轻度 AD，Aβ+。</li>
+      <li><b>症状缓解</b>：胆碱酯酶抑制剂 / 美金刚，对认知有短期改善。</li>
+      <li><b>BPSD 管理</b>：药物 vs 非药物干预，非药物 (音乐/光照/运动) 是 A 级证据。</li>
+      <li><b>预防</b>：14 因素干预可降低 45% 风险（FINGER/POINTER）。</li>
+      <li><b>不能做的</b>：逆转已死神经元、停止 tau 蔓延（仅 Phase 1）、治愈晚期 AD。</li>
+    </ol>
+
+    <h3>5.2 监测/可穿戴可以填的位置</h3>
+    <p>对照"治疗能做什么、做不到什么"，可穿戴 + AI 系统可以补充的位置如下（按客观证据强度排序）：</p>
+
+    <div class="wm-diagram">
+<pre>
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 可穿戴/AI 可填的位置        证据强度       现状                          │
+├──────────────────────────────────────────────────────────────────────────┤
+│ 1. 早期筛查辅助              中-高         Apple Nat Med 2025 (n=23K)    │
+│    (筛 MCI/Aβ+ 候选者)                     npj Aging EEG sleep AUC 0.90  │
+│                                                                            │
+│ 2. 治疗效果监测              中            Lecanemab/Donanemab 需要      │
+│    (Lecanemab/Donanemab 期间)              监测认知 + ARIA，目前只有     │
+│                                            门诊评估，可穿戴可填          │
+│                                                                            │
+│ 3. BPSD 预警                高            Iaboni 2022 EDA+HR+ACC         │
+│    (sundowning/agitation)                  BPSD AUC 0.87                  │
+│                                            JMIR Aging 2025 提前 6 min    │
+│                                                                            │
+│ 4. BPSD 干预触发            低-中         Cochrane 2025 音乐有证据但是   │
+│    (闭环：检测 → 自动干预)                 caregiver-initiated 而非自动  │
+│                                            <b>目前无 sensor 自动触发 RCT</b>     │
+│                                                                            │
+│ 5. 安全监测                 高           跌倒检测、游荡 GPS              │
+│    (跌倒/游荡)                             已有商业方案，但与认知评估    │
+│                                            没有联动                      │
+│                                                                            │
+│ 6. 认知轨迹纵向追踪          中           Apple iPhone 主动任务有效，    │
+│    (两次门诊之间)                          但被动 sensor 反推认知尚少    │
+│                                                                            │
+│ 7. 临床试验入组筛选         高（药企需求） Lecanemab/Donanemab 每年      │
+│    (找符合 MCI + Aβ+ 候选)                 几十万候选人需要筛 MCI，     │
+│                                            可穿戴 → p-tau217 + PET 的    │
+│                                            转化路径有商业空间            │
+│                                                                            │
+│ 8. 护理者负担减轻            高           远程监测 + 报警可减少 caregi-  │
+│                                            ver 夜间不眠，但产品级 RCT    │
+│                                            证据不足                      │
+└──────────────────────────────────────────────────────────────────────────┘
+</pre>
+    </div>
+
+    <h3>5.3 一句话总结</h3>
+    <blockquote>
+      <b>药物端</b>能减速但不能治愈，且只在 MCI–轻度阶段有效。<b>诊断端</b>已经有血液 marker 接近 CSF。<b>预防端</b>已经知道 14 个因素能挡掉 45% 风险。<b>监测端</b>是最年轻、证据最稀的一端——它能不能从"商业健身追踪"上升到"医疗级证据"，取决于<b>多模态、生理耦合、闭环干预</b>这三条线能不能在 Nature 级研究上落地。
+    </blockquote>
+  </div>
+</section>
+
+<!-- ========================================= LIT TABLES ========================================= -->
+
+<!-- MECHANISM -->
+<section id="lit-mech">
+  <div class="container">
+    <h2>六、文献表 A · 机制 + 遗传学 + 基础生物 (27 篇)</h2>
+    <p class="lede">这是"AD 是怎么发生的"的科学基础——从 2002 Hardy/Selkoe 到 2025 Tsai Cell。</p>
+    <div class="lit-controls"><input type="text" placeholder="过滤：输入关键词、年份、作者..." onkeyup="filterTable('tbl-mech', this.value)"></div>
+    <table class="lit" id="tbl-mech">
+      <thead><tr><th>年</th><th>期刊</th><th>作者/团队</th><th>标题</th><th>核心发现</th><th>为什么重要</th></tr></thead>
+      <tbody>
+        <tr><td class="year">2025</td><td class="journal">Cell <span class="badge badge-cell">Cell</span></td><td>Xiong / Tsai (MIT)</td><td class="title"><a href="https://www.cell.com/cell/fulltext/S0092-8674(25)00733-0">Multiregion epigenomic rewiring in AD</a></td><td class="finding">6 脑区染色质可及性图谱揭示细胞类型特异性调控重塑跟随认知韧性</td><td class="finding">首个多区域 AD 表观图谱</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Nature <span class="badge badge-nature">Nat</span></td><td>Mathys / Tsai</td><td class="title"><a href="https://www.nature.com/articles/s41586-024-07606-7">Single-cell multiregion dissection of AD</a></td><td class="finding">130 万核 × 6 区域；Reelin 信号调控兴奋性神经元易损性</td><td class="finding">第一份泛区域单细胞 AD 图谱</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Nature <span class="badge badge-nature">Nat</span></td><td>Green / De Jager</td><td class="title"><a href="https://www.nature.com/articles/s41586-024-07871-6">Cellular communities trace AD trajectory</a></td><td class="finding">两个脂质相关微胶质状态因果分离 Aβ vs tau 驱动</td><td class="finding">165 万核 × 437 供体的因果细胞建模</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Nat Genet <span class="badge badge-nature">Nat</span></td><td>Gockley / De Jager</td><td class="title"><a href="https://www.nature.com/articles/s41588-024-01961-x">Spatial+snRNA of sporadic &amp; genetic AD</a></td><td class="finding">空间转录区分散发 vs APOE4/PSEN1 AD 特征</td><td class="finding">首个分离基因层 AD 的空间分子图谱</td></tr>
+        <tr><td class="year">2023</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Lopera / Arboleda-Velasquez</td><td class="title"><a href="https://www.nature.com/articles/s41591-023-02318-3">Reelin-COLBOS resilience in PSEN1 carrier</a></td><td class="finding">RELN H3447R 功能获得性变异延迟 ADAD 起病 30+ 年</td><td class="finding">Paisa 家族第二个保护基因</td></tr>
+        <tr><td class="year">2023</td><td class="journal">Cell <span class="badge badge-cell">Cell</span></td><td>Mathys / Tsai</td><td class="title"><a href="https://www.cell.com/cell/fulltext/S0092-8674(23)00973-X">Single-cell atlas of cognitive resilience</a></td><td class="finding">230 万细胞 × 427 供体描绘认知韧性分子相关</td><td class="finding">最大单细胞 AD 资源</td></tr>
+        <tr><td class="year">2023</td><td class="journal">Nat Neurosci <span class="badge badge-nature">Nat</span></td><td>Sun / Tsai</td><td class="title"><a href="https://www.nature.com/articles/s41593-023-01334-3">Multiregion vasculature snRNA in AD</a></td><td class="finding">22,514 脑血管核揭示周细胞/内皮功能失调签名</td><td class="finding">首张 AD 人脑 BBB 单细胞图</td></tr>
+        <tr><td class="year">2023</td><td class="journal">Science <span class="badge badge-science">Sci</span></td><td>Seo / Holtzman</td><td class="title"><a href="https://www.science.org/doi/10.1126/science.add1236">ApoE × microbiota drives tauopathy</a></td><td class="finding">无菌或抗生素处理的 P301S/ApoE4 鼠免于神经退化</td><td class="finding">建立肠脑轴调控 ApoE-tau 的因果链</td></tr>
+        <tr><td class="year">2022</td><td class="journal">Nat Genet <span class="badge badge-nature">Nat</span></td><td>Bellenguez / Lambert</td><td class="title"><a href="https://www.nature.com/articles/s41588-022-01024-z">75 loci for AD and related dementias</a></td><td class="finding">11 万例 + 67.7 万对照定位 42 个新位点，富集微胶质/APP</td><td class="finding">定义当前 GWAS 全景</td></tr>
+        <tr><td class="year">2022</td><td class="journal">Cell <span class="badge badge-cell">Cell</span></td><td>Yan / Eldar-Finkelman</td><td class="title"><a href="https://www.cell.com/cell/fulltext/S0092-8674(22)01193-9">X-linked USP11 explains female tau vulnerability</a></td><td class="finding">USP11 逃逸 X 失活，去泛素化 tau，加重女性 tangle</td><td class="finding">AD 性别偏向的机制基础</td></tr>
+        <tr><td class="year">2021</td><td class="journal">Nat Neurosci <span class="badge badge-nature">Nat</span></td><td>Leng / Kampmann</td><td class="title"><a href="https://www.nature.com/articles/s41593-020-00764-7">RORB+ entorhinal neurons selectively vulnerable</a></td><td class="finding">snRNA 识别 RORB 兴奋性神经元最先累积 tangle</td><td class="finding">tau 病理"首批响应者"的分子身份</td></tr>
+        <tr><td class="year">2019</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Arboleda-Velasquez / Lopera</td><td class="title"><a href="https://www.nature.com/articles/s41591-019-0611-3">APOE3 Christchurch protects PSEN1 carrier</a></td><td class="finding">纯合 APOE3-R136S 通过降低 HSPG 结合延迟 ADAD ~30 年</td><td class="finding">单变异可压制常染色体显性 AD 的首证</td></tr>
+        <tr><td class="year">2019</td><td class="journal">Nature <span class="badge badge-nature">Nat</span></td><td>Mathys / Tsai</td><td class="title"><a href="https://www.nature.com/articles/s41586-019-1195-2">snRNA of AD prefrontal cortex</a></td><td class="finding">80,660 核揭示细胞类型特异性响应；髓鞘 + 性别效应</td><td class="finding">第一份大规模单核 AD 图谱</td></tr>
+        <tr><td class="year">2019</td><td class="journal">Nat Neurosci <span class="badge badge-nature">Nat</span></td><td>Grubman / Polo</td><td class="title"><a href="https://www.nature.com/articles/s41593-019-0539-4">Entorhinal single-cell atlas of AD</a></td><td class="finding">APOE 在 OPCs/星形胶质中下调，AD 微胶质中上调</td><td class="finding">最早受累区的细胞类型 APOE 调控</td></tr>
+        <tr><td class="year">2017</td><td class="journal">Cell <span class="badge badge-cell">Cell</span></td><td>Keren-Shaul / Amit</td><td class="title"><a href="https://www.cell.com/fulltext/S0092-8674(17)30578-0">DAM: Disease-Associated Microglia</a></td><td class="finding">5xFAD scRNA 揭示 TREM2 依赖的两步 DAM 程序</td><td class="finding">定义 AD 主导微胶质状态框架</td></tr>
+        <tr><td class="year">2017</td><td class="journal">Nature <span class="badge badge-nature">Nat</span></td><td>Shi / Holtzman</td><td class="title"><a href="https://www.nature.com/articles/nature24016">ApoE4 markedly exacerbates tau neurodegeneration</a></td><td class="finding">P301S × ApoE4 鼠严重萎缩；ApoE-KO 救援</td><td class="finding">ApoE 驱动 tau 毒性独立于 amyloid</td></tr>
+        <tr><td class="year">2017</td><td class="journal">Nat Genet <span class="badge badge-nature">Nat</span></td><td>Sims / Williams</td><td class="title"><a href="https://www.nature.com/articles/ng.3916">Rare variants in PLCG2, ABI3, TREM2</a></td><td class="finding">三个新微胶质编码变异；PLCG2-P522R 保护</td><td class="finding">微胶质先天免疫为 AD 核心通路</td></tr>
+        <tr><td class="year">2016</td><td class="journal">Science <span class="badge badge-science">Sci</span></td><td>Hong / Stevens</td><td class="title"><a href="https://www.science.org/doi/10.1126/science.aad8373">Complement &amp; microglia mediate early synapse loss</a></td><td class="finding">C1q/C3/CR3 抑制救援 Aβ 寡聚体诱导的突触修剪</td><td class="finding">激活发育性修剪作为突触丢失机制</td></tr>
+        <tr><td class="year">2016</td><td class="journal">EMBO MM <span class="badge badge-other">other</span></td><td>Selkoe &amp; Hardy</td><td class="title"><a href="https://www.embopress.org/doi/10.15252/emmm.201606210">Amyloid hypothesis at 25 years</a></td><td class="finding">可溶寡聚体而非斑块驱动突触毒性</td><td class="finding">级联假说权威更新</td></tr>
+        <tr><td class="year">2015</td><td class="journal">Cell <span class="badge badge-cell">Cell</span></td><td>Wang / Colonna</td><td class="title"><a href="https://www.sciencedirect.com/science/article/pii/S0092867415002007">TREM2 lipid sensing sustains microglia</a></td><td class="finding">Trem2-/- 微胶质无法聚集斑块并凋亡</td><td class="finding">从 GWAS 命中到屏障功能的机制链</td></tr>
+        <tr><td class="year">2013</td><td class="journal">Science <span class="badge badge-science">Sci</span></td><td>Xie / Nedergaard</td><td class="title"><a href="https://www.science.org/doi/10.1126/science.1241224">Sleep drives metabolite clearance from brain</a></td><td class="finding">睡眠扩张间质空间 60%，通过 glymphatic 翻倍 Aβ 清除</td><td class="finding">睡眠-AD 机制链奠基</td></tr>
+        <tr><td class="year">2013</td><td class="journal">NEJM <span class="badge badge-other">NEJM</span></td><td>Guerreiro &amp; Jonsson</td><td class="title"><a href="https://www.nejm.org/doi/10.1056/NEJMoa1211851">TREM2 R47H triples AD risk</a></td><td class="finding">罕见 TREM2 变异 OR ~3</td><td class="finding">开启 AD 微胶质遗传学时代</td></tr>
+        <tr><td class="year">2012</td><td class="journal">Nature <span class="badge badge-nature">Nat</span></td><td>Jonsson / Stefansson</td><td class="title"><a href="https://www.nature.com/articles/nature11283">APP A673T protective Icelandic mutation</a></td><td class="finding">β 位点编码变异降低 Aβ ~40%，保护认知</td><td class="finding">amyloid 假说最强人类遗传证据</td></tr>
+        <tr><td class="year">2012</td><td class="journal">Sci Transl Med <span class="badge badge-science">Sci</span></td><td>Iliff / Nedergaard</td><td class="title"><a href="https://www.science.org/doi/10.1126/scitranslmed.3003748">Glymphatic paravascular clearance of Aβ</a></td><td class="finding">AQP4 依赖的 CSF-ISF 交换清除 Aβ</td><td class="finding">发现 glymphatic 系统</td></tr>
+        <tr><td class="year">2012</td><td class="journal">Neuron <span class="badge badge-other">Neuron</span></td><td>de Calignon / Hyman</td><td class="title"><a href="https://www.cell.com/neuron/fulltext/S0896-6273(12)00038-4">Tau propagates from entorhinal cortex</a></td><td class="finding">EC-II 限制性 P301L tau 沿环路跨突触传播</td><td class="finding">活体内证实 prion 样 tau 传播</td></tr>
+        <tr><td class="year">2009</td><td class="journal">JBC <span class="badge badge-other">other</span></td><td>Frost / Diamond</td><td class="title"><a href="https://www.jbc.org/article/S0021-9258(20)58284-7/fulltext">Propagation of tau misfolding cell-to-cell</a></td><td class="finding">细胞外 tau 聚集物可种入细胞内纤维化</td><td class="finding">prion 样 tau 种子范式诞生</td></tr>
+        <tr><td class="year">2002</td><td class="journal">Science <span class="badge badge-science">Sci</span></td><td>Hardy &amp; Selkoe</td><td class="title"><a href="https://www.science.org/doi/10.1126/science.1072994">Amyloid hypothesis: progress &amp; problems</a></td><td class="finding">Aβ 失衡上游于 tau 和神经元死亡</td><td class="finding">定义了 20 年的 AD 治疗框架</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- BIOMARKERS -->
+<section id="lit-bio">
+  <div class="container">
+    <h2>七、文献表 B · 生物标志物 + 诊断 + 早期检测 (38 篇)</h2>
+    <p class="lede">"AD 怎么看见"的工具演化——从 2004 PiB-PET 到 2026 ProtAIDe-Dx 一管血鉴别六种痴呆。</p>
+    <div class="lit-controls"><input type="text" placeholder="过滤..." onkeyup="filterTable('tbl-bio', this.value)"></div>
+    <table class="lit" id="tbl-bio">
+      <thead><tr><th>年</th><th>期刊</th><th>作者/团队</th><th>标题</th><th>核心发现</th><th>为什么重要</th></tr></thead>
+      <tbody>
+        <tr><td class="year">2026</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Mattsson-Carlgren / Hansson (BioFINDER)</td><td class="title"><a href="https://www.nature.com/articles/s41591-026-04303-y">ProtAIDe-Dx pan-dementia plasma proteomics</a></td><td class="finding">单血浆蛋白组同时分类 AD/PD/FTD/ALS/卒中/对照 (n=17,187, 7,595 蛋白)</td><td class="finding">首个鉴别诊断级的血液 panel；AUC>0.78 all, AD 81% acc</td></tr>
+        <tr><td class="year">2026</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Janelidze / Hansson</td><td class="title"><a href="https://www.nature.com/articles/s41591-026-04206-y">Plasma p-tau217 clocks for AD onset</a></td><td class="finding">%p-tau217 轨迹预测 AD 症状起病年龄，中位误差 3.0–3.7 年</td><td class="finding">从二分类预测推到个体化预后时间</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Aschenbrenner / Bateman</td><td class="title"><a href="https://www.nature.com/articles/s41591-025-03605-x">BBM predicts community dementia incidence</a></td><td class="finding">p-tau217 + GFAP 在普通社区预测 ~10 年痴呆</td><td class="finding">把 BBM 从专科诊所推广到社区医疗</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Palmqvist / Hansson</td><td class="title"><a href="https://www.nature.com/articles/s41591-025-03622-w">Plasma p-tau217 on Lumipulse automated platform</a></td><td class="finding">全自动 p-tau217 与 CSF 一致 (AUC 0.93–0.96)</td><td class="finding">首个 FDA 可清通的 AD 血液测试工作流</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Chen / Dagum (Apple/Biogen/Stanford)</td><td class="title"><a href="https://www.nature.com/articles/s41591-024-03475-9">Smartwatch+iPhone remote MCI detection (Intuition)</a></td><td class="finding">Apple Watch + iPhone 被动 + 主动信号在 n=23,004 美国成人中分类 MCI</td><td class="finding"><b>迄今唯一进入 Nature 系的可穿戴 AD 论文</b>；规模 + 生态验证</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Horie / Bateman</td><td class="title"><a href="https://www.nature.com/articles/s41591-025-03617-7">Plasma MTBR-tau243 reflects tau tangle</a></td><td class="finding">血浆 MTBR-tau243 特异反映 tangle (非 amyloid) 负担</td><td class="finding">首个血液 tangle stage marker</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Nat Aging <span class="badge badge-nature">Nat</span></td><td>Ossenkoppele</td><td class="title"><a href="https://www.nature.com/articles/s43587-025-00835-z">p-tau217 + tau-PET predict CU decline</a></td><td class="finding">联合 p-tau217 + tau-PET 削减 AD 试验入组 94%</td><td class="finding">重塑临床前期试验筛选</td></tr>
+        <tr><td class="year">2025</td><td class="journal">npj Aging <span class="badge badge-other">npj</span></td><td>—</td><td class="title"><a href="https://www.nature.com/articles/s41514-025-00219-y">Wearable sleep EEG + AI for AD screening</a></td><td class="finding">家用可穿戴 EEG/加速度分类 AD acc 0.90 / prodromal 0.76</td><td class="finding">卧室级筛查可能性</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Barthélemy / Bateman</td><td class="title"><a href="https://www.nature.com/articles/s41591-024-02869-z">Plasma p-tau217 matches/beats CSF</a></td><td class="finding">血浆 p-tau217 AUC ~0.94，匹配 FDA 批准的 CSF 测试</td><td class="finding">日常工作流中可替代腰穿</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Alz &amp; Dem <span class="badge badge-other">A&amp;D</span></td><td>Jack et al. (NIA-AA)</td><td class="title"><a href="https://pubmed.ncbi.nlm.nih.gov/38934362/">Revised NIA-AA biological criteria (AT1T2NISV)</a></td><td class="finding">A+ 或 T1+ 即足以诊断 AD；血液 BBM 接纳为 Core-1</td><td class="finding">AD 在生物学上重新定义、血液可检测</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Nat Aging <span class="badge badge-nature">Nat</span></td><td>Guo et al. (UK Biobank)</td><td class="title"><a href="https://www.nature.com/articles/s43587-023-00565-0">Plasma proteomic predicts 14-yr dementia</a></td><td class="finding">GFAP/NEFL/GDF15/LTBP2 预测 14 年痴呆 (n=52,645)</td><td class="finding">人群级 >10 年 lead time 蛋白组预测</td></tr>
+        <tr><td class="year">2023</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Smith / Pascoal</td><td class="title"><a href="https://www.nature.com/articles/s41591-023-02380-x">Astrocyte reactivity gates Aβ→tau</a></td><td class="finding">血浆 GFAP+ 是 Aβ 驱动 tau 累积的必要条件</td><td class="finding">星形胶质重新定位为闸门</td></tr>
+        <tr><td class="year">2023</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Brum / Karikari</td><td class="title"><a href="https://www.nature.com/articles/s41591-023-02443-z">CSF MTBR-tau243 specific for tangle</a></td><td class="finding">CSF MTBR-tau243 独特反映 tangle vs soluble tau</td><td class="finding">解决 tau biomarker 异质性</td></tr>
+        <tr><td class="year">2023</td><td class="journal">Nat Aging <span class="badge badge-nature">Nat</span></td><td>Hansson</td><td class="title"><a href="https://www.nature.com/articles/s43587-023-00471-5">Two-step plasma p-tau217 amyloid screening</a></td><td class="finding">p-tau217 单独解决 80% 病例；CSF 仅留 grey-zone</td><td class="finding">实用临床算法</td></tr>
+        <tr><td class="year">2022</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Ossenkoppele</td><td class="title"><a href="https://www.nature.com/articles/s41591-022-02049-x">A+T+ CU at high decline risk</a></td><td class="finding">amyloid+tau-PET 同阳 CU 强预测衰退 HR ~7×</td><td class="finding">定义最高风险临床前组</td></tr>
+        <tr><td class="year">2022</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Ashton / Karikari</td><td class="title"><a href="https://www.nature.com/articles/s41591-022-01925-w">Plasma p-tau231 earliest preclinical signal</a></td><td class="finding">血浆 p-tau231 在临床前期最早升高</td><td class="finding">最早的血液脑 Aβ 信号</td></tr>
+        <tr><td class="year">2022</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Mattsson-Carlgren</td><td class="title"><a href="https://www.nature.com/articles/s41591-022-02074-w">Differential roles of Aβ42/40, p-tau231, p-tau217</a></td><td class="finding">不同血液 marker 在试验选择 vs 监测中最优各异</td><td class="finding">指导按用途选 biomarker</td></tr>
+        <tr><td class="year">2021</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Palmqvist / Hansson</td><td class="title"><a href="https://www.nature.com/articles/s41591-021-01348-z">Plasma p-tau + accessible measures predict AD</a></td><td class="finding">p-tau + APOE + 认知组合优于专科判断 (AUC 0.88)</td><td class="finding">首个纯血液预后模型</td></tr>
+        <tr><td class="year">2020</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Janelidze / Hansson</td><td class="title"><a href="https://www.nature.com/articles/s41591-020-0755-1">Plasma p-tau181 discriminates AD</a></td><td class="finding">p-tau181 区分 AD vs 非 AD AUC 0.89–0.94</td><td class="finding">启动 BBM-for-AD 时代</td></tr>
+        <tr><td class="year">2019</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Preische / Bateman (DIAN)</td><td class="title"><a href="https://www.nature.com/articles/s41591-018-0304-3">Serum NfL dynamics in presymptomatic AD</a></td><td class="finding">NfL 变化率分离携带者 16.2 年提前</td><td class="finding">首个稳健 presymptomatic 血液 marker</td></tr>
+        <tr><td class="year">2019</td><td class="journal">Neurology <span class="badge badge-other">other</span></td><td>Schindler / Bateman</td><td class="title">Plasma Aβ42/40 by IP-MS predicts amyloid PET</td><td class="finding">高精度 MS 血浆 Aβ42/40 反映脑 amyloidosis AUC 0.88</td><td class="finding">PrecivityAD 血液测试基础</td></tr>
+        <tr><td class="year">2019</td><td class="journal">Nat Commun <span class="badge badge-nature">Nat</span></td><td>Hadoux / van Wijngaarden</td><td class="title"><a href="https://www.nature.com/articles/s41467-019-12242-1">Hyperspectral retinal imaging of AD</a></td><td class="finding">视网膜反射光谱区分高/低脑 Aβ</td><td class="finding">非侵入光学临床前期检测器</td></tr>
+        <tr><td class="year">2019</td><td class="journal">Nat Genet <span class="badge badge-nature">Nat</span></td><td>Jansen / Posthuma</td><td class="title"><a href="https://www.nature.com/articles/s41588-018-0311-9">GWAS of clinically diagnosed + by-proxy AD</a></td><td class="finding">29 风险位点、215 基因；免疫 + 脂质通路</td><td class="finding">最大 AD GWAS（彼时）</td></tr>
+        <tr><td class="year">2018</td><td class="journal">Nature <span class="badge badge-nature">Nat</span></td><td>Nakamura / Yanagisawa</td><td class="title"><a href="https://www.nature.com/articles/nature25456">Plasma Aβ IP-MS biomarkers for AD</a></td><td class="finding">APP669-711/Aβ42 + Aβ40/Aβ42 反映脑 amyloid AUC ~0.97</td><td class="finding">首篇 Nature 血液 amyloid; Shimadzu/Tanaka 平台</td></tr>
+        <tr><td class="year">2018</td><td class="journal">Alz &amp; Dem <span class="badge badge-other">A&amp;D</span></td><td>Jack et al. (NIA-AA)</td><td class="title"><a href="https://pubmed.ncbi.nlm.nih.gov/29653606/">NIA-AA AT(N) research framework</a></td><td class="finding">AD 按 Amyloid/Tau/Neurodegeneration 生物学定义</td><td class="finding">标准化现代 AD biomarker 思维</td></tr>
+        <tr><td class="year">2018</td><td class="journal">JAMA <span class="badge badge-other">JAMA</span></td><td>Ossenkoppele</td><td class="title">Flortaucipir tau-PET differential diagnosis</td><td class="finding">Tau-PET 区分 AD vs 非 AD 痴呆 AUC ~0.92</td><td class="finding">支撑 flortaucipir FDA 批准</td></tr>
+        <tr><td class="year">2014</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Mapstone / Federoff</td><td class="title"><a href="https://www.nature.com/articles/nm.3466">Plasma phospholipid panel predicts MCI/AD</a></td><td class="finding">10 脂质 panel 预测 MCI/AD 2-3 年起病（原 90%，后未复现 AUC 0.40-0.64）</td><td class="finding">高调但未复现的警示案例</td></tr>
+        <tr><td class="year">2012</td><td class="journal">NEJM (DIAN) <span class="badge badge-other">NEJM</span></td><td>Bateman</td><td class="title"><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1202753">Clinical/biomarker changes in dominantly inherited AD</a></td><td class="finding">CSF Aβ 25 年、萎缩 15 年、认知 10 年 pre-symptom 异常</td><td class="finding">奠基 AD biomarker 级联时间表</td></tr>
+        <tr><td class="year">2023</td><td class="journal">NEJM (A4) <span class="badge badge-other">NEJM</span></td><td>Sperling</td><td class="title"><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2305032">Solanezumab in preclinical AD (A4)</a></td><td class="finding">amyloid+ CU 患者 240 周认知无减缓</td><td class="finding">定义纯 amyloid 降低的临床前期极限</td></tr>
+        <tr><td class="year">2004</td><td class="journal">Ann Neurol <span class="badge badge-other">other</span></td><td>Klunk</td><td class="title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/ana.20009">PiB amyloid PET in living AD brains</a></td><td class="finding">活体首次人脑 Aβ 成像 (额叶 1.94×)</td><td class="finding">奠基 amyloid-PET 整个领域</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Commun Med <span class="badge badge-other">other</span></td><td>Yang et al. (NIA)</td><td class="title">Spoken language predicts MCI→AD progression</td><td class="finding">语音 NLP 预测 MCI→AD 6 年内转化 acc 78.2%</td><td class="finding">可扩展电话筛查</td></tr>
+        <tr><td class="year">2025</td><td class="journal">npj Dig Med <span class="badge badge-other">npj</span></td><td>—</td><td class="title"><a href="https://www.nature.com/articles/s41746-024-01292-5">Eye-AD: Retinal OCTA graph network</a></td><td class="finding">视网膜 OCTA 图网络识别 EOAD AUC 0.94 / MCI 0.86</td><td class="finding">最佳验证的视网膜 AI AD 模型</td></tr>
+        <tr><td class="year">2019</td><td class="journal">npj Dig Med <span class="badge badge-other">npj</span></td><td>Kourtis / Hampel</td><td class="title"><a href="https://www.nature.com/articles/s41746-019-0084-2">Mobile/wearable digital biomarkers for AD (review)</a></td><td class="finding">可穿戴 AD 数字 biomarker 综述框架</td><td class="finding">领域奠基路线图</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Nat Aging <span class="badge badge-nature">Nat</span></td><td>Salvadó et al.</td><td class="title"><a href="https://www.nature.com/articles/s43587-025-00951-w">Plasma tau panel for biological staging</a></td><td class="finding">血浆 tau panel 生物学分期 AD (早→晚)</td><td class="finding">把 AT(N) 分期延伸到纯血液</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Nat Aging <span class="badge badge-nature">Nat</span></td><td>Brum / Hansson</td><td class="title"><a href="https://www.nature.com/articles/s43587-024-00731-y">Plasma BBMs adjusted to clinical probability</a></td><td class="finding">贝叶斯整合 BBM + 临床预测概率</td><td class="finding">桥接 BBM 到临床决策</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Wang et al.</td><td class="title"><a href="https://www.nature.com/articles/s41591-025-03565-2">CSF synaptic protein predicts AD resilience</a></td><td class="finding">CSF 突触 marker 预测认知韧性</td><td class="finding">在 AT(N) 上加 resilience 维度</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Lehallier / Wyss-Coray</td><td class="title"><a href="https://www.nature.com/articles/s41591-025-03798-1">Plasma organ-specific aging clocks</a></td><td class="finding">脑 + 免疫衰老时钟与痴呆 healthspan 相关</td><td class="finding">aging-clock 框架接入痴呆</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- THERAPEUTICS -->
+<section id="lit-rx">
+  <div class="container">
+    <h2>八、文献表 C · 治疗 + 临床试验 (40 篇)</h2>
+    <p class="lede">"AD 怎么治"——多数失败，少数成功，呈现剩下没人占的赛道。</p>
+    <div class="lit-controls"><input type="text" placeholder="过滤..." onkeyup="filterTable('tbl-rx', this.value)"></div>
+    <table class="lit" id="tbl-rx">
+      <thead><tr><th>年</th><th>期刊</th><th>药物/团队</th><th>标题/试验</th><th>核心发现</th><th>为什么重要</th></tr></thead>
+      <tbody>
+        <tr><td class="year">2023</td><td class="journal">NEJM <span class="badge badge-other">NEJM</span></td><td>Lecanemab (van Dyck)</td><td class="title"><a href="https://doi.org/10.1056/NEJMoa2212948">CLARITY-AD Phase 3</a></td><td class="finding">18 月减缓 CDR-SB 衰退 27%</td><td class="finding">第一个无歧义阳性 anti-Aβ Phase 3；FDA 全批准 2023-07</td></tr>
+        <tr><td class="year">2023</td><td class="journal">JAMA <span class="badge badge-other">JAMA</span></td><td>Donanemab (Sims/Lilly)</td><td class="title"><a href="https://doi.org/10.1001/jama.2023.13239">TRAILBLAZER-ALZ 2</a></td><td class="finding">低/中 tau 亚组 iADRS 减缓 35%；76% 清斑</td><td class="finding">第二个确证 anti-Aβ；FDA 全批准 2024-07</td></tr>
+        <tr><td class="year">2016</td><td class="journal">Nature <span class="badge badge-nature">Nat</span></td><td>Aducanumab (Sevigny/Biogen)</td><td class="title"><a href="https://doi.org/10.1038/nature19323">PRIME Phase 1b</a></td><td class="finding">PET 确证剂量/时间依赖清斑</td><td class="finding">人源抗体可体内结合 amyloid 的证明</td></tr>
+        <tr><td class="year">2022</td><td class="journal">J Prev Alz Dis <span class="badge badge-other">other</span></td><td>Aducanumab (Budd Haeberlein)</td><td class="title">EMERGE/ENGAGE Phase 3</td><td class="finding">EMERGE CDR-SB 阳性高剂量；ENGAGE 阴性</td><td class="finding">2021 FDA 加速批准争议；2024 撤回</td></tr>
+        <tr><td class="year">2018</td><td class="journal">NEJM <span class="badge badge-other">NEJM</span></td><td>Solanezumab (Honig)</td><td class="title"><a href="https://doi.org/10.1056/NEJMoa1705971">EXPEDITION3 mild AD</a></td><td class="finding">80 周轻度 AD 认知无收益</td><td class="finding">关闭症状期 soluble-Aβ 单靶路</td></tr>
+        <tr><td class="year">2023</td><td class="journal">NEJM <span class="badge badge-other">NEJM</span></td><td>Solanezumab (Sperling)</td><td class="title"><a href="https://doi.org/10.1056/NEJMoa2305032">A4 preclinical AD</a></td><td class="finding">240 周 PACC 无减缓 in amyloid+ CU</td><td class="finding">"越早越好"假说被部分证伪</td></tr>
+        <tr><td class="year">2023</td><td class="journal">NEJM <span class="badge badge-other">NEJM</span></td><td>Gantenerumab (Bateman)</td><td class="title"><a href="https://doi.org/10.1056/NEJMoa2304430">GRADUATE I &amp; II</a></td><td class="finding">CDR-SB 无显著收益；清斑不足</td><td class="finding">Roche 停止；皮下剂量教训</td></tr>
+        <tr><td class="year">2021</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>DIAN-TU (Salloway)</td><td class="title"><a href="https://doi.org/10.1038/s41591-021-01369-8">Gantenerumab/Solanezumab in DIAD</a></td><td class="finding">两药均未达认知主终点</td><td class="finding">首个完成的家族性 AD 预防试验</td></tr>
+        <tr><td class="year">2022</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Crenezumab (Tariot)</td><td class="title"><a href="https://doi.org/10.1038/s41591-022-01853-9">API ADAD Colombia (PSEN1 E280A)</a></td><td class="finding">无认知/biomarker 收益</td><td class="finding">最大家族性 AD 临床前期试验</td></tr>
+        <tr><td class="year">2021</td><td class="journal">Alz Res Ther <span class="badge badge-other">other</span></td><td>Lecanemab/BAN2401 (Swanson)</td><td class="title">BAN2401 Phase 2b</td><td class="finding">10 mg/kg 双周 ADCOMS 减 30%</td><td class="finding">为 CLARITY-AD 去风险</td></tr>
+        <tr><td class="year">2023</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>BIIB080 (Mummery)</td><td class="title"><a href="https://doi.org/10.1038/s41591-023-02326-3">MAPT-Rx Phase 1b tau ASO</a></td><td class="finding">CSF total/p-tau 减 ~50%</td><td class="finding">首个人体 CNS tau 降低</td></tr>
+        <tr><td class="year">2022</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Semorinemab (Teng)</td><td class="title"><a href="https://doi.org/10.1038/s41591-022-01992-z">LAURIET mild-mod AD</a></td><td class="finding">达 ADAS-Cog11 但未达 ADL</td><td class="finding">中段 anti-tau 抗体混合信号</td></tr>
+        <tr><td class="year">2023</td><td class="journal">JAMA Neurol <span class="badge badge-other">JAMA</span></td><td>Tilavonemab (Florian/AbbVie)</td><td class="title"><a href="https://doi.org/10.1001/jamaneurol.2023.1364">Tilavonemab early AD Phase 2</a></td><td class="finding">无收益</td><td class="finding">N 端 anti-tau 失败；AbbVie 终止</td></tr>
+        <tr><td class="year">2021</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Gosuranemab (Boxer)</td><td class="title"><a href="https://doi.org/10.1038/s41591-021-01455-x">Gosuranemab PSP+AD Phase 2</a></td><td class="finding">尽管接合细胞外 tau 但无临床收益</td><td class="finding">使 N 端 anti-tau 抗体广泛存疑</td></tr>
+        <tr><td class="year">2019</td><td class="journal">NEJM <span class="badge badge-other">NEJM</span></td><td>Verubecestat (Egan/Merck)</td><td class="title"><a href="https://doi.org/10.1056/NEJMoa1812840">APECS prodromal AD</a></td><td class="finding">认知恶化；futility 停止</td><td class="finding">终结 BACE1 抑制剂类</td></tr>
+        <tr><td class="year">2018</td><td class="journal">NEJM <span class="badge badge-other">NEJM</span></td><td>Verubecestat (Egan)</td><td class="title"><a href="https://doi.org/10.1056/NEJMoa1706441">EPOCH mild-mod AD</a></td><td class="finding">无认知收益；futility 停止</td><td class="finding">BACE 首个 Phase 3 失败</td></tr>
+        <tr><td class="year">2019</td><td class="journal">NEJM <span class="badge badge-other">NEJM</span></td><td>Lanabecestat (Wessels)</td><td class="title"><a href="https://doi.org/10.1056/NEJMoa1900824">AMARANTH/DAYBREAK</a></td><td class="finding">futility 停止；认知恶化</td><td class="finding">BACE 类负担确认</td></tr>
+        <tr><td class="year">2013</td><td class="journal">NEJM <span class="badge badge-other">NEJM</span></td><td>Semagacestat (Doody)</td><td class="title"><a href="https://doi.org/10.1056/NEJMoa1210951">Semagacestat mild-mod AD</a></td><td class="finding">认知衰退 + 皮肤癌信号</td><td class="finding">结束 γ-secretase 抑制剂时代</td></tr>
+        <tr><td class="year">2009</td><td class="journal">JAMA <span class="badge badge-other">JAMA</span></td><td>Tarenflurbil (Green)</td><td class="title"><a href="https://doi.org/10.1001/jama.2009.1866">Tarenflurbil Phase 3 mild AD</a></td><td class="finding">无效</td><td class="finding">首个 NSAID 衍生 γ-secretase 调节剂失败</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Phase 3 readout</td><td>Semaglutide (Novo)</td><td class="title">EVOKE / EVOKE+</td><td class="finding">2025 读出；GLP-1 disease-modifying 测试</td><td class="finding">首个大型 GLP-1 AD 试验；转向代谢靶点</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Alz &amp; Dem <span class="badge badge-other">A&amp;D</span></td><td>Liraglutide (Edison)</td><td class="title"><a href="https://doi.org/10.1002/alz.13668">ELAD mild AD</a></td><td class="finding">脑容量丢失减缓；认知趋势</td><td class="finding">维持 GLP-1 重定向兴趣</td></tr>
+        <tr><td class="year">2019</td><td class="journal">Cell Research <span class="badge badge-other">other</span></td><td>GV-971 (Wang / Geng)</td><td class="title"><a href="https://doi.org/10.1038/s41422-019-0216-x">Sodium oligomannate Phase 3 (China)</a></td><td class="finding">36 周 ADAS-Cog 改善 vs 安慰剂</td><td class="finding">首个肠道微生物组 AD 药；中国 2019 条件批准</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Alz &amp; Dem <span class="badge badge-other">A&amp;D</span></td><td>Blarcamesine (Macfarlane)</td><td class="title"><a href="https://doi.org/10.1002/alz.14015">ATTENTION-AD 2b/3 sigma-1 agonist</a></td><td class="finding">高剂量 ADAS-Cog13 减缓 36.3%</td><td class="finding">Sigma-1/自噬机制复兴；EMA 审评中</td></tr>
+        <tr><td class="year">2023</td><td class="journal">Alz Res Ther <span class="badge badge-other">other</span></td><td>Masitinib (Dubois)</td><td class="title"><a href="https://doi.org/10.1186/s13195-023-01169-x">AB09004 Phase 3</a></td><td class="finding">4.5 mg/kg/d ADAS-Cog 减 2.15 分</td><td class="finding">肥大细胞 / Lyn-kinase 抑制；Phase 3 进行</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Science (news) <span class="badge badge-science">Sci</span></td><td>Simufilam (Piller report)</td><td class="title"><a href="https://doi.org/10.1126/science.acx9522">Cassava simufilam REFOCUS-ALZ failure + integrity</a></td><td class="finding">Phase 3 失败 + 数据操纵问题</td><td class="finding">AD 科研诚信案例</td></tr>
+        <tr><td class="year">2011</td><td class="journal">Br J Psych <span class="badge badge-other">other</span></td><td>Lithium 微剂量 (Forlenza)</td><td class="title"><a href="https://doi.org/10.1192/bjp.bp.110.080044">Lithium aMCI 12 月</a></td><td class="finding">认知衰退减缓 + 降 CSF p-tau</td><td class="finding">复兴 GSK-3β / 锂假说</td></tr>
+        <tr><td class="year">2015</td><td class="journal">Lancet <span class="badge badge-lancet">Lan</span></td><td>FINGER (Ngandu)</td><td class="title"><a href="https://doi.org/10.1016/S0140-6736(15)60461-5">FINGER 2-yr multidomain RCT</a></td><td class="finding">饮食+运动+认知+血管干预，NTB +25%</td><td class="finding">首个 RCT 阳性预防；WW-FINGERS 蓝图</td></tr>
+        <tr><td class="year">2025</td><td class="journal">JAMA <span class="badge badge-other">JAMA</span></td><td>US POINTER (Baker)</td><td class="title"><a href="https://doi.org/10.1001/jama.2025.12923">Structured vs self-guided lifestyle RCT</a></td><td class="finding">两组都改善，结构化组优于自助</td><td class="finding">首个美国 FINGER 复现；国家政策依据</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Lancet <span class="badge badge-lancet">Lan</span></td><td>Lancet Commission (Livingston)</td><td class="title"><a href="https://doi.org/10.1016/S0140-6736(24)01296-0">Dementia prevention 2024 update</a></td><td class="finding">14 个修改性因素覆盖 45% 痴呆 PAF</td><td class="finding">全球预防参考框架；加入 LDL + 视力损失</td></tr>
+        <tr><td class="year">2019</td><td class="journal">JAMA <span class="badge badge-other">JAMA</span></td><td>SPRINT-MIND (Williamson)</td><td class="title"><a href="https://doi.org/10.1001/jama.2018.21442">Intensive BP control on dementia</a></td><td class="finding">强降压 (&lt;120) 降低 MCI；痴呆未达显著</td><td class="finding">首个 RCT 血压控制降认知风险</td></tr>
+        <tr><td class="year">2024</td><td class="journal">JAMA Neurol <span class="badge badge-other">JAMA</span></td><td>EXERT (Baker)</td><td class="title"><a href="https://doi.org/10.1001/jamaneurol.2024.0078">Aerobic vs stretching in aMCI</a></td><td class="finding">两组 12 月稳定（解读为活动收益）</td><td class="finding">最大 MCI 运动 RCT</td></tr>
+        <tr><td class="year">2023</td><td class="journal">NEJM <span class="badge badge-other">NEJM</span></td><td>MIND diet (Barnes)</td><td class="title"><a href="https://doi.org/10.1056/NEJMoa2302368">MIND vs usual diet RCT</a></td><td class="finding">3 年无显著认知收益</td><td class="finding">冷却观察性 MIND 信号</td></tr>
+        <tr><td class="year">2016</td><td class="journal">Lancet Neurol <span class="badge badge-lancet">Lan</span></td><td>Lozano (ADvance)</td><td class="title"><a href="https://doi.org/10.1016/S1474-4422(16)30113-1">Fornix DBS mild AD Phase 2</a></td><td class="finding">总体无收益；>65y 提示</td><td class="finding">首个 AD DBS RCT；ADvance-II</td></tr>
+        <tr><td class="year">2018</td><td class="journal">Nat Commun <span class="badge badge-nature">Nat</span></td><td>Lipsman</td><td class="title"><a href="https://doi.org/10.1038/s41467-018-04529-6">MR-guided FUS BBB opening in AD</a></td><td class="finding">安全可逆 BBB 开放于海马/额叶皮层</td><td class="finding">人体内首次 FUS-BBB；递送范式开启</td></tr>
+        <tr><td class="year">2024</td><td class="journal">NEJM <span class="badge badge-other">NEJM</span></td><td>Rezai</td><td class="title"><a href="https://doi.org/10.1056/NEJMoa2308719">FUS + aducanumab BBB enhancement</a></td><td class="finding">治疗半球 amyloid 清除增强</td><td class="finding">FUS 增强 mAb 递送的证明</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Banerjee / Collinge</td><td class="title"><a href="https://doi.org/10.1038/s41591-023-02729-2">Iatrogenic AD via cadaveric GH</a></td><td class="finding">5 例尸源生长激素受者出现早发 AD</td><td class="finding">AD 病理 prion 样首证；生物安全意涵</td></tr>
+        <tr><td class="year">2021</td><td class="journal">Nat Rev Neurol <span class="badge badge-nature">Nat</span></td><td>Cummings</td><td class="title"><a href="https://doi.org/10.1038/s41582-021-00567-9">Aducanumab evidence base &amp; controversy</a></td><td class="finding">EMERGE/ENGAGE 不一致的批判合成</td><td class="finding">批准争议后临床指南</td></tr>
+        <tr><td class="year">2023</td><td class="journal">Nat Rev Neurol <span class="badge badge-nature">Nat</span></td><td>Selkoe</td><td class="title"><a href="https://doi.org/10.1038/s41582-022-00688-9">Treatments for AD emerge</a></td><td class="finding">Lecanemab/Donanemab 证实 amyloid 假说</td><td class="finding">2023 批准的叙事框架</td></tr>
+        <tr><td class="year">2019</td><td class="journal">Nat Neurosci <span class="badge badge-nature">Nat</span></td><td>Long / Holtzman</td><td class="title">AD pathobiology &amp; treatment update</td><td class="finding">Aβ→tau→neurodegen 级联综合治疗意涵</td><td class="finding">最被引现代机制综述</td></tr>
+        <tr><td class="year">2022</td><td class="journal">Nat Neurosci <span class="badge badge-nature">Nat</span></td><td>Wilcock / Heneka</td><td class="title"><a href="https://doi.org/10.1038/s41593-022-01104-7">Neuroinflammation &amp; innate immunity in AD</a></td><td class="finding">微胶质 TREM2/补体调节剂为下一波靶点</td><td class="finding">后-amyloid 流水线框架</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- RISK + DIGITAL -->
+<section id="lit-risk">
+  <div class="container">
+    <h2>九、文献表 D · 风险因素 + 数字健康 + 行为干预 (34 篇)</h2>
+    <p class="lede">"AD 与世界的接口"——可穿戴/AI 实际工作在这一层。</p>
+    <div class="lit-controls"><input type="text" placeholder="过滤..." onkeyup="filterTable('tbl-risk', this.value)"></div>
+    <table class="lit" id="tbl-risk">
+      <thead><tr><th>年</th><th>期刊</th><th>作者/团队</th><th>标题</th><th>核心发现</th><th>为什么重要</th></tr></thead>
+      <tbody>
+        <tr><td class="year">2025</td><td class="journal">Nat Med <span class="badge badge-natmed">NatMed</span></td><td>Apple/Biogen/Stanford (Chen)</td><td class="title"><a href="https://www.nature.com/articles/s41591-024-03475-9">Smartwatch+iPhone remote MCI detection (Intuition)</a></td><td class="finding">iPhone+Apple Watch 被动+主动信号在 23,000 美国成人 18 月中分类 MCI</td><td class="finding">最大消费级 AD 认知队列；合法化被动数字表型化</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Nature <span class="badge badge-nature">Nat</span></td><td>Zhao (DeepRare)</td><td class="title"><a href="https://www.nature.com/articles/s41586-025-10097-9">Agentic system for rare-disease diagnosis</a></td><td class="finding">多智能体 LLM 64.4% 一击 vs 资深医生 54.6%</td><td class="finding">首个 Nature 级可追溯多智能体诊断；AD 多智能体的模板</td></tr>
+        <tr><td class="year">2025</td><td class="journal">npj Dig Med <span class="badge badge-other">npj</span></td><td>Li (CARE-AD)</td><td class="title"><a href="https://www.nature.com/articles/s41746-025-01940-4">Multi-agent LLM forecasts AD from EHR notes</a></td><td class="finding">专科 agent ensemble 提前 10 年预测 AD acc 0.53 vs baseline 0.26-0.45</td><td class="finding">首个 AD 多智能体 EHR 预测器</td></tr>
+        <tr><td class="year">2025</td><td class="journal">JAMA <span class="badge badge-other">JAMA</span></td><td>Baker (US POINTER)</td><td class="title"><a href="https://jamanetwork.com/journals/jama/fullarticle/2837046">Structured vs self-guided lifestyle RCT</a></td><td class="finding">结构化干预改善 2 年全局认知 (n=2,111 多元化)</td><td class="finding">首个美国大规模 FINGER 多元复现</td></tr>
+        <tr><td class="year">2025</td><td class="journal">npj Dig Med <span class="badge badge-other">npj</span></td><td>Polk</td><td class="title"><a href="https://www.nature.com/articles/s41746-025-01583-5">Remote digital cognitive tests scoping review</a></td><td class="finding">识别 23 个临床前期数字认知工具 vs Aβ/tau biomarker 验证</td><td class="finding">定义数字认知评估全景</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Lancet <span class="badge badge-lancet">Lan</span></td><td>Livingston (Commission)</td><td class="title"><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24)01296-0/abstract">Dementia prevention 2024 — 14 risk factors</a></td><td class="finding">加入 LDL + 视力损失；45% 痴呆可预防</td><td class="finding">全球预防政策参考框架</td></tr>
+        <tr><td class="year">2023</td><td class="journal">Lancet <span class="badge badge-lancet">Lan</span></td><td>Lin (ACHIEVE)</td><td class="title"><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23)01406-X/abstract">Hearing aids vs education in older adults</a></td><td class="finding">高危人群 3 年认知衰退 ~50% 减缓</td><td class="finding">首个证明可干预因素 RCT</td></tr>
+        <tr><td class="year">2022</td><td class="journal">Lancet PH <span class="badge badge-lancet">Lan</span></td><td>GBD 2019 Dementia</td><td class="title"><a href="https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(21)00249-8/fulltext">Global dementia 2019→2050 forecast</a></td><td class="finding">全球 57M→153M (2050)；女男比 ~1.7</td><td class="finding">标准全球负担引用</td></tr>
+        <tr><td class="year">2022</td><td class="journal">ADI Report <span class="badge badge-other">other</span></td><td>Gauthier (WAR 2022)</td><td class="title"><a href="https://www.alzint.org/resource/world-alzheimer-report-2022/">Life after diagnosis</a></td><td class="finding">全球 85% 患者无诊断后护理</td><td class="finding">最大健康系统 gap 证据</td></tr>
+        <tr><td class="year">2020</td><td class="journal">Lancet <span class="badge badge-lancet">Lan</span></td><td>Livingston (Commission)</td><td class="title"><a href="https://www.thelancet.com/article/S0140-6736(20)30367-6/fulltext">Dementia prevention 2020 — 12 factors</a></td><td class="finding">加入 alcohol/TBI/空气污染；~40% 可预防</td><td class="finding">12 因素标准框架</td></tr>
+        <tr><td class="year">2019</td><td class="journal">npj Dig Med <span class="badge badge-other">npj</span></td><td>Kourtis</td><td class="title"><a href="https://www.nature.com/articles/s41746-019-0084-2">Digital biomarkers via mobile/wearables</a></td><td class="finding">被动 sensing → AD biomarker 综述框架</td><td class="finding">数字 biomarker 领域奠基</td></tr>
+        <tr><td class="year">2018</td><td class="journal">Env Int <span class="badge badge-other">other</span></td><td>Chen</td><td class="title"><a href="https://www.sciencedirect.com/science/article/pii/S0160412017308218">PM2.5 + incident dementia Ontario</a></td><td class="finding">210 万人 HR 1.04 / IQR PM2.5；6.1% PAF</td><td class="finding">人群级空气污染→AD 证据</td></tr>
+        <tr><td class="year">2017</td><td class="journal">Lancet <span class="badge badge-lancet">Lan</span></td><td>Livingston (Commission)</td><td class="title"><a href="https://pubmed.ncbi.nlm.nih.gov/28735855/">First dementia prevention Commission — 9 factors</a></td><td class="finding">~35% 痴呆归因于 9 修改性因素</td><td class="finding">启动修改性风险范式</td></tr>
+        <tr><td class="year">2015</td><td class="journal">Lancet <span class="badge badge-lancet">Lan</span></td><td>Ngandu (FINGER)</td><td class="title"><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)60461-5/abstract">FINGER 2-yr multidomain RCT</a></td><td class="finding">饮食+运动+认知+血管，NTB +25%</td><td class="finding">首个 RCT 阳性预防；WW-FINGERS 蓝图</td></tr>
+        <tr><td class="year">2015</td><td class="journal">Alz &amp; Dem <span class="badge badge-other">A&amp;D</span></td><td>Morris</td><td class="title"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4532650/">MIND diet and incident AD</a></td><td class="finding">高 MIND 服从性 53% 降 AD</td><td class="finding">最常用 AD 预防饮食评分</td></tr>
+        <tr><td class="year">2014</td><td class="journal">JNNP <span class="badge badge-other">other</span></td><td>Holwerda (AMSTEL)</td><td class="title"><a href="https://pubmed.ncbi.nlm.nih.gov/23232034/">Loneliness predicts dementia</a></td><td class="finding">主观孤独 OR 1.64 痴呆</td><td class="finding">分离孤独 vs 客观隔离</td></tr>
+        <tr><td class="year">2013</td><td class="journal">Science <span class="badge badge-science">Sci</span></td><td>Xie / Nedergaard</td><td class="title"><a href="https://www.science.org/doi/10.1126/science.1241224">Sleep drives metabolite clearance</a></td><td class="finding">睡眠扩张间质 60% Aβ 清除</td><td class="finding">睡眠-AD 机制基础</td></tr>
+        <tr><td class="year">2013</td><td class="journal">JAMA Neurol <span class="badge badge-other">JAMA</span></td><td>Spira</td><td class="title"><a href="https://jamanetwork.com/journals/jamaneurology/fullarticle/1788611">Self-reported sleep and Aβ deposition</a></td><td class="finding">短/差睡眠 → PiB-PET Aβ 沉积 (BLSA)</td><td class="finding">首个人体 PET 证据睡眠→AD</td></tr>
+        <tr><td class="year">2013</td><td class="journal">Sleep <span class="badge badge-other">other</span></td><td>Lim / Bennett</td><td class="title"><a href="https://pubmed.ncbi.nlm.nih.gov/23814339/">Sleep fragmentation and incident AD</a></td><td class="finding">顶 vs 底 decile 片段化 1.5× AD</td><td class="finding">actigraphy 前瞻；可穿戴 AD 基础</td></tr>
+        <tr><td class="year">2012</td><td class="journal">Lancet Neurol <span class="badge badge-lancet">Lan</span></td><td>Stern</td><td class="title"><a href="https://pubmed.ncbi.nlm.nih.gov/23079557/">Cognitive reserve in ageing and AD</a></td><td class="finding">教育/职业缓冲同等病理</td><td class="finding">预防理论框架定义</td></tr>
+        <tr><td class="year">2012</td><td class="journal">JAMA IM <span class="badge badge-other">JAMA</span></td><td>Weuve</td><td class="title"><a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/1108716">PM2.5 and cognitive decline (Nurses)</a></td><td class="finding">长期 PM2.5 → 更快衰退 (n=19,409)</td><td class="finding">首个美国队列 air→认知</td></tr>
+        <tr><td class="year">2012</td><td class="journal">Neurology <span class="badge badge-other">other</span></td><td>Buchman</td><td class="title"><a href="https://www.neurology.org/doi/10.1212/WNL.0b013e3182535d35">Total daily physical activity and AD</a></td><td class="finding">actigraphy 活动反相关 AD 风险</td><td class="finding">证明"任何运动"都保护</td></tr>
+        <tr><td class="year">2011</td><td class="journal">Arch Neurol <span class="badge badge-other">other</span></td><td>Lin</td><td class="title"><a href="https://pubmed.ncbi.nlm.nih.gov/21320988/">Hearing loss and incident dementia (BLSA)</a></td><td class="finding">严重听损 4.94× 痴呆</td><td class="finding">听损为首要修改因素</td></tr>
+        <tr><td class="year">2011</td><td class="journal">PNAS <span class="badge badge-other">other</span></td><td>Erickson</td><td class="title"><a href="https://www.pnas.org/doi/10.1073/pnas.1015950108">Aerobic exercise grows hippocampus</a></td><td class="finding">1 年步行海马 +2%</td><td class="finding">首个 MRI 运动-脑因果</td></tr>
+        <tr><td class="year">2007</td><td class="journal">Arch Gen Psych <span class="badge badge-other">other</span></td><td>Wilson (Rush)</td><td class="title"><a href="https://jamanetwork.com/journals/jamapsychiatry/fullarticle/482179">Loneliness and risk of AD</a></td><td class="finding">主观孤独 >2× AD 风险</td><td class="finding">Rush MAP/ROS 首证</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Cochrane DSR <span class="badge badge-other">other</span></td><td>van der Steen</td><td class="title"><a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD003477.pub5/abstract">Music-based interventions for dementia</a></td><td class="finding">音乐疗法对抑郁中等确定性收益；激越无明确效果</td><td class="finding">权威音乐疗法 RCT 综合</td></tr>
+        <tr><td class="year">2024</td><td class="journal">Nat Mental Health <span class="badge badge-nature">Nat</span></td><td>realist review</td><td class="title"><a href="https://www.nature.com/articles/s44220-024-00342-x">Music therapy in advanced dementia</a></td><td class="finding">机制综合：通过 attunement 降痛苦 / 升福祉</td><td class="finding">Cochrane 的高影响定性互补</td></tr>
+        <tr><td class="year">2022</td><td class="journal">Alz Dem DADM <span class="badge badge-other">A&amp;D</span></td><td>Iaboni</td><td class="title"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9043905/">Wearable multimodal sensors detect BPSD</a></td><td class="finding">个体化 ML 在腕带信号上 minute-level 检测 BPSD</td><td class="finding">sundowning/BPSD 数字表型化 PoC</td></tr>
+        <tr><td class="year">2018</td><td class="journal">JAGS <span class="badge badge-other">other</span></td><td>Moyle</td><td class="title"><a href="https://pubmed.ncbi.nlm.nih.gov/29656838/">PARO robot cluster RCT</a></td><td class="finding">PARO 适度降低激越 SMD -0.27</td><td class="finding">最大养老院机器宠物试验</td></tr>
+        <tr><td class="year">2026</td><td class="journal">BMC Geriatr <span class="badge badge-other">other</span></td><td>Chua (LightSPAN)</td><td class="title"><a href="https://link.springer.com/article/10.1186/s12877-026-07105-6">Chrono-mHealth light protocol</a></td><td class="finding">双盲 app 引导光照 RCT (n≈90)</td><td class="finding">circadian-light 转化到 mHealth</td></tr>
+        <tr><td class="year">2025</td><td class="journal">npj Dig Med <span class="badge badge-other">npj</span></td><td>passive DHT review</td><td class="title"><a href="https://www.nature.com/articles/s41746-026-02650-1">Passive digital health for ADRD screening</a></td><td class="finding">30 研究：acc/sens 80–90%，AUC ~78%</td><td class="finding">定义被动 ADRD 检测成熟度</td></tr>
+        <tr><td class="year">2025</td><td class="journal">Nat Hum Behav <span class="badge badge-nature">Nat</span></td><td>meta-analysis</td><td class="title"><a href="https://www.nature.com/articles/s41562-025-02159-9">Technology use and cognitive aging</a></td><td class="finding">高数字技术使用 → 低痴呆风险（老年）</td><td class="finding">反驳"数字痴呆"叙事</td></tr>
+        <tr><td class="year">2022</td><td class="journal">JAMA Netw Open <span class="badge badge-other">JAMA</span></td><td>Nianogo</td><td class="title"><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2793916">PAF of AD by race/ethnicity</a></td><td class="finding">修改性因素在黑人/拉美人群解释更大份额</td><td class="finding">健康公平视角</td></tr>
+        <tr><td class="year">2026</td><td class="journal">MICCAI <span class="badge badge-other">other</span></td><td>Bian (ADAgent)</td><td class="title"><a href="https://link.springer.com/chapter/10.1007/978-3-032-06004-4_3">LLM coordinator for multimodal AD</a></td><td class="finding">多模态诊断 +2.7%、预后 +0.7% MRI+PET 任务</td><td class="finding">首个 AD 专用 LLM agent imaging</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- WHITESPACE -->
+<section id="whitespace">
+  <div class="container">
+    <h2>十、白空间地图（2026 年还空着的位置）</h2>
+    <p class="lede">把上面 4 张表叠起来，能看出 4 个明显的空位。每个空位都标了"目前谁最接近、距离多远"——客观盘点，不假定具体方向。</p>
+
+    <div class="ws-grid">
+      <div class="ws-card">
+        <h4>WS-1 · 多模态 AD 世界模型</h4>
+        <p class="occupied"><b>最接近：</b>DADD 2025（仅 EEG）/ Unlearn CRBM 2025（仅 baseline，不可 rollout 干预）/ MeWM 2025（肿瘤，不是 AD）</p>
+        <p class="gap"><b>空缺：</b>没有任何已发表工作是<b>多模态 + cross-modal coupled + 可个体化条件 + 可反事实推演</b>的生成式 AD 患者动力模型。LeCun JEPA / Sora 范式在 AD 上完全空白。</p>
+      </div>
+      <div class="ws-card">
+        <h4>WS-2 · 多智能体 × 连续 sensor 流</h4>
+        <p class="occupied"><b>最接近：</b>DeepRare Nature 2025（HPO + 静态文本）/ CARE-AD npj DM 2025（EHR 注释）/ ADAgent 2026（影像 + LLM 协调）</p>
+        <p class="gap"><b>空缺：</b>所有现有 multi-agent AD 系统都在<b>静态艺术品</b>（笔记、影像、基因）上推理。<b>没人把多智能体接到 7×24 连续多模态 sensor 流，且没人让 agent 调用世界模型做 counterfactual rollout</b>。</p>
+      </div>
+      <div class="ws-card">
+        <h4>WS-3 · 闭环可穿戴 RCT</h4>
+        <p class="occupied"><b>最接近：</b>JMIR Aging 2025（agitation 提前 6 min 检测）/ Cochrane 2025（音乐疗法 RCT，但 caregiver 触发）/ LightSPAN 2026（光照协议，未闭环）</p>
+        <p class="gap"><b>空缺：</b>检测端和干预端两条线 20 年来没有合拢。<b>没有一个 RCT 是"sensor 自动检测 BPSD 触发 → autonomous 干预 → 量化 outcome"</b>的全栈闭环。</p>
+      </div>
+      <div class="ws-card">
+        <h4>WS-4 · 行为/居家层 → 分子端的可解释桥梁</h4>
+        <p class="occupied"><b>最接近：</b>Apple Intuition Nat Med 2025（n=23K 但只到 MCI 分类）/ UK Biobank Nat Aging 2024（蛋白组 10 年提前但需采血）</p>
+        <p class="gap"><b>空缺：</b>没人证明<b>纯被动可穿戴信号能在不抽血、不影像的条件下，准确预测 p-tau217 / Aβ-PET 这些金标准</b>。手套 → 分子层的 inverse mapping 是开放问题。</p>
+      </div>
+    </div>
+
+    <div class="callout-good ui">
+      <b>观察</b>：4 个白空间互相耦合——WS-1（世界模型）给 WS-2（Agent）提供 rollout 引擎，WS-2 给 WS-3（闭环）提供决策器，WS-3 的真实回流又校准 WS-1。<b>它们既可以分开做，也可以叠起来做</b>。
+    </div>
+  </div>
+</section>
+
+<!-- POSITION -->
+<section id="position">
+  <div class="container">
+    <h2>十一、三个候选研究方向（客观对比）</h2>
+    <p class="lede">基于上面 4 个白空间，可以收敛出 3 个互不重叠的候选方向。这里只列出每个方向的目标、可行性、潜在风险，不假定哪个最适合——这取决于具体团队配置、临床合作可用性、时间线偏好。</p>
+
+    <h3>11.1 哪些位置已经被占满（不论选哪条都要避开）</h3>
+    <ul>
+      <li><b>单模态 ML 分类器</b>（步态/语音/睡眠单跑）：Apple Intuition / npj Aging sleep / Yang Commun Med 占满。</li>
+      <li><b>新血液 biomarker 单跑</b>：Hansson / Bateman 的 BioFINDER / DIAN 占满 p-tau217 / MTBR-tau243 / NfL。</li>
+      <li><b>另一个静态多智能体诊断系统</b>：DeepRare + CARE-AD + ADAgent 三连击。</li>
+      <li><b>新单细胞图谱</b>：Tsai / De Jager 三个 Nature/Cell。</li>
+      <li><b>新 Aβ/tau 抗体</b>：药厂主导。</li>
+    </ul>
+
+    <h3>11.2 三个候选方向</h3>
+
+    <div class="position-stack">
+      <h3>方向 A · The Glove-Driven AD World Model + Closed-Loop Agent</h3>
+      <p><b>论题</b>：构建首个由可穿戴信号驱动、可个体化、可反事实推演的 AD 世界模型，并把单只手套变成一个完成 sense → reason → intervene → re-measure 闭环的临床智能体。</p>
+      <p><b>占的白空间</b>：WS-1 + WS-2 + WS-3 三块同时。</p>
+      <p><b>论文路径（3 篇打包）</b></p>
+      <ul>
+        <li>P1 (Nat Med / Nat Commun)：Conditional Multimodal Diffusion-Transformer AD generator + blind clinical Turing test</li>
+        <li>P2 (Nature / Nat Med)：World-model-coupled multi-agent system on continuous sensor stream，MCI lead time vs Apple Intuition baseline</li>
+        <li>P3 (Lancet Dig Health / Nat Med)：n≈30 sundowning RCT，BPSD 频次 ↓40%</li>
+      </ul>
+      <p><b>风险</b>：(1) Paired 采集 (5–10 例) 是单点故障；(2) 需要药物/p-tau217 cross-validation；(3) 闭环 IRB 复杂；(4) 三篇耦合，任一失败影响整体 narrative。</p>
+      <p><b>时间线</b>：12–24 月 + 临床合作 + 工程资源。</p>
+    </div>
+
+    <div class="position-stack alt">
+      <h3>方向 B · The "Glucose Monitor for AD" — 可穿戴 → 分子 inverse model</h3>
+      <p><b>论题</b>：建立可穿戴信号到 p-tau217 / Aβ-PET / 海马萎缩的 inverse mapping，让手套变成 AD 的"血糖仪"——不抽血、不影像、连续看见。</p>
+      <p><b>占的白空间</b>：WS-4 单块。</p>
+      <p><b>论文路径（1 篇主线 + 后续）</b></p>
+      <ul>
+        <li>Main (Nat Med)：n≈50–100 paired wearable + p-tau217 + tau-PET 队列；模型预测分子标志物 AUC≥0.85</li>
+        <li>后续可扩展到 trial enrichment 商业化路径</li>
+      </ul>
+      <p><b>风险</b>：(1) 需要相对大的 paired 队列 (50+) 才有统计力；(2) ceiling 高但依赖 paired 采集规模；(3) 不依赖闭环创新，narrative 单线。</p>
+      <p><b>时间线</b>：18–30 月 + 多中心合作。</p>
+    </div>
+
+    <div class="position-stack alt">
+      <h3>方向 C · HCI 端可追溯多智能体 + 临床落地 (深度而非广度)</h3>
+      <p><b>论题</b>：聚焦"可追溯多智能体 + 家属-医生沟通报告"的 HCI 部分，做 5–10 例 deployment study，证明系统在真实临床工作流中的可用性。</p>
+      <p><b>占的白空间</b>：WS-2 的一个 subset（不接 world model，但深度 HCI 评估）。</p>
+      <p><b>论文路径</b>：CHI / UIST / CSCW main conference paper + 可能 Lancet Dig Health。</p>
+      <p><b>风险</b>：(1) 进不了 Nature 主刊；(2) HCI 主流 venue 接受度高但 scientific impact 单一；(3) 与已有 CARE-AD/DeepRare 同范式，差异化要靠 HCI 方法学。</p>
+      <p><b>时间线</b>：6–18 月。</p>
+    </div>
+
+    <h3>11.3 三个方向的客观对比</h3>
+    <table class="lit">
+      <thead><tr><th>维度</th><th>方向 A · World Model + Agent + 闭环</th><th>方向 B · Inverse Mapping</th><th>方向 C · HCI Deployment</th></tr></thead>
+      <tbody>
+        <tr><td>白空间覆盖</td><td>3/4 (WS-1 + 2 + 3)</td><td>1/4 (WS-4)</td><td>1/4 subset</td></tr>
+        <tr><td>Nature 主刊可能性</td><td>高（多篇）</td><td>中（单篇）</td><td>低</td></tr>
+        <tr><td>主要 venue</td><td>Nat Med × 2-3, Lancet DH</td><td>Nat Med × 1</td><td>CHI/UIST/CSCW</td></tr>
+        <tr><td>需要 paired 采集</td><td>5–10 例</td><td>50–100 例</td><td>5–10 例</td></tr>
+        <tr><td>需要药物/PET cross-val</td><td>有用</td><td>必须</td><td>不需要</td></tr>
+        <tr><td>闭环 IRB</td><td>必须</td><td>不需要</td><td>不需要</td></tr>
+        <tr><td>工程复杂度</td><td>高（diffusion + agent + 闭环）</td><td>中（inverse model）</td><td>低（既有 pipeline）</td></tr>
+        <tr><td>单点故障数</td><td>多 (paired 采集 + p-tau + 闭环 IRB)</td><td>少 (主要是队列规模)</td><td>少</td></tr>
+        <tr><td>时间线</td><td>12–24 月</td><td>18–30 月</td><td>6–18 月</td></tr>
+        <tr><td>是否依赖现有 generator+MIND+glove stack</td><td>是（充分利用）</td><td>是（用 glove）</td><td>是（用 MIND）</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout-good ui" style="margin-top: 24px;">
+      <b>选择不是技术问题，是 portfolio 问题</b>。如果团队偏好"高风险高回报、3 篇 thesis、Nature 系野心"——倾向 A。如果偏好"单点突破、与药企/PET 合作可行"——倾向 B。如果偏好"快速产出、稳进 HCI 顶会、临床合作落地优先"——倾向 C。三者也可以混合 (例如先做 C 的 deployment 拿小数据，再升级到 A 的 world model)。
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>本文档基于 4 路并行文献调研合成（机制+遗传 27 / 生物标志 38 / 治疗 40 / 风险+数字 34），覆盖 2005–2026 年 Nature / Science / Nature Medicine / Cell / Lancet 顶刊 139 篇。</p>
+    <p>Compiled 2026-05-14 · v1.1 · <a href="https://github.com/I-Thread-Lab">github.com/I-Thread-Lab</a></p>
+  </div>
+</footer>
+
+<script>
+  function filterTable(tableId, q) {
+    q = q.toLowerCase().trim();
+    var rows = document.querySelectorAll('#' + tableId + ' tbody tr');
+    rows.forEach(function(r) {
+      r.style.display = (q === '' || r.textContent.toLowerCase().indexOf(q) !== -1) ? '' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
