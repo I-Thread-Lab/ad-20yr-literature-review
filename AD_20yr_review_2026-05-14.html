@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AD World Model · 20-Year Nature/Science Literature Review (2005–2026)</title>
-<meta name="description" content="139 篇 Nature/Science/Nature Medicine/Cell AD 顶刊文献综合，构建 AD 患者的世界模型与白空间分析">
+<meta name="description" content="140 篇 Nature/Science/Nature Medicine/Cell AD 顶刊文献综合，构建 AD 患者的世界模型与白空间分析">
 <style>
   :root {
     --ink: #1a1a1a;
@@ -299,19 +299,105 @@
     font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-bottom: 6px;
     font-weight: 700; letter-spacing: 0.3px;
   }
+  /* === v1.3 additions: 5-layer × literature-table synthesis matrix === */
+  .synth-stack { margin: 20px 0 10px; }
+  .synth-card {
+    background: white; border: 1px solid #d0ccc0; border-radius: 6px;
+    padding: 20px 24px; margin-top: 22px;
+    font-family: -apple-system, "PingFang SC", BlinkMacSystemFont, sans-serif;
+    font-size: 14.5px; line-height: 1.65;
+  }
+  .synth-card:first-child { margin-top: 0; }
+  .synth-card .synth-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+  .synth-card .synth-no {
+    font-weight: 700; font-size: 11.5px; padding: 3px 12px; border-radius: 12px;
+    color: white; letter-spacing: 0.6px; white-space: nowrap;
+  }
+  .synth-card .synth-title { font-size: 17px; font-weight: 700; color: var(--ink); }
+  .synth-card .synth-tables {
+    display: inline-block; background: #f7f3ea; color: var(--muted);
+    font-size: 11.5px; padding: 3px 10px; border-radius: 10px;
+    font-family: "SF Mono", Menlo, Monaco, monospace;
+  }
+  .synth-card .you-here {
+    display: inline-block; background: var(--gap); color: white;
+    font-size: 10.5px; padding: 2px 9px; border-radius: 10px;
+    letter-spacing: 0.4px; font-weight: 700;
+  }
+  .synth-card .you-here.sec { background: #d4a017; }
+  .synth-card .synth-body { margin: 10px 0 4px; font-size: 14.5px; }
+  .synth-card .synth-body b { color: var(--ink); }
+  .synth-card .synth-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px;
+  }
+  @media (max-width: 760px) { .synth-card .synth-grid { grid-template-columns: 1fr; } }
+  .synth-card .position {
+    background: #f0f7ff; border-left: 3px solid var(--accent);
+    padding: 12px 16px; border-radius: 0 4px 4px 0; font-size: 13.5px;
+  }
+  .synth-card .gap-list {
+    background: #fdecea; border-left: 3px solid var(--gap);
+    padding: 12px 16px; border-radius: 0 4px 4px 0; font-size: 13.5px;
+  }
+  .synth-card .position h5,
+  .synth-card .gap-list h5 {
+    margin: 0 0 6px; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.6px; color: var(--muted); font-weight: 700;
+  }
+  .synth-card .gap-list ul { margin: 4px 0 0; padding-left: 18px; }
+  .synth-card .gap-list li { margin: 4px 0; font-size: 13.5px; line-height: 1.6; }
+  .synth-card.l1 { border-left: 4px solid #1e3a8a; }
+  .synth-card.l1 .synth-no { background: #1e3a8a; }
+  .synth-card.l2 { border-left: 4px solid #5b21b6; }
+  .synth-card.l2 .synth-no { background: #5b21b6; }
+  .synth-card.l3 {
+    border-left: 4px solid #0f5c5a;
+    background: linear-gradient(180deg, #f0fdfa 0%, white 70%);
+  }
+  .synth-card.l3 .synth-no { background: #0f5c5a; }
+  .synth-card.l4 { border-left: 4px solid #7c2d12; }
+  .synth-card.l4 .synth-no { background: #7c2d12; }
+  .synth-card.l5 { border-left: 4px solid #14532d; }
+  .synth-card.l5 .synth-no { background: #14532d; }
+  .gap-summary {
+    background: var(--ink); color: var(--paper); border-radius: 6px;
+    padding: 26px 30px; margin: 26px 0 8px;
+    font-family: -apple-system, "PingFang SC", sans-serif;
+  }
+  .gap-summary h4 {
+    color: white; margin: 0 0 12px; font-family: inherit;
+    text-transform: none; font-size: 17px; letter-spacing: 0; font-weight: 700;
+  }
+  .gap-summary p { margin: 0 0 14px; color: #d8d8d8; font-size: 14px; line-height: 1.65; }
+  .gap-summary p.position-line { font-size: 14.5px; color: white; }
+  .gap-summary p.position-line b { color: #ffd97a; }
+  .gap-summary ol { padding-left: 22px; margin: 0; color: #eee; }
+  .gap-summary li { margin: 9px 0; font-size: 14px; line-height: 1.65; }
+  .gap-summary li b { color: #fff7e6; }
+  .gap-summary .priority {
+    display: inline-block; background: var(--gap); color: white;
+    font-size: 10.5px; padding: 2px 8px; border-radius: 10px;
+    margin-right: 6px; letter-spacing: 0.4px; font-weight: 700; vertical-align: 1px;
+  }
+  .gap-summary .priority.med { background: #d4a017; }
+  .gap-summary .priority.low { background: #6a6a6a; }
+  .gap-summary .roadmap {
+    margin-top: 18px; padding-top: 14px; border-top: 1px dashed #555;
+    font-size: 13.5px; color: #bbb; font-style: italic;
+  }
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="container">
-    <span class="pill ui">STRATEGIC LITERATURE REVIEW · v1.2</span>
+    <span class="pill ui">STRATEGIC LITERATURE REVIEW · v1.4</span>
     <h1>The Alzheimer&#39;s Patient as a World Model</h1>
-    <p class="sub">20 年的 Nature / Science / Nature Medicine / Cell · 139 篇 · 一份 AD 患者的"世界模型"综述 + 白空间分析</p>
+    <p class="sub">20 年的 Nature / Science / Nature Medicine / Cell · 140 篇 · 一份 AD 患者的"世界模型"综述 + 白空间分析</p>
     <div class="meta ui">
       <span>Compiled: 2026-05-14</span>
       <span>Scope: 2005–2026</span>
-      <span>Papers indexed: 139</span>
+      <span>Papers indexed: 140</span>
       <span>Tables: 4</span>
     </div>
   </div>
@@ -327,7 +413,7 @@
     <a href="#lit-mech">机制·遗传 (27)</a>
     <a href="#lit-bio">生物标志 (38)</a>
     <a href="#lit-rx">治疗 (40)</a>
-    <a href="#lit-risk">风险·数字 (34)</a>
+    <a href="#lit-risk">风险·数字 (35)</a>
     <a href="#whitespace">白空间地图</a>
     <a href="#position">三个候选方向</a>
   </div>
@@ -346,7 +432,7 @@
       <div class="stat"><div class="n">~25 yr</div><div class="l">CSF Aβ 异常 vs 临床确诊的提前量 (DIAN)</div></div>
     </div>
 
-    <h3>读完 139 篇之后的 5 点判断</h3>
+    <h3>读完 140 篇之后的 5 点判断</h3>
     <ol>
       <li><b>分子端的胜利已经接近天花板</b>。Aβ 抗体让数十年争议落地，但 27%–35% 的减速是当前生物上限；BACE、γ-secretase、N-端 anti-tau 全军覆没；GLP-1（EVOKE 2025）是下一个赌注。</li>
       <li><b>诊断端的胜利刚刚到来</b>。Plasma p-tau217（Palmqvist 2025, Nat Med）AUC ≥0.93，2024 NIA-AA 框架已经把血液 marker 接纳为 Core-1。AD 在生物学上已经"看得见"了。</li>
@@ -364,7 +450,7 @@
 <!-- ========================================= WORLD MODEL ========================================= -->
 <section id="world-model">
   <div class="container">
-    <h2>二、AD 患者的世界模型（把 139 篇文献叠成一张图）</h2>
+    <h2>二、AD 患者的世界模型（把 140 篇文献叠成一张图）</h2>
     <p class="lede">"世界模型"在这里的意思：把 20 年所有顶刊的因果证据合并成一份<b>能 forward simulation</b> 的患者模型——给它一个 70 岁、APOE4、HRV 异常、睡眠片段化的状态，它能 rollout 出未来 5 年的轨迹。<b>2.1 是时间维度，2.2 是层次维度，2.3 是从两张图收敛出的硬事实。</b></p>
 
     <h3>2.1 时间轴：从 T-25 年到 T+15 年</h3>
@@ -434,7 +520,7 @@
 
     <h3>2.2 因果链：五层耦合系统</h3>
     <div class="derivation">
-      <b>这五层是怎么来的？</b> 不是先验拍脑袋——是把 139 篇文献按<b>观测尺度</b>自下而上聚类得到的：<b>L1 分子层</b> ≈ 35 篇 (机制 / bench 顶刊) · <b>L2 细胞层</b> ≈ 22 篇 (snRNA-seq / 小胶质 / 选择性脆弱) · <b>L3 系统层</b> ≈ 30 篇 (临床纵向 + 可穿戴 + 数字健康，<b>这是手套可读的层</b>) · <b>L4 行为层</b> ≈ 20 篇 (BPSD / 居家监测) · <b>L5 社会层</b> ≈ 12 篇 (流行病学 / 护理 / Lancet Commission)；跨层综合 ≈ 20 篇 (世界模型 / 综述 / 多智能体)。
+      <b>这五层是怎么来的？</b> 不是先验拍脑袋——是把 140 篇文献按<b>观测尺度</b>自下而上聚类得到的：<b>L1 分子层</b> ≈ 35 篇 (机制 / bench 顶刊) · <b>L2 细胞层</b> ≈ 22 篇 (snRNA-seq / 小胶质 / 选择性脆弱) · <b>L3 系统层</b> ≈ 30 篇 (临床纵向 + 可穿戴 + 数字健康，<b>这是手套可读的层</b>) · <b>L4 行为层</b> ≈ 20 篇 (BPSD / 居家监测) · <b>L5 社会层</b> ≈ 12 篇 (流行病学 / 护理 / Lancet Commission)；跨层综合 ≈ 20 篇 (世界模型 / 综述 / 多智能体)。
       <span class="ref"><b>层间箭头方向</b>来自纵向级联文献 (DIAN 2012 · AT(N) 2018 · Lancet Comm 2024) 与因果建模文献 (Green Nature 2024 细胞群体因果分离 Aβ vs tau · Seo Science 2023 ApoE×菌-tau 因果)。<b>读图方式</b>：每层 = 一个观测尺度；层内 = 机制 + 锚点；层间 = 上游对下游因果输出 (▼)；L5 → L1 有反馈 (公共卫生干预 → 血管/炎症/认知储备 → 分子负担)，所以级联是<b>闭环</b>。</span>
     </div>
 
@@ -602,6 +688,163 @@
       <li><b>诊断范式已经从临床切到生物</b>。NIA-AA 2024 把血液 p-tau217 / GFAP 接纳为 Core-1。Plasma p-tau217 AUC ≥0.93。</li>
       <li><b>"行为/居家"这一层在分子和血液之间还是断裂的</b>。它在数据上最丰富（手机/手表 24/7），但在 Nature 顶刊里还几乎是空的。</li>
     </ol>
+
+    <h3>2.4 5 层 × 4 张文献表 · Nature 综述 + 你的位置 + 剩余 gap</h3>
+    <div class="derivation">
+      <b>这一节做什么？</b>把上面 2.1 的时间轴 + 2.2 的因果分层 + 下面 4 张文献表（A 机制·遗传 27 篇 · B 生物标志·诊断 38 篇 · C 治疗·试验 40 篇 · D 风险·数字 35 篇）三件事合到一个矩阵里——<b>每一层对应哪些文献表 → Nature 层共识是什么 → 我在这一层在哪 → 剩下什么 gap 跟我相关</b>。这个 view 的目的是回答：<b>我现在到底在哪、为什么不去其他层、剩下的可攻击空间在哪里。</b>
+    </div>
+
+    <div class="synth-stack">
+
+      <div class="synth-card l1">
+        <div class="synth-head">
+          <span class="synth-no">L1 · 分子</span>
+          <span class="synth-title">MOLECULAR</span>
+          <span class="synth-tables">→ Table A 机制 ⊃ · Table B CSF/血液 ⊃ · Table C 抗体 ⊃ · ≈ 45 篇</span>
+        </div>
+        <div class="synth-body">
+          <b>Nature 层综述</b>：Aβ Cascade（Hardy &amp; Selkoe 2002, 2016）经 Bateman DIAN NEJM 2012 / van Dyck NEJM 2023（Lecanemab）/ Sims JAMA 2024（Donanemab）验证为<b>必要不充分</b>——清掉 76% 斑块只能减速 27–35%。Xie Science 2013 把睡眠从"症状"重新定义为<b>上游可干预因子</b>。Jack 2018 AT(N) 把 Aβ + tau + 神经退化三个 marker 固化为诊断框架。Janelidze Nat Med 2024 / Palmqvist 2025 把 p-tau217 推到 AUC ≥ 0.93。Banerjee Nat Med 2024 加上朊样可传播的生物安全维度。<b>层内共识度：高（生物学最成熟）。剩余争议：Aβ 是因还是放大器（Q1）。下一战线：tau ASO（BIIB080）/ 微胶质激动 / GLP-1。</b>
+        </div>
+        <div class="synth-grid">
+          <div class="position">
+            <h5>你在这一层的位置</h5>
+            <b>不入场。</b>这是药企的赌局，27–35% 是当前生物上限。手套不试图替代 Lecanemab。这一层的输出（p-tau217 / Aβ-PET / NfL 标签）作为你的<b>训练标签</b>——让 L3 sensor 信号去回归预测它们。
+          </div>
+          <div class="gap-list">
+            <h5>这一层还空着的事（跟你相关）</h5>
+            <ul>
+              <li><b>Q6 协变量黑箱</b>：同 Aβ+ 为什么 5 年 vs 30 年发病差异这么大？答案在 L3 个体协变量（HRV / 睡眠 / 步态）里</li>
+              <li><b>Inverse mapping</b>：能不能从可穿戴反推 p-tau217？没人做</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="synth-card l2">
+        <div class="synth-head">
+          <span class="synth-no">L2 · 细胞</span>
+          <span class="synth-title">CELLULAR</span>
+          <span class="synth-tables">→ Table A 单细胞/微胶质 ⊃ · Table B 细胞 marker ⊃ · ≈ 17 篇</span>
+        </div>
+        <div class="synth-body">
+          <b>Nature 层综述</b>：过去 8 年单细胞测序（Keren-Shaul Cell 2017 DAM · Leng Nat Neurosci 2021 RORB+ 选择脆弱性 · Smith Nat Aging 2023 GFAP 星胶网关）把 AD 细胞图谱建得几乎完整；Hong Science 2016 + Shi Nature 2017 把 C1q 突触修剪和 APOE4 微胶质失调连成机制链；<b>Green Nature 2024（n=437 供体 · 165 万核）用细胞群体因果分离</b>证明两种脂质相关微胶质态分别驱动 Aβ vs tau——这是 2026 年最重要的单层突破。<b>层内共识度：中高。下一战线：TREM2 激动剂 / 微胶质极化调节器（Phase 1-2 进行中）。</b>
+        </div>
+        <div class="synth-grid">
+          <div class="position">
+            <h5>你在这一层的位置</h5>
+            <b>不直接入场，但桥接两次。</b>一次是 Q7 AD 是否多亚型——如果 L2 证据指向 3-5 个生物学亚型，你的 L3 多模态信号应能在<b>不抽血</b>条件下分出亚型；另一次是用 L3 → L1 inverse mapping 把单细胞 marker（p-tau217 / GFAP）当作手套 4 通道的回归目标。
+          </div>
+          <div class="gap-list">
+            <h5>这一层还空着的事（跟你相关）</h5>
+            <ul>
+              <li><b>Subtype × wearable signature</b>：3-5 个生物学亚型有没有对应的 sensor 签名？没人做</li>
+              <li><b>微胶质状态 ↔ 系统层信号</b>：DAM 活化度能不能从睡眠/HRV 推出来？空</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="synth-card l3">
+        <div class="synth-head">
+          <span class="synth-no">L3 · 系统</span>
+          <span class="synth-title">SYSTEMS PHYSIOLOGY</span>
+          <span class="synth-tables">→ Table B 数字 biomarker ⊃ · Table D wearable/sleep/gait ⊃ · Table C 监测 ⊃ · ≈ 30 篇</span>
+          <span class="you-here">★ 你的主战场</span>
+        </div>
+        <div class="synth-body">
+          <b>Nature 层综述</b>：4 条生理通路各自被验证——睡眠（Lim/Spira Sleep 2013, Mander Nat Neurosci 2015）· 步态（Buracchio Arch Neurol 2010 早 12y · Verghese 2013 MCR）· 自主神经（Collins 2012 HRV）· 语言/语音（Yang npj DM 2024）。这一层在 Nature 系顶刊里只有两个锚：<b>Apple/Biogen Nat Med 2025</b>（n=23,000 智能手表筛 MCI，但单模态、活动+心率）+ <b>WearGait-PD Sci Data 2026</b>（Watkinson 等, 100 PD + 85 对照, 13 IMU + 鞋垫压感, 同步 walkway + 视频帧标注——<b>这是当前唯一开源、Nature-tier、带临床标签的多通道步态数据</b>，虽然是 PD 但 IMU 步态在 Buracchio 2010 已证明 AD 早 12y 异常，所以是 L3 → L1 inverse mapping 可直接 pretrain 的底盘）。<b>但都没有多模态融合 × 生理耦合 × 干预闭环。层内共识度：低（最年轻、证据最稀）。这是 2026 年最大的可占空间。</b>
+        </div>
+        <div class="synth-grid">
+          <div class="position">
+            <h5>你在这一层的位置</h5>
+            <b>主战场。</b>手套同时拿 EDA + PPG + IMU + mic 四路 → 一次性覆盖 4 条通路（自主 + 心血管 + 运动 + 语言）。7-Agent 推理栈把 4 路信号送给 specialist agent + central coordinator，做<b>跨通路推理</b>而不是单通路阈值。AD generator v2.1 用 5 OpenNeuro EEG + WESAD/DaLiA/mHealth/PAMAP2（n=49, 42 hr）做 forward simulation。<b>WearGait-PD（Sci Data 2026）可作为 IMU 步态通道的 pretrain 数据</b>——把 100 PD 的 supervised 步态标签迁移到 AD generator 的运动通道，解决你 b-class generator 当前 walking bug（ρ(jerk,HR)=0.13 vs 真实 0.51）。<b>位置正好踩在 Apple/Biogen 没占的多模态 × 生理耦合 × 生成式那块。</b>
+          </div>
+          <div class="gap-list">
+            <h5>这一层还空着的事（跟你相关）</h5>
+            <ul>
+              <li><b>多模态融合的 Nature 级证据</b>：单模态有了（Apple），4 模态加成 super-additive 没人证</li>
+              <li><b>L3 → L1 inverse mapping</b>：手套 → p-tau217 / Aβ-PET？空</li>
+              <li><b>L3 → L4 闭环干预 RCT</b>：检测有了（Iaboni），sensor 自动触发的非药物 RCT 没人做</li>
+              <li><b>L3 在发展中国家</b>：85% 无随访的国家（诊断率 &lt;10%）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="synth-card l4">
+        <div class="synth-head">
+          <span class="synth-no">L4 · 行为</span>
+          <span class="synth-title">BEHAVIORAL · BPSD</span>
+          <span class="synth-tables">→ Table C BPSD 干预 ⊃ · Table D BPSD 检测 ⊃ · ≈ 16 篇</span>
+          <span class="you-here sec">★ 你的副战场</span>
+        </div>
+        <div class="synth-body">
+          <b>Nature 层综述</b>：BPSD 出现率（Lyketsos JAMA 2002, Steinberg 2008）+ 入机构首因（Lancet Comm 2024）已成定论。<b>检测做到了</b>——Iaboni 2022 用 EDA+HR+ACC 给 BPSD AUC 0.87；JMIR Aging 2025 提前 6 min 预警 agitation。<b>干预做到了</b>——Cochrane 2025 证明音乐疗法对激越有 RCT 级证据。<b>但两边没合拢</b>——sensor 自动触发的非药物干预 RCT 是空的。这一层在 Nature 顶刊里几乎没有论文，因为它处在精神病学 + 老年医学的接缝。<b>共识度：中（检测共识高、闭环干预空白）。</b>
+        </div>
+        <div class="synth-grid">
+          <div class="position">
+            <h5>你在这一层的位置</h5>
+            <b>副战场。</b>7-Agent 栈把 L3 信号在 6-min 量级预测 BPSD 事件 → 触发非药物干预（光 / 声 / 提示 caregiver）。这是 ProtAIDe-Dx 闭环里 "intervene" 那一步。Iaboni 0.87 + JMIR 6 min 是 baseline，你的论点是把它<b>从被动报警变成主动闭环</b>。
+          </div>
+          <div class="gap-list">
+            <h5>这一层还空着的事（跟你相关）</h5>
+            <ul>
+              <li><b>Sensor 触发的非药物干预 RCT</b>：Nature 系完全空白</li>
+              <li><b>BPSD → 入机构 6-12 月延迟</b>：经济意义大但没人量化</li>
+              <li><b>不同 BPSD 子类型的 sensor 签名</b>：激越 vs 淡漠 vs 日落是否分得开？空</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="synth-card l5">
+        <div class="synth-head">
+          <span class="synth-no">L5 · 社会</span>
+          <span class="synth-title">SOCIAL · CAREGIVER</span>
+          <span class="synth-tables">→ Table C 多领域干预 ⊃ · Table D 风险因素 ⊃ · ≈ 18 篇</span>
+        </div>
+        <div class="synth-body">
+          <b>Nature 层综述</b>：Lancet Commission 2024（Livingston）是这一层的<b>圣经</b>——14 个可干预因素 PAF 45%。FINGER（Ngandu Lancet 2015）是第一个 RCT 阳性的多领域预防；US POINTER（Baker JAMA 2025）完成美国队列复现；SPRINT-MIND（Williamson JAMA 2019）单一干预（BP 控制）阳性。ADI 2022 量化了全球护理空缺（85% 患者无诊断后护理）。CARE-AD（npj DM 2025）第一次把多智能体接到 AD——但只用 EHR 笔记，4 个 agent 协同 AUC 0.53。<b>层内共识度：高（流行病学）+ 低（工程化实施）。</b>
+        </div>
+        <div class="synth-grid">
+          <div class="position">
+            <h5>你在这一层的位置</h5>
+            <b>桥接。</b>7-Agent 里有一个 "caregiver agent" 负责把 L3/L4 输出翻译成<b>家属可执行动作</b>（接管 / 缓解提示 / 报警决策）。这是 CARE-AD 没做的——把多智能体从静态 EHR 接到连续 sensor + caregiver 决策环。
+          </div>
+          <div class="gap-list">
+            <h5>这一层还空着的事（跟你相关）</h5>
+            <ul>
+              <li><b>居家闭环减负担的 RCT</b>：Lancet 14 因素需要工程化路径</li>
+              <li><b>Multi-agent + 流式 sensor</b>：CARE-AD 在快照上，连续版没人做</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gap-summary">
+      <h4>所以我现在到了哪一层、剩下哪些巨大的 gap？</h4>
+      <p class="position-line">
+        <b>主战场 = L3 系统层 (★)</b> · <b>副战场 = L4 行为/BPSD 层 (★)</b> · <b>桥接 = L2 细胞 inverse + L5 caregiver agent</b> · <b>不入场 = L1 分子</b>
+      </p>
+      <p>
+        简单说：分子端有药企在赌（27-35% 天花板），细胞端有 snRNA + Green 2024 因果在卷，社会端有 Lancet Commission 框架，行为端有 Iaboni 检测——但<b style="color:white">中间那条 L3 系统层 + L4 闭环</b>（多模态 × 生理耦合 × 闭环干预）是 Nature 系最稀的一格，正好是手套能踩的。
+      </p>
+      <p style="color:white;font-weight:700;margin-top:18px;">基于前面 140 篇分析，剩下的巨大 gap 按可攻击性排序：</p>
+      <ol>
+        <li><span class="priority">高</span><b>L3 多模态融合的 Nature 级证据</b>：Apple/Biogen 2025 单模态做到了 n=23k，4 模态加成 super-additive 没人证。<b>第一论文位置。</b></li>
+        <li><span class="priority">高</span><b>L3 → L1 inverse mapping</b>：手套 → p-tau217 / Aβ-PET 的回归。如果通了，可以做不抽血不影像的大规模筛查——是 85% 没诊断国家的破局点。</li>
+        <li><span class="priority">高</span><b>L3 → L4 自动触发非药物干预 RCT</b>：检测有（Iaboni 0.87）、干预有（Cochrane 音乐），闭环没人做。BPSD 延迟入机构 6-12 月的 ROI 杠杆。</li>
+        <li><span class="priority med">中</span><b>生成式患者模型（forward simulation）</b>：DeepRare / CARE-AD 都缺连续 sensor 所以只能在快照推理；用 sensor 流喂世界模型做反事实 rollout，是把多智能体从静态推到动态的唯一路径。</li>
+        <li><span class="priority med">中</span><b>L2 ↔ L3 subtype-specific wearable signature</b>：如果 AD 是 3-5 亚型（Q7），手套信号能不能分？没人做。</li>
+        <li><span class="priority med">中</span><b>L4 → L5 caregiver agent + 居家闭环</b>：CARE-AD 在静态 EHR；接连续流 + 决策输出的版本空。</li>
+        <li><span class="priority low">低</span><b>L3 在 LMIC 落地</b>：发展中国家（诊断率 &lt;10%）用手套替代 PET 是终极临床影响，但需要前 6 项先打通。</li>
+      </ol>
+      <div class="roadmap">
+        1 + 2 + 3 是 v1 三篇论文级目标；4 是 v2 整合论点；5 + 6 是 v3 横向扩展；7 是 v4 社会影响。
+      </div>
+    </div>
   </div>
 </section>
 
@@ -791,6 +1034,12 @@
         <span class="yr">2026 · Nat Med</span>
         <span class="what">Janelidze: Plasma p-tau217 时钟预测发病年份</span>
         <p class="body">血浆 %p-tau217 轨迹预测 AD 症状起病年龄，中位误差 3.0–3.7 年。<i>从 AD 二分类预测推到个体化预后时间预测</i>。</p>
+      </div>
+
+      <div class="tl-event focus">
+        <span class="yr">2026 · Sci Data (Nature) ★</span>
+        <span class="what">Watkinson et al. (MJFF / SAGE): WearGait-PD 开源多通道步态数据集 n=185</span>
+        <p class="body"><b>详注（与你 L3 方向直接相关）</b>：100 PD + 85 年龄对照，每人 13 个 IMU 传感器 + 双足 16-传感器压感鞋垫 + 步行通道 2D 位置/压力 + 视频帧级动作标注，全部对齐 MDS-UPDRS / DBS 状态 / 用药信息。<i>意义</i>：这是当前<b>唯一开源、Nature-tier、带细粒度临床标签</b>的多通道步态数据集。虽然是 PD 不是 AD，但 (1) IMU 步态在 Buracchio Arch Neurol 2010 已证明 AD 早 12y 异常；(2) AD generator v2.1 当前的 b-class walking bug（ρ(jerk,HR)=0.13 vs 真实 0.51）正好需要 supervised 步态数据做 pretrain；(3) PD ↔ AD 鉴别诊断本身也是 ProtAIDe-Dx 在做的事。<b>它给 L3 → L1 inverse mapping 提供了首个可直接使用的预训练底盘</b>——PD 上 supervise，迁到 AD。</p>
       </div>
 
       <div class="tl-event gap">
@@ -1178,7 +1427,7 @@
 <!-- RISK + DIGITAL -->
 <section id="lit-risk">
   <div class="container">
-    <h2>九、文献表 D · 风险因素 + 数字健康 + 行为干预 (34 篇)</h2>
+    <h2>九、文献表 D · 风险因素 + 数字健康 + 行为干预 (35 篇)</h2>
     <p class="lede">"AD 与世界的接口"——可穿戴/AI 实际工作在这一层。</p>
     <div class="lit-controls"><input type="text" placeholder="过滤..." onkeyup="filterTable('tbl-risk', this.value)"></div>
     <table class="lit" id="tbl-risk">
@@ -1218,6 +1467,7 @@
         <tr><td class="year">2025</td><td class="journal">Nat Hum Behav <span class="badge badge-nature">Nat</span></td><td>meta-analysis</td><td class="title"><a href="https://www.nature.com/articles/s41562-025-02159-9">Technology use and cognitive aging</a></td><td class="finding">高数字技术使用 → 低痴呆风险（老年）</td><td class="finding">反驳"数字痴呆"叙事</td></tr>
         <tr><td class="year">2022</td><td class="journal">JAMA Netw Open <span class="badge badge-other">JAMA</span></td><td>Nianogo</td><td class="title"><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2793916">PAF of AD by race/ethnicity</a></td><td class="finding">修改性因素在黑人/拉美人群解释更大份额</td><td class="finding">健康公平视角</td></tr>
         <tr><td class="year">2026</td><td class="journal">MICCAI <span class="badge badge-other">other</span></td><td>Bian (ADAgent)</td><td class="title"><a href="https://link.springer.com/chapter/10.1007/978-3-032-06004-4_3">LLM coordinator for multimodal AD</a></td><td class="finding">多模态诊断 +2.7%、预后 +0.7% MRI+PET 任务</td><td class="finding">首个 AD 专用 LLM agent imaging</td></tr>
+        <tr><td class="year">2026</td><td class="journal">Sci Data <span class="badge badge-nature">Nat</span></td><td>Watkinson et al. (Michael J. Fox Foundation / SAGE Bionetworks)</td><td class="title"><a href="https://www.nature.com/articles/s41597-026-06806-2">WearGait-PD: open-access wearables dataset for gait in PD</a></td><td class="finding">100 PD + 85 对照 · 13 IMU + 16 压感鞋垫 · 同步步行通道 + 视频帧标注 · MDS-UPDRS</td><td class="finding"><b>跨病种 L3 步态 benchmark</b>。虽然是 PD 不是 AD，但 IMU 步态在 Buracchio 2010 已证明 AD 早 12y 异常——这是当前唯一开源、Nature-tier、带临床标签的多通道步态数据，可作为 L3 → L1 inverse mapping 的<b>预训练底盘</b>（PD 上 supervised, 迁到 AD）</td></tr>
       </tbody>
     </table>
   </div>
@@ -1337,7 +1587,7 @@
 
 <footer>
   <div class="container">
-    <p>本文档基于 4 路并行文献调研合成（机制+遗传 27 / 生物标志 38 / 治疗 40 / 风险+数字 34），覆盖 2005–2026 年 Nature / Science / Nature Medicine / Cell / Lancet 顶刊 139 篇。</p>
+    <p>本文档基于 4 路并行文献调研合成（机制+遗传 27 / 生物标志 38 / 治疗 40 / 风险+数字 35），覆盖 2005–2026 年 Nature / Science / Nature Medicine / Cell / Lancet 顶刊 140 篇。</p>
     <p>Compiled 2026-05-14 · v1.1 · <a href="https://github.com/I-Thread-Lab">github.com/I-Thread-Lab</a></p>
   </div>
 </footer>
