@@ -160,13 +160,152 @@
     section { page-break-inside: avoid; padding: 18px 0; }
     table.lit { font-size: 10.5px; }
   }
+  /* === v1.2 additions: derivation note, swim-lane, causal cards, monitor-benefits === */
+  .derivation {
+    background: #fff7e6; border-left: 3px solid #d4a017;
+    padding: 14px 18px; margin: 14px 0 22px;
+    font-size: 14.5px; color: #3a2f12; line-height: 1.65;
+  }
+  .derivation b { color: #8a5a17; }
+  .derivation .ref {
+    display: block; margin-top: 6px;
+    font-family: "SF Mono", Menlo, Monaco, monospace;
+    font-size: 12.5px; color: #6a5a3a;
+  }
+  .swim-wrap {
+    background: white; border: 1px solid #d0ccc0; padding: 20px;
+    border-radius: 6px; margin: 18px 0 8px; overflow-x: auto;
+    font-family: -apple-system, "PingFang SC", BlinkMacSystemFont, sans-serif;
+  }
+  .swim-grid {
+    display: grid;
+    grid-template-columns: 110px repeat(6, minmax(125px, 1fr));
+    gap: 4px; min-width: 880px;
+  }
+  .swim-axis {
+    padding: 6px 4px 10px; text-align: center; font-weight: 700;
+    font-size: 12.5px; color: var(--muted); border-bottom: 2px solid var(--rule);
+  }
+  .swim-axis.now { color: var(--gap); }
+  .swim-empty-corner { border-bottom: 2px solid var(--rule); }
+  .swim-label {
+    font-weight: 700; font-size: 12.5px; padding: 8px 8px 8px 0;
+    text-align: right; border-right: 2px solid var(--rule);
+    display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
+  }
+  .swim-cell {
+    min-height: 48px; padding: 5px 6px; border-radius: 3px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; line-height: 1.3;
+  }
+  .swim-cell.empty { background: #fafaf7; border: 1px dashed #e3dfd5; color: #c0c0c0; }
+  .swim-cell .pt { font-weight: 700; font-size: 11.5px; }
+  .swim-cell .src { font-size: 9.5px; opacity: 0.8; margin-top: 2px; font-style: italic; }
+  .swim-cell.mol { background: #dbeafe; color: #1e3a8a; }
+  .swim-cell.cell { background: #ede9fe; color: #5b21b6; }
+  .swim-cell.sys { background: #ccfbf1; color: #0f5c5a; }
+  .swim-cell.beh { background: #fed7aa; color: #7c2d12; }
+  .swim-cell.soc { background: #d1fae5; color: #14532d; }
+  .swim-legend {
+    display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px;
+    color: var(--muted); margin-top: 10px;
+  }
+  .swim-legend i {
+    display: inline-block; width: 12px; height: 12px; border-radius: 2px;
+    margin-right: 5px; vertical-align: -2px;
+  }
+  .causal-stack { margin: 18px 0 10px; }
+  .causal-layer {
+    background: white; border: 1px solid #d0ccc0; border-radius: 6px;
+    padding: 18px 22px; margin-top: 28px;
+    font-family: -apple-system, "PingFang SC", BlinkMacSystemFont, sans-serif;
+    font-size: 14.5px; line-height: 1.65; position: relative;
+  }
+  .causal-layer:first-child { margin-top: 0; }
+  .causal-layer + .causal-layer::before {
+    content: "▼"; position: absolute; left: 50%; top: -26px;
+    transform: translateX(-50%); font-size: 22px; color: #6a6a6a;
+  }
+  .causal-layer .layer-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .causal-layer .layer-no {
+    font-weight: 700; font-size: 11.5px; padding: 3px 12px; border-radius: 12px;
+    color: white; letter-spacing: 0.6px; white-space: nowrap;
+  }
+  .causal-layer .layer-title { font-size: 17px; font-weight: 700; color: var(--ink); }
+  .causal-layer .layer-eng { font-size: 13px; color: var(--muted); font-style: italic; }
+  .causal-layer .wearable-tag {
+    display: inline-block; background: var(--gap); color: white;
+    font-size: 10.5px; padding: 2px 9px; border-radius: 10px;
+    letter-spacing: 0.4px; font-weight: 700;
+  }
+  .causal-layer .layer-summary {
+    margin: 12px 0 14px; font-size: 14.5px; color: #2a2a2a;
+  }
+  .causal-layer .layer-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px;
+  }
+  @media (max-width: 760px) { .causal-layer .layer-grid { grid-template-columns: 1fr; } }
+  .causal-layer .mechanism {
+    background: #f7f3ea; padding: 12px 16px; border-radius: 4px; font-size: 13.5px;
+  }
+  .causal-layer .mechanism h5,
+  .causal-layer .papers h5 {
+    margin: 0 0 6px; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.6px; color: var(--muted); font-weight: 700;
+  }
+  .causal-layer .mechanism ul { margin: 0; padding-left: 18px; }
+  .causal-layer .mechanism li { margin: 3px 0; font-size: 13.5px; }
+  .causal-layer .papers {
+    background: #f0f7ff; padding: 12px 16px; border-radius: 4px;
+    font-family: "SF Mono", Menlo, Monaco, monospace;
+    font-size: 12px; line-height: 1.55; color: #1e3a8a;
+  }
+  .causal-layer .arrow-down {
+    margin-top: 14px; padding-top: 10px; border-top: 1px dashed #d0ccc0;
+    font-size: 13px; color: var(--accent);
+  }
+  .causal-layer .arrow-down b { color: var(--accent); }
+  .causal-layer.l1 { border-left: 4px solid #1e3a8a; }
+  .causal-layer.l1 .layer-no { background: #1e3a8a; }
+  .causal-layer.l2 { border-left: 4px solid #5b21b6; }
+  .causal-layer.l2 .layer-no { background: #5b21b6; }
+  .causal-layer.l3 {
+    border-left: 4px solid #0f5c5a;
+    background: linear-gradient(180deg, #f0fdfa 0%, white 70%);
+  }
+  .causal-layer.l3 .layer-no { background: #0f5c5a; }
+  .causal-layer.l4 { border-left: 4px solid #7c2d12; }
+  .causal-layer.l4 .layer-no { background: #7c2d12; }
+  .causal-layer.l5 { border-left: 4px solid #14532d; }
+  .causal-layer.l5 .layer-no { background: #14532d; }
+  /* monitor-benefits grid */
+  .mb-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+    margin: 16px 0;
+  }
+  @media (max-width: 760px) { .mb-grid { grid-template-columns: 1fr; } }
+  .mb-card {
+    background: white; border: 1px solid #d0ccc0; border-left: 3px solid var(--good);
+    padding: 14px 18px; border-radius: 0 4px 4px 0;
+    font-family: -apple-system, "PingFang SC", sans-serif;
+  }
+  .mb-card h4 {
+    margin: 0 0 6px; color: var(--good); font-size: 14.5px;
+    font-family: inherit; text-transform: none; letter-spacing: 0; font-weight: 700;
+  }
+  .mb-card p { margin: 0; font-size: 13.5px; line-height: 1.6; color: #2a2a2a; }
+  .mb-card .scale {
+    display: inline-block; background: var(--good-soft); color: var(--good);
+    font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-bottom: 6px;
+    font-weight: 700; letter-spacing: 0.3px;
+  }
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="container">
-    <span class="pill ui">STRATEGIC LITERATURE REVIEW · v1.1</span>
+    <span class="pill ui">STRATEGIC LITERATURE REVIEW · v1.2</span>
     <h1>The Alzheimer&#39;s Patient as a World Model</h1>
     <p class="sub">20 年的 Nature / Science / Nature Medicine / Cell · 139 篇 · 一份 AD 患者的"世界模型"综述 + 白空间分析</p>
     <div class="meta ui">
@@ -226,76 +365,233 @@
 <section id="world-model">
   <div class="container">
     <h2>二、AD 患者的世界模型（把 139 篇文献叠成一张图）</h2>
-    <p class="lede">这就是文献综合出来的"AD 是什么"——一个跨越 25 年的多层级联系统。</p>
+    <p class="lede">"世界模型"在这里的意思：把 20 年所有顶刊的因果证据合并成一份<b>能 forward simulation</b> 的患者模型——给它一个 70 岁、APOE4、HRV 异常、睡眠片段化的状态，它能 rollout 出未来 5 年的轨迹。<b>2.1 是时间维度，2.2 是层次维度，2.3 是从两张图收敛出的硬事实。</b></p>
 
     <h3>2.1 时间轴：从 T-25 年到 T+15 年</h3>
-    <div class="wm-diagram">
-<pre>
-                临床前 (preclinical)         前驱 (prodromal)       痴呆 (dementia)
-  T-25y  T-20y  T-16y  T-15y  T-12y  T-10y  T-5y   T-3y    T=0     T+5y    T+10y   T+15y
-   │      │      │      │      │      │      │     │       │       │       │       │
-   ●      ●      ●      ●      ●      ●      ●     ●       ●       ●       ●       ●
-   │      │      │      │      │      │      │     │       │       │       │       │
-分子    glymph  NfL    海马   步速   p-tau   SCD   MCI    AD临床   BPSD   重度    舒缓
- Aβ ↓   ↓      率变  萎缩   拐点   ↑       自评  ↓18%   平均迟    起    AD     护理
-CSF             16y           12y    可测   认知  MMSE   2-5年     爆     游走
- 25y    Xie    Bateman Jack          Bate-  下降  灵敏              发     失能
- Bate-  Sci    Nat Med  AT(N)        man    Stern        Lecane-   Iaboni
- man    2013   2019    2018   Bura-  Nat    Lancet   <b>mab/Donanemab</b>  2022
- NEJM                          cchio  Med    Commi-       窗口期已过
- 2012                          2010   2026   ssion 2024
-   │
-   └──── 分子层 (Aβ→tau→neurodegen)
-              └──── 细胞层 (DAM microglia, RORB+ neurons, GFAP astrocytes)
-                          └──── 系统层 (sleep/glymphatic, autonomic, gait, language)
-                                       └──── 行为层 (BPSD, sundowning, agitation)
-                                                  └──── 社会层 (caregiver, isolation)
-</pre>
+    <div class="derivation">
+      <b>这张时间轴是干嘛的？</b> 把 AD 当成一个 40 年的疾病来画——从分子开始走样 (T-25y) 到临床确诊 (T=0) 到末期护理 (T+15y)，每一格是一个<b>可观测窗口</b>。它回答："如果想用 sensor 在病早期截到信号，应该截哪条通路、在哪个窗口截、能看到什么"——本质是<b>可穿戴 + AI 干预的设计图</b>。
+      <span class="ref"><b>锚点文献</b>：Bateman DIAN NEJM 2012 (T-25y CSF Aβ↓) · Preische Nat Med 2019 (T-16y NfL↑) · Buracchio Arch Neurol 2010 (T-12y 步速↓) · Lim/Spira Sleep 2013 (T-10y 睡眠) · Stern 2014 (T-3y SCD) · van Dyck NEJM 2023 (Lecanemab 治疗窗口 T-3 → T=0) · Iaboni 2022 (T+3 BPSD wearable)</span>
+    </div>
+
+    <div class="swim-wrap">
+      <div class="swim-grid">
+        <div class="swim-empty-corner"></div>
+        <div class="swim-axis">T-25 → T-15<br><span style="font-weight:500;font-size:11px;">早临床前</span></div>
+        <div class="swim-axis">T-15 → T-5<br><span style="font-weight:500;font-size:11px;">晚临床前</span></div>
+        <div class="swim-axis">T-5 → T=0<br><span style="font-weight:500;font-size:11px;">前驱 MCI</span></div>
+        <div class="swim-axis now">T=0 → T+5<br><span style="font-weight:500;font-size:11px;">早期痴呆</span></div>
+        <div class="swim-axis">T+5 → T+10<br><span style="font-weight:500;font-size:11px;">中期</span></div>
+        <div class="swim-axis">T+10 → T+15<br><span style="font-weight:500;font-size:11px;">重度</span></div>
+
+        <div class="swim-label">L1 分子</div>
+        <div class="swim-cell mol"><span class="pt">CSF Aβ ↓</span><span class="src">Bateman 12</span></div>
+        <div class="swim-cell mol"><span class="pt">NfL ↑ · p-tau ↑</span><span class="src">Preische 19</span></div>
+        <div class="swim-cell mol"><span class="pt">Aβ-PET +<br>p-tau217 AUC .93</span><span class="src">Palmqvist 25</span></div>
+        <div class="swim-cell mol"><span class="pt">海马 ↓ · 斑块 plateau</span><span class="src">Jack AT(N) 18</span></div>
+        <div class="swim-cell mol"><span class="pt">Tangle Braak V-VI</span><span class="src">Braak</span></div>
+        <div class="swim-cell mol"><span class="pt">弥漫性神经退化</span></div>
+
+        <div class="swim-label">L2 细胞</div>
+        <div class="swim-cell empty">—</div>
+        <div class="swim-cell cell"><span class="pt">DAM 活化 · GFAP ↑</span><span class="src">Keren-Shaul 17</span></div>
+        <div class="swim-cell cell"><span class="pt">RORB+ 内嗅神经元死</span><span class="src">Leng 21</span></div>
+        <div class="swim-cell cell"><span class="pt">C1q 突触修剪 · APOE4 环路</span><span class="src">Hong 16 · Shi 17</span></div>
+        <div class="swim-cell cell"><span class="pt">星胶反应 · 突触大量丧失</span><span class="src">Smith 23</span></div>
+        <div class="swim-cell cell"><span class="pt">神经元广泛死亡</span></div>
+
+        <div class="swim-label">L3 系统<br><span style="font-size:10px;color:#7c2d12;">★ 手套读取</span></div>
+        <div class="swim-cell empty">—</div>
+        <div class="swim-cell sys"><span class="pt">慢波睡眠 ↓ · HRV 变化</span><span class="src">Lim 13 · Collins 12</span></div>
+        <div class="swim-cell sys"><span class="pt">步速 ↓ · 语速 ↓</span><span class="src">Buracchio 10 · Yang 24</span></div>
+        <div class="swim-cell sys"><span class="pt">睡眠倒错 · 步态明显异常</span><span class="src">Apple/Biogen 25</span></div>
+        <div class="swim-cell sys"><span class="pt">自主神经紊乱 · 失语</span></div>
+        <div class="swim-cell sys"><span class="pt">全面失功能</span></div>
+
+        <div class="swim-label">L4 行为</div>
+        <div class="swim-cell empty">—</div>
+        <div class="swim-cell empty">—</div>
+        <div class="swim-cell beh"><span class="pt">SCD · 短期记忆 ↓ 18%</span><span class="src">Stern · Jessen</span></div>
+        <div class="swim-cell beh"><span class="pt">BPSD 起爆：激越 · 抑郁</span><span class="src">Iaboni 22</span></div>
+        <div class="swim-cell beh"><span class="pt">日落 · 游荡 · 幻觉</span><span class="src">JMIR Aging 25</span></div>
+        <div class="swim-cell beh"><span class="pt">完全失能</span></div>
+
+        <div class="swim-label">L5 社会</div>
+        <div class="swim-cell empty">—</div>
+        <div class="swim-cell empty">—</div>
+        <div class="swim-cell soc"><span class="pt">家属察觉 · 工作受影响</span></div>
+        <div class="swim-cell soc"><span class="pt">护理 burnout · Lecanemab 治疗窗口</span><span class="src">CLARITY-AD 23</span></div>
+        <div class="swim-cell soc"><span class="pt">家属抑郁 50% · 机构化压力</span><span class="src">ADI 22</span></div>
+        <div class="swim-cell soc"><span class="pt">长护 · 安宁治疗</span></div>
+      </div>
+      <div class="swim-legend">
+        <span><i style="background:#dbeafe"></i>L1 分子层 ≈ 35 篇</span>
+        <span><i style="background:#ede9fe"></i>L2 细胞层 ≈ 22 篇</span>
+        <span><i style="background:#ccfbf1"></i>L3 系统层 ≈ 30 篇 · ★ 可穿戴可读</span>
+        <span><i style="background:#fed7aa"></i>L4 行为层 ≈ 20 篇</span>
+        <span><i style="background:#d1fae5"></i>L5 社会层 ≈ 12 篇</span>
+      </div>
     </div>
 
     <h3>2.2 因果链：五层耦合系统</h3>
-    <div class="wm-diagram">
-<pre>
-┌─────────────────────────────────────────────────────────────────────────┐
-│ LAYER 1: MOLECULAR     Aβ 错折叠 → 寡聚体 → 斑块 → tau 高磷酸化           │
-│                        ↑                                  │              │
-│                  glymphatic ↓ (Xie 2013)              tangle 蔓延        │
-│                  sleep ↓                              (Frost 2009)       │
-└────────────────────────┬────────────────────────────────────────────────┘
-                         ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│ LAYER 2: CELLULAR    DAM microglia (Keren-Shaul 2017, TREM2-dep)         │
-│                      RORB+ entorhinal 神经元先死 (Leng 2021)             │
-│                      GFAP+ astrocyte 反应 (Smith 2023, gates Aβ→tau)     │
-│                      C1q complement 突触修剪 (Hong 2016)                 │
-│                      APOE4 微胶质环路 (Shi 2017)                          │
-└────────────────────────┬────────────────────────────────────────────────┘
-                         ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│ LAYER 3: SYSTEMS / PHYSIOLOGY                                            │
-│   ┌─────────────┬──────────────┬─────────────┬──────────────┐           │
-│   │ 睡眠/昼夜    │ 步态/运动     │ 自主神经     │ 语言/认知     │           │
-│   │ Lim 2013    │ Buracchio    │ HRV ↓       │ Yang 2024     │           │
-│   │ Spira 2013  │ Verghese     │ EDA 异常     │ Apple Nat Med│           │
-│   │ npj Aging   │ MCR 2013     │ Collins '12  │ 2025          │           │
-│   └─────────────┴──────────────┴─────────────┴──────────────┘           │
-│   ↑ 可穿戴设备 (EDA+PPG+IMU+mic) 实时读取的层                              │
-└────────────────────────┬────────────────────────────────────────────────┘
-                         ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│ LAYER 4: BEHAVIORAL / BPSD                                               │
-│   激越 (50-70%) · 抑郁 (40-60%) · 淡漠 (50-70%) · 游荡 (40-60%)            │
-│   日落综合征 (20-45%) · 睡眠倒错 · 幻觉/妄想 (20-40%)                       │
-│   Iaboni 2022: EDA+HR+ACC → BPSD AUC 0.87                                │
-│   JMIR Aging 2025: 提前 6 min 预警 agitation                              │
-└────────────────────────┬────────────────────────────────────────────────┘
-                         ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│ LAYER 5: SOCIAL / CAREGIVER                                              │
-│   ADI 2022: 全球 85% 患者无诊断后护理 · 护理者 burnout · 经济负担           │
-│   Lancet Commission 2024: 14 个可干预因素解释 45% AD                       │
-└─────────────────────────────────────────────────────────────────────────┘
-</pre>
+    <div class="derivation">
+      <b>这五层是怎么来的？</b> 不是先验拍脑袋——是把 139 篇文献按<b>观测尺度</b>自下而上聚类得到的：<b>L1 分子层</b> ≈ 35 篇 (机制 / bench 顶刊) · <b>L2 细胞层</b> ≈ 22 篇 (snRNA-seq / 小胶质 / 选择性脆弱) · <b>L3 系统层</b> ≈ 30 篇 (临床纵向 + 可穿戴 + 数字健康，<b>这是手套可读的层</b>) · <b>L4 行为层</b> ≈ 20 篇 (BPSD / 居家监测) · <b>L5 社会层</b> ≈ 12 篇 (流行病学 / 护理 / Lancet Commission)；跨层综合 ≈ 20 篇 (世界模型 / 综述 / 多智能体)。
+      <span class="ref"><b>层间箭头方向</b>来自纵向级联文献 (DIAN 2012 · AT(N) 2018 · Lancet Comm 2024) 与因果建模文献 (Green Nature 2024 细胞群体因果分离 Aβ vs tau · Seo Science 2023 ApoE×菌-tau 因果)。<b>读图方式</b>：每层 = 一个观测尺度；层内 = 机制 + 锚点；层间 = 上游对下游因果输出 (▼)；L5 → L1 有反馈 (公共卫生干预 → 血管/炎症/认知储备 → 分子负担)，所以级联是<b>闭环</b>。</span>
+    </div>
+
+    <div class="causal-stack">
+      <div class="causal-layer l1">
+        <div class="layer-head">
+          <span class="layer-no">L1 · 分子</span>
+          <span class="layer-title">MOLECULAR</span>
+          <span class="layer-eng">Aβ → tau → neurodegen 级联</span>
+        </div>
+        <p class="layer-summary">AD 在分子层先表现为 <b>Aβ42 错折叠 → 寡聚体 → 斑块沉积</b>；随后触发 <b>tau 磷酸化 → 神经原纤维缠结 (NFT)</b>。睡眠驱动的 glymphatic 清除是关键调节器——睡得不好 = Aβ 清不掉。Lecanemab / Donanemab 在这一层赌赢了（清掉 76% 斑块、减速 27–35%），但 27–35% 是<b>当前生物上限</b>。</p>
+        <div class="layer-grid">
+          <div class="mechanism">
+            <h5>核心实体与机制</h5>
+            <ul>
+              <li>Aβ40 / Aβ42 比 ↓ → 寡聚体 → 斑块</li>
+              <li>p-tau181 / p-tau217 ↑ → 缠结 NFT</li>
+              <li>NfL ↑ → 轴突损伤代理</li>
+              <li>Glymphatic 清除 (睡眠期 ↑) → Aβ 排出</li>
+              <li>Iatrogenic 传播 (Banerjee 2024) → 朊样行为</li>
+            </ul>
+          </div>
+          <div class="papers">
+            <h5>关键文献 · 锚点</h5>
+            Bateman NEJM 2012 · DIAN T-25y<br>
+            Xie Science 2013 · 睡眠→Aβ 清除<br>
+            Frost JCB 2009 · Tau prion-like<br>
+            Jack 2018 · AT(N) 框架<br>
+            Preische Nat Med 2019 · NfL 16y 前<br>
+            van Dyck NEJM 2023 · Lecanemab<br>
+            Banerjee Nat Med 2024 · 朊样 AD
+          </div>
+        </div>
+        <div class="arrow-down"><b>▼ 输出到 L2：</b> 细胞外斑块 + 细胞内缠结 + 神经元死亡信号 → 触发免疫与细胞型程序</div>
+      </div>
+
+      <div class="causal-layer l2">
+        <div class="layer-head">
+          <span class="layer-no">L2 · 细胞</span>
+          <span class="layer-title">CELLULAR</span>
+          <span class="layer-eng">免疫与细胞型选择性脆弱</span>
+        </div>
+        <p class="layer-summary">分子损伤激活一套<b>细胞型程序</b>：小胶质从静息切到 DAM (Disease-Associated Microglia)，TREM2 是开关；星形胶质变反应性，<b>决定 Aβ 到 tau 的转换</b>；C1q 启动突触修剪；APOE4 放大微胶质失调。同时<b>某些神经元天然更脆弱</b>——内嗅 RORB+ 神经元最早死，这就是为什么 AD 从近事记忆开始坏。</p>
+        <div class="layer-grid">
+          <div class="mechanism">
+            <h5>核心细胞类型与程序</h5>
+            <ul>
+              <li><b>DAM microglia</b> · TREM2 依赖，两步活化</li>
+              <li><b>RORB+ 内嗅神经元</b> · 早期选择性死亡</li>
+              <li><b>GFAP+ 反应性星胶</b> · 闸门 Aβ→tau</li>
+              <li><b>C1q 补体</b> · 突触修剪过度</li>
+              <li><b>APOE4</b> · 微胶质脂代谢失常</li>
+            </ul>
+          </div>
+          <div class="papers">
+            <h5>关键文献 · 锚点</h5>
+            Keren-Shaul Cell 2017 · DAM 程序<br>
+            Leng Nat Neurosci 2021 · RORB+ 脆弱<br>
+            Smith Nat Aging 2023 · 星胶网关<br>
+            Hong Science 2016 · C1q 突触修剪<br>
+            Shi Nature 2017 · APOE4 微胶质<br>
+            Green Nature 2024 · 细胞群体因果分离
+          </div>
+        </div>
+        <div class="arrow-down"><b>▼ 输出到 L3：</b> 突触丢失 + 环路碎片化 + 神经炎症 → 系统级生理功能开始失衡</div>
+      </div>
+
+      <div class="causal-layer l3">
+        <div class="layer-head">
+          <span class="layer-no">L3 · 系统</span>
+          <span class="layer-title">SYSTEMS PHYSIOLOGY</span>
+          <span class="layer-eng">身体在哪里显示出来</span>
+          <span class="wearable-tag">★ 可穿戴层</span>
+        </div>
+        <p class="layer-summary"><b>这是手套能直接读的层</b>。细胞层损伤通过<b>四条生理通路</b>渗到体表：<b>睡眠/昼夜</b> (glymph 清除窗口) · <b>步态/运动</b> (基底节-小脑-海马网络) · <b>自主神经</b> (HRV/EDA 反映迷走-交感平衡) · <b>语言/认知</b> (颞叶-前额叶执行)。每条通路都有 24/7 sensor 可读，且<b>比临床访视早 3–12 年</b>就开始异常——这是 L1/L2 看不见、L4 太晚的<b>中间唯一可被外部连续观测的层</b>。</p>
+        <div class="layer-grid">
+          <div class="mechanism">
+            <h5>四条生理通路 → sensor 对应</h5>
+            <ul>
+              <li><b>睡眠/昼夜</b> · PPG 夜间心率 + IMU 活动节律 → glymph 效率代理</li>
+              <li><b>步态/运动</b> · IMU 步速 / 步长变异 / jerk → 早 12y 异常</li>
+              <li><b>自主神经</b> · PPG-HRV + EDA 皮电 → 交感优势</li>
+              <li><b>语言/认知</b> · mic 语速 / 流畅度 / 停顿</li>
+            </ul>
+          </div>
+          <div class="papers">
+            <h5>关键文献 · 锚点</h5>
+            Lim Sleep 2013 · 睡眠片段化→AD 风险<br>
+            Spira Sleep 2013 · 睡眠剥夺→Aβ 沉积<br>
+            Buracchio Arch Neurol 2010 · 步速 12y 前<br>
+            Verghese MCR 2013 · 运动认知风险综合征<br>
+            Collins 2012 · HRV 与认知衰退<br>
+            Yang npj DM 2024 · 语音 AD 标志<br>
+            Apple/Biogen Nat Med 2025 · n=23k 手表
+          </div>
+        </div>
+        <div class="arrow-down"><b>▼ 输出到 L4：</b> 系统层失衡累积到阈值 → 触发可被照护者观察到的行为异常 (BPSD)</div>
+      </div>
+
+      <div class="causal-layer l4">
+        <div class="layer-head">
+          <span class="layer-no">L4 · 行为</span>
+          <span class="layer-title">BEHAVIORAL · BPSD</span>
+          <span class="layer-eng">看护者看见的症状</span>
+        </div>
+        <p class="layer-summary">系统层失衡通过<b>情绪 / 动机 / 行为</b>表达出来。BPSD (Behavioral and Psychological Symptoms of Dementia) 不是"附加症状"——它是<b>照护者决定送医或入机构的实际触发点</b>，且没有任何 disease-modifying 药能阻止它。</p>
+        <div class="layer-grid">
+          <div class="mechanism">
+            <h5>典型 BPSD 与出现率</h5>
+            <ul>
+              <li>激越 (agitation) · 50–70%</li>
+              <li>抑郁 / 焦虑 · 40–60%</li>
+              <li>淡漠 (apathy) · 50–70%</li>
+              <li>游荡 · 40–60%</li>
+              <li>日落综合征 · 20–45%</li>
+              <li>幻觉 / 妄想 · 20–40%</li>
+            </ul>
+          </div>
+          <div class="papers">
+            <h5>关键文献 · 锚点</h5>
+            Iaboni 2022 · EDA+HR+ACC → BPSD AUC 0.87<br>
+            JMIR Aging 2025 · 6 min 前预警 agitation<br>
+            Cochrane 2025 · 音乐对激越 RCT<br>
+            Livingston Lancet 2024 · BPSD 是入机构首因
+          </div>
+        </div>
+        <div class="arrow-down"><b>▼ 输出到 L5：</b> BPSD 事件累积 → 家属决策 (送医 / 入机构 / 加药) → 公共卫生负担</div>
+      </div>
+
+      <div class="causal-layer l5">
+        <div class="layer-head">
+          <span class="layer-no">L5 · 社会</span>
+          <span class="layer-title">SOCIAL · CAREGIVER</span>
+          <span class="layer-eng">系统外溢到照护与公共卫生</span>
+        </div>
+        <p class="layer-summary">AD 最终是一个<b>社会层疾病</b>：诊断后绝大部分时间不在医院、不在临床试验、而在家里——照护者 (配偶 / 子女) 承担实际负担，公共卫生层用 <b>14 个可干预因素的人口归因分数 (PAF 45%)</b> 决定政策方向。</p>
+        <div class="layer-grid">
+          <div class="mechanism">
+            <h5>核心负担与干预杠杆</h5>
+            <ul>
+              <li>全球 85% 患者无持续诊断后护理 (ADI 2022)</li>
+              <li>主要照护者 50% 临床抑郁</li>
+              <li>14 个可干预因素 → PAF 45% (Livingston 2024)</li>
+              <li>低教育 / 听力 / 糖尿病 / 孤独 / 空气污染 / 视力 / LDL / 缺活动 / 吸烟 / 饮酒 / 抑郁 / BMI / TBI / 社交</li>
+            </ul>
+          </div>
+          <div class="papers">
+            <h5>关键文献 · 锚点</h5>
+            Livingston Lancet 2024 · 委员会更新<br>
+            ADI 2022 · 全球护理空缺<br>
+            Baker JAMA 2025 · US POINTER<br>
+            Ngandu Lancet 2015 · FINGER 蓝图<br>
+            Williamson JAMA 2019 · SPRINT-MIND
+          </div>
+        </div>
+        <div class="arrow-down" style="color: var(--gap)"><b>↻ 反馈回 L1：</b> 公共卫生干预 (BP 控制 / 运动 / 社交) 通过血管 / 炎症 / 认知储备反向降低分子负担——级联是<b>闭环</b>，不是单向瀑布</div>
+      </div>
     </div>
 
     <h3>2.3 文献综合出来的 5 个"硬事实"</h3>
@@ -452,7 +748,7 @@ CSF             16y           12y    可测   认知  MMSE   2-5年     爆     
       <div class="tl-event focus">
         <span class="yr">2025 · Nature ★</span>
         <span class="what">Zhao (DeepRare): 多智能体临床 AI 第一次进 Nature</span>
-        <p class="body"><b>详注（与你的方向直接相关）</b>：DeepRare 是一个面向罕见病诊断的多智能体系统，由一个 central host 协调 40+ 工具（HPO 表型库、文本检索、基因库、文献检索）。在多个外部测试集上首次尝试准确率 64.4%，超过资深医生的 54.6%；临床医生对 95.4% 的推理链表示认同。它部署在 600+ 机构。<i>意义</i>：(1) 多智能体临床 AI 首次以"可追溯推理"为核心论点进 Nature 主刊；(2) 它工作在<b>静态 HPO + 文本输入</b>上——患者表型描述是固定的快照。(3) <b>未做到的事</b>：没有连续多模态 sensor 流输入、没有生成式患者模型做反事实推演、没有干预动作输出。这定义了"可追溯多智能体"赛道的当前天花板，也告诉我们空间在哪里。</p>
+        <p class="body"><b>详注</b>：DeepRare 是一个面向罕见病诊断的多智能体系统，由一个 central host 协调 40+ 工具（HPO 表型库、文本检索、基因库、文献检索）。在多个外部测试集上首次尝试准确率 64.4%，超过资深医生的 54.6%；临床医生对 95.4% 的推理链表示认同。它部署在 600+ 机构。<i>意义</i>：(1) 多智能体临床 AI 首次以"可追溯推理"为核心论点进 Nature 主刊；(2) 它工作在<b>静态 HPO + 文本输入</b>上——患者表型描述是固定的快照。(3) <b>未做到的事</b>：没有连续多模态 sensor 流输入、没有生成式患者模型做反事实推演、没有干预动作输出。这定义了"可追溯多智能体"赛道的当前天花板，也告诉我们空间在哪里。</p>
       </div>
 
       <div class="tl-event focus">
@@ -499,8 +795,24 @@ CSF             16y           12y    可测   认知  MMSE   2-5年     爆     
 
       <div class="tl-event gap">
         <span class="yr">2026 (今) · 你的位置</span>
-        <span class="what">手套 (EDA+PPG+IMU+mic) + MIND pipeline + generator v2.1</span>
-        <p class="body"><i>行为/居家层 + 多智能体 + 生成式患者模型的交集还空着</i>。Apple/Biogen 占了消费级单模态规模，DeepRare/CARE-AD 占了静态多智能体，谁也没有把三者合成一个 stack。</p>
+        <span class="what">手套 (EDA+PPG+IMU+mic) + 7-Agent 推理栈 + AD generator v2.1 + ProtAIDe-Dx</span>
+        <p class="body">
+        把上面这条 20 年时间线放到一张图上看，目前的占位是这样的：<b>消费级单模态规模</b>属于 Apple/Biogen (n≈23k 智能手表筛 MCI, Nat Med 2025)；<b>静态多智能体诊断</b>属于 DeepRare (Nature 2025, HPO+文本) 和 CARE-AD (npj DM 2025, EHR 笔记 4-agent 协同, AUC 0.53)；<b>分子端</b>属于 Lecanemab / Donanemab (清 76% 斑块, 减速 27–35%)。这三块从来没合到一个 stack 里。
+        <br><br>
+        <b>我们在做的是把它们合起来</b>——具体到当前的实施状态：
+        <br>
+        <b>(1) 多模态 vs 单模态</b>。手套同时拿 <span style="font-family:'SF Mono',Menlo,monospace;font-size:13px">EDA / PPG / IMU / 麦克风</span> 四路信号，对应 L3 系统层的四条通路 (自主、运动、心血管、语言) 一次性截下来，而不是只看一只手表的活动量。
+        <br>
+        <b>(2) 连续 sensor 流 vs 静态 EHR</b>。把 DeepRare / CARE-AD 的"多智能体推理"接到 24×7 流式输入上——目前栈里 7 个 specialist agent：神经 / 心血管 / 运动 / 睡眠 / 语言 / 精神 / 护理，每个 agent 监听对应通道，central coordinator 做跨 agent 推理。
+        <br>
+        <b>(3) 生成式患者模型</b>。AD generator v2.1 已经能用 <b>5 个 OpenNeuro EEG 数据集 (ds002778 / 004504 / 007427 等, n=163)</b> + <b>WESAD / DaLiA / mHealth / PAMAP2 PPG+IMU (n=49, 42 hr)</b> 做 forward simulation，给反事实"如果不干预会怎样"的 rollout 引擎。当前在修 B 类 generator 的 walking bug：<span style="font-family:'SF Mono',Menlo,monospace;font-size:13px">ρ(jerk, HR) = 0.13 vs 真实 0.51</span>；HR 66 vs 真实 94 BPM。
+        <br>
+        <b>(4) 实际数据底盘</b>。量表库 <b>137 例</b> (经临床合作) + 传感器 baseline 4 例 + 公开数据集 10 个；已建立 17 个 AD signature + Transformer 架构 + FUPCC 评估框架。
+        <br>
+        <b>(5) ProtAIDe-Dx</b>。把 (1)–(4) 串到一个 sense → reason → simulate → intervene 的闭环里，目标是占住 Nature 系还空着的那块：<b>L3 多模态 + L4 BPSD 预测 + 闭环非药物干预</b> 这格。
+        <br><br>
+        <b>说白了不是"再来一个 demo"。</b>不在分子端（药企赌过了，27–35% 天花板）；不在静态多智能体（DeepRare 已占）；不在消费级单模态（Apple 已占）。位置是<b>多模态 × 流式 sensor × 生成式世界模型 × 闭环干预</b>这四者的交集——上面四块没人占。
+        </p>
       </div>
 
     </div>
@@ -554,7 +866,11 @@ CSF             16y           12y    可测   认知  MMSE   2-5年     爆     
     </div>
 
     <blockquote>
-      <b>综合判断</b>：2026 年的 AD 既不是"完全没搞清楚"，也不是"已经搞清楚"。生物学上有<b>清晰的级联框架 + 单细胞分辨率图谱 + 血液诊断</b>，但 8 个核心问题没有共识。临床上有<b>2 个 disease-modifying drugs</b>，但都是减速器不是治愈，且只在窄窗口期有效。<b>"AD 是什么"的世界模型是一张半透明的网——粗框架清楚，节点和参数仍在被填</b>。
+      <b>说人话 · 2026 年的 AD 到底是个什么状态？</b><br><br>
+      说白了，这病现在的处境是这样：医学已经知道它怎么一步步坏下来——分子层 25 年前就开始 Aβ 堆积，然后 tau 缠结、神经元一批批倒下，最后大脑萎缩、人忘了自己是谁。这套级联在顶刊里画过上千遍。诊断这一端也终于跟上：一管血查 p-tau217 准确率超过 0.93，比 PET 便宜十几倍，2024 NIA-AA 已经把它写进核心生物标志。<br><br>
+      治疗这一端 2023 年开始有了两个真药 (Lecanemab、Donanemab)——能清掉 76% 斑块，听起来很爽，但临床终点只能减缓 27–35% 的衰退速度，所以本质是<b>减速器不是治愈</b>。而且药很贵 (年费 2.6 万美元)、副作用 ARIA (脑水肿/微出血) 不算轻、必须在症状极早期 (MCI 到 mild AD) 才能用，APOE4 双拷贝的人风险还更大。再加上输液中心 + PET 筛查这些基础设施门槛，绝大部分国家用不起、用不上。<br><br>
+      最现实的一层问题是：<b>诊断后的日常没人接得住</b>。全球 85% 患者拿到诊断之后没有持续随访；主要照护者一半进入临床抑郁；BPSD (激越 / 游荡 / 日落综合征 / 幻觉) 是入机构的实际触发点，没有任何 disease-modifying 药能阻止它们。这一段——从拿到诊断到末期——平均 10 年，主要发生在<b>家里</b>，不在医院、不在试验。<br><br>
+      所以 2026 年的 AD 不是"完全没搞清楚"，也不是"已经搞清楚"。生物学上有<b>清晰的级联框架 + 单细胞图谱 + 血液诊断</b>，临床上有两个能减速 30% 的药，但 8 个核心机制问题没共识、治疗窗口很窄、<b>居家这一层在 Nature 顶刊里基本是空的</b>。"AD 是什么"的世界模型是一张半透明的网——粗框架清楚，节点和参数还在被填，行为/居家/闭环这一格几乎没人画。
     </blockquote>
   </div>
 </section>
@@ -657,6 +973,56 @@ CSF             16y           12y    可测   认知  MMSE   2-5年     爆     
     <h3>5.3 一句话总结</h3>
     <blockquote>
       <b>药物端</b>能减速但不能治愈，且只在 MCI–轻度阶段有效。<b>诊断端</b>已经有血液 marker 接近 CSF。<b>预防端</b>已经知道 14 个因素能挡掉 45% 风险。<b>监测端</b>是最年轻、证据最稀的一端——它能不能从"商业健身追踪"上升到"医疗级证据"，取决于<b>多模态、生理耦合、闭环干预</b>这三条线能不能在 Nature 级研究上落地。
+    </blockquote>
+
+    <h3>5.4 监测到底有什么好处？（八条客观收益）</h3>
+    <p>"为什么不只是给老人多戴一个手环"——这里把监测能带来的实际收益按<b>能挽回什么 × 能值多少钱 / 多少时间</b>列出来，每条都接上现有文献的证据强度。</p>
+
+    <div class="mb-grid">
+      <div class="mb-card">
+        <span class="scale">A · 临床盲区填补</span>
+        <h4>1. 把 25 年的盲区填上</h4>
+        <p>DIAN 2012 说 AD 在临床确诊前 25 年就启动，但门诊一年只看 2–3 次——99% 时间临床是盲的。可穿戴是<b>唯一能 24×7 把这 25 年填满的工具</b>。p-tau217 测一次知道"现在是不是 +"，但说不出"过去 5 年怎么变的"——这正是监测的位置。</p>
+      </div>
+      <div class="mb-card">
+        <span class="scale">B · 治疗窗口</span>
+        <h4>2. 让更多人挤进 Lecanemab/Donanemab 窗口</h4>
+        <p>这两个药只在 MCI–mild AD 有效。但目前症状被注意到 → 就诊 → 确诊平均延迟 <b>2–5 年</b>，很多人到诊时已经过了窗口。监测能在 SCD/前驱期就提示"你正在向 MCI 滑"——把可治人群放大几倍。Apple/Biogen Nat Med 2025 已经在 n=23k 上验证手表能筛 MCI 候选。</p>
+      </div>
+      <div class="mb-card">
+        <span class="scale">C · BPSD 预警</span>
+        <h4>3. BPSD 提前 6 分钟 → 提前几个月</h4>
+        <p>JMIR Aging 2025 用 EDA+HR+ACC 提前 6 min 预警 agitation；Iaboni 2022 AUC 0.87。即使只把这件事工程化到家里——延迟入机构 <b>6–12 个月</b>——对单个家庭 = 几万美元，对医疗系统 = <b>几十亿美元级</b>。这是离 RCT 最近、ROI 最高的一格。</p>
+      </div>
+      <div class="mb-card">
+        <span class="scale">D · ARIA / 药物监测</span>
+        <h4>4. Lecanemab/Donanemab 的安全监测</h4>
+        <p>这两个药每 3 个月要 MRI 看 ARIA-E/H、每 6 个月要 PET 复查。临床实际操作很重。可穿戴 + 血液 marker 组合能<b>把窗口压缩到家里</b>，让"药 + 监测"成一个产品，而不是两套独立的服务。这是药企已经在找的合作位。</p>
+      </div>
+      <div class="mb-card">
+        <span class="scale">E · 个体化</span>
+        <h4>5. 同样 Aβ+ 为什么有人 5 年发病 有人 30 年不</h4>
+        <p>这是 8 个开放问题之一 (Q6)。原因可能在 L3 (认知储备 / 微胶质响应 / 心血管健康) 的<b>个体级协变量</b>——但这些都是<b>系统层信号</b>，正是可穿戴在测的层。监测产生的纵向数据 = trial enrollment + dose-response 的分层依据。</p>
+      </div>
+      <div class="mb-card">
+        <span class="scale">F · Inverse mapping</span>
+        <h4>6. 反推分子层 → 降低筛查门槛</h4>
+        <p>开放问题 Q8 直接问："步速 ↓ 反映海马、基底节、还是脑白质？"。如果手套的 jerk/HRV 能反推 p-tau217 / Aβ-PET 分布，意味着<b>不抽血不影像也能做大规模筛查</b>——对发展中国家 (诊断率 <10%) 是关键的门槛降低。Apple 2025 已经走到第一步。</p>
+      </div>
+      <div class="mb-card">
+        <span class="scale">G · 非药物 RCT</span>
+        <h4>7. 给 Lancet "45% PAF" 提供工程化路径</h4>
+        <p>药物只能 30%；Lancet Commission 2024 算出 14 个可干预因素能挡 45%——但目前都是观察证据。<b>监测 + 闭环干预 (光、声、运动、社交)</b> 是把这 45% 从流行病学搬到 RCT 的唯一工程化路径。Cochrane 2025 已经证明音乐对激越有效，但还是 caregiver-initiated；自动触发的 RCT 还是空的。</p>
+      </div>
+      <div class="mb-card">
+        <span class="scale">H · 多智能体燃料</span>
+        <h4>8. 给生成式世界模型 + multi-agent 喂数据</h4>
+        <p>DeepRare / CARE-AD 都因为<b>缺连续 sensor 数据</b>所以只能在快照上推理。监测产生的纵向多模态流 = 生成式患者模型 (counterfactual rollout) 的训练 fuel，也是多 agent 协同推理的输入。这是把"静态多智能体"升到"动态闭环"的唯一路径。</p>
+      </div>
+    </div>
+
+    <blockquote style="background:var(--good-soft); border-left-color: var(--good);">
+      <b>一句话：</b> 监测不是"再加一个手环"——它是<b>填补 25 年临床盲区</b>、<b>把治疗窗口和 BPSD 干预窗口拉开</b>、<b>给非药物 RCT 提供工程路径</b>、<b>给多智能体喂连续数据</b>这四件事的唯一可行底盘。从商业健身追踪到医疗级证据的跨越，需要的就是<b>多模态 × 生理耦合 × 闭环干预</b>这三条线在 Nature 级研究上同时落地——这是 2026 年最大的可占空间。
     </blockquote>
   </div>
 </section>
