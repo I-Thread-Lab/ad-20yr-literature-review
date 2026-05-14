@@ -385,13 +385,142 @@
     margin-top: 18px; padding-top: 14px; border-top: 1px dashed #555;
     font-size: 13.5px; color: #bbb; font-style: italic;
   }
+  /* === v1.5 additions: idea bank, thesis compare, roadmap table === */
+  .thesis-compare {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin: 16px 0 8px;
+    font-family: -apple-system, "PingFang SC", sans-serif;
+  }
+  @media (max-width: 760px) { .thesis-compare { grid-template-columns: 1fr; } }
+  .thesis-old, .thesis-new {
+    padding: 16px 20px; border-radius: 6px;
+    font-size: 14px; line-height: 1.7;
+  }
+  .thesis-old { background: #fdecea; border-left: 3px solid var(--gap); color: #4a2a28; }
+  .thesis-new { background: #ecf7ec; border-left: 3px solid var(--good); color: #1f3a1f; }
+  .thesis-old h5, .thesis-new h5 {
+    margin: 0 0 8px; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.6px; font-weight: 700; font-family: inherit;
+  }
+  .thesis-old h5 { color: var(--gap); }
+  .thesis-new h5 { color: var(--good); }
+  .thesis-new b, .thesis-old b { color: var(--ink); }
+
+  .idea-stack { margin: 16px 0 12px; }
+  .idea-card {
+    background: white; border: 1px solid #d0ccc0; border-radius: 6px;
+    padding: 18px 22px; margin-top: 16px;
+    font-family: -apple-system, "PingFang SC", sans-serif;
+    font-size: 14px; line-height: 1.65;
+  }
+  .idea-card:first-child { margin-top: 0; }
+  .idea-card.priority-now { border-left: 4px solid var(--good); }
+  .idea-card.priority-mid { border-left: 4px solid #d4a017; }
+  .idea-card.priority-far { border-left: 4px solid var(--muted); }
+  .idea-card .idea-head {
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .idea-card .idea-no {
+    font-weight: 700; font-size: 11.5px; padding: 3px 12px; border-radius: 12px;
+    color: white; background: var(--accent); letter-spacing: 0.5px;
+  }
+  .idea-card .idea-title { font-size: 16px; font-weight: 700; color: var(--ink); }
+  .idea-card .idea-when {
+    display: inline-block; font-size: 10.5px; padding: 2px 9px;
+    border-radius: 10px; letter-spacing: 0.4px; font-weight: 700;
+  }
+  .idea-card .idea-when.now { background: var(--good-soft); color: var(--good); }
+  .idea-card .idea-when.mid { background: #fef3c7; color: #7a5a17; }
+  .idea-card .idea-when.far { background: #e8e6df; color: var(--muted); }
+  .idea-card .idea-body p { margin: 5px 0; font-size: 13.5px; }
+  .idea-card .idea-body .label {
+    display: inline-block; width: 80px; font-weight: 700; color: var(--muted);
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+    vertical-align: top; padding-top: 2px;
+  }
+  .idea-card .idea-body .why-nature {
+    background: #f0f7ff; padding: 9px 13px; border-radius: 3px; margin-top: 10px;
+    border-left: 3px solid var(--accent); font-size: 13px; line-height: 1.6;
+  }
+  .idea-card .idea-body .why-nature b { color: var(--accent); }
+
+  .roadmap-table {
+    width: 100%; border-collapse: collapse; margin: 16px 0 8px;
+    font-family: -apple-system, "PingFang SC", sans-serif; font-size: 13.5px;
+  }
+  .roadmap-table th {
+    background: var(--ink); color: white; padding: 10px 12px;
+    text-align: left; font-size: 11.5px; text-transform: uppercase;
+    letter-spacing: 0.5px; font-weight: 700;
+  }
+  .roadmap-table td {
+    padding: 11px 12px; border-bottom: 1px solid #e3dfd5; vertical-align: top;
+    line-height: 1.5;
+  }
+  .roadmap-table tr:nth-child(even) td { background: #faf8f3; }
+  .roadmap-table td.stage { font-weight: 700; color: var(--accent); white-space: nowrap; }
+  .roadmap-table td.venue { font-style: italic; color: var(--muted); white-space: nowrap; }
+
+  h4.subhead {
+    margin: 22px 0 8px; font-family: -apple-system, "PingFang SC", sans-serif;
+    font-size: 15px; font-weight: 700; color: var(--ink);
+    text-transform: none; letter-spacing: 0;
+  }
+  /* === paper blueprint (academic critique format) === */
+  .paper-blueprint {
+    background: #faf8f3; border: 1px solid #d0ccc0; border-radius: 6px;
+    padding: 24px 28px; margin: 18px 0 12px;
+    font-family: -apple-system, "PingFang SC", BlinkMacSystemFont, sans-serif;
+    font-size: 14px; line-height: 1.7;
+  }
+  .paper-blueprint .pb-section {
+    margin: 0 0 22px; padding-bottom: 18px; border-bottom: 1px dashed #d0ccc0;
+  }
+  .paper-blueprint .pb-section:last-child {
+    border-bottom: none; margin-bottom: 0; padding-bottom: 0;
+  }
+  .paper-blueprint .pb-section h5 {
+    margin: 0 0 10px; font-size: 13px;
+    color: var(--accent); font-weight: 700; font-family: inherit;
+    text-transform: none; letter-spacing: 0;
+  }
+  .paper-blueprint .pb-section h5 .num {
+    display: inline-block; background: var(--accent); color: white;
+    padding: 2px 9px; border-radius: 10px; margin-right: 10px;
+    font-size: 11px; letter-spacing: 0.4px; vertical-align: 1px;
+  }
+  .paper-blueprint p { margin: 6px 0; }
+  .paper-blueprint ul, .paper-blueprint ol { margin: 8px 0; padding-left: 22px; }
+  .paper-blueprint li { margin: 5px 0; line-height: 1.65; }
+  .paper-blueprint code {
+    background: var(--paper-2); padding: 2px 6px; border-radius: 3px;
+    font-family: "SF Mono", Menlo, Monaco, monospace; font-size: 12.5px;
+  }
+  .paper-blueprint .h-block {
+    background: white; border-left: 3px solid var(--accent);
+    padding: 9px 14px; margin: 7px 0; border-radius: 0 4px 4px 0; font-size: 13.5px;
+  }
+  .paper-blueprint .h-block .h-tag {
+    display: inline-block; background: var(--accent); color: white;
+    font-size: 10.5px; padding: 2px 8px; border-radius: 10px;
+    margin-right: 8px; font-weight: 700; letter-spacing: 0.4px;
+  }
+  .paper-blueprint .h-block i { color: var(--muted); }
+  .paper-blueprint .study-block {
+    background: white; padding: 10px 14px; border-radius: 4px;
+    margin: 8px 0; font-size: 13.5px; line-height: 1.65;
+    border-left: 3px solid #d4a017;
+  }
+  .paper-blueprint .study-block b { color: var(--ink); }
+  .paper-blueprint .study-block i { color: var(--muted); }
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="container">
-    <span class="pill ui">STRATEGIC LITERATURE REVIEW · v1.4</span>
+    <span class="pill ui">STRATEGIC LITERATURE REVIEW · v1.5</span>
     <h1>The Alzheimer&#39;s Patient as a World Model</h1>
     <p class="sub">20 年的 Nature / Science / Nature Medicine / Cell · 140 篇 · 一份 AD 患者的"世界模型"综述 + 白空间分析</p>
     <div class="meta ui">
@@ -845,6 +974,305 @@
         1 + 2 + 3 是 v1 三篇论文级目标；4 是 v2 整合论点；5 + 6 是 v3 横向扩展；7 是 v4 社会影响。
       </div>
     </div>
+
+    <h3>2.5 你的研究 idea bank + thesis 重写</h3>
+    <div class="derivation">
+      <b>这一节做什么？</b>把 §2.4 的"主战场 L3 + 副战场 L4 + 7 条剩余 gap"翻译成<b>具体可发表的研究 idea</b>——每条锚定一篇已发表对标论文，给出假设 / 怎么测 / 为什么是 Nature 级、以及<b>现在跑得起还是要等</b>。这一节存在的理由是：从"我应该往哪个方向走"到"下周我应该写什么 code"之间的距离。
+    </div>
+
+    <h4 class="subhead">为什么是 L3 + L4 — 一段话</h4>
+    <p style="font-size:14.5px;line-height:1.7;margin:8px 0 16px;">
+      L3 是<b>唯一一个 24×7 能从体表连续观测的层</b>——L1 要抽血/扫脑、L2 要活检、L4 要照护者报告、L5 要 epidemiology，只有 L3 是 sensor 贴皮肤就拿得到的。手上 4 通道（IMU / PPG+HRV / EDA / voice）正好一一对应 L3 的 4 条生理通路（运动 / 心血管+自主 / 情绪唤起+交感 / 语言）——这不是巧合，sensor 选型本来就是按这层挑的。L4 是 L3 的 immediate downstream，临床和经济意义最大（BPSD 是入机构首因），但 Nature 系顶刊里这层论文比 L3 还稀。<b>所以你的位置 = L3 多模态融合（论文影响力）+ L4 闭环干预（临床和经济影响力）</b>——上面 L1/L2 别人在卷，下面 L5 是 Lancet 的地盘，中间这一段没人占。
+    </p>
+
+    <h4 class="subhead">当前 thesis 太弱 — 旧 vs 新</h4>
+    <div class="thesis-compare">
+      <div class="thesis-old">
+        <h5>旧 thesis（太 generic）</h5>
+        "手套长期监测，反应 AD 患者的症状。"
+        <br><br>
+        <b>问题 4 个</b>：
+        (1) 不够具体——哪个症状？什么时间尺度？对什么 ground truth？
+        (2) Apple/Biogen 2025 已在 n=23K 上做过"监测 + 反应 MCI"——正面打又赢不了；
+        (3) "反应症状"是中间态，没说做完之后干什么；
+        (4) 漏掉两个真正能领先的点：<b>多模态耦合</b>（4 通道相互关系，Apple 没有）+ <b>闭环干预</b>（检测 + 自动触发，Iaboni / Cochrane 没合拢）。
+      </div>
+      <div class="thesis-new">
+        <h5>新 thesis（具体 + 差异化）</h5>
+        手套<b>同时</b>做三件事——
+        <br>
+        (1) <b>多模态生理耦合</b>：从 IMU / PPG+HRV / EDA / 语音 4 通道相互关系里抽出单通道看不到的 AD 早期信号；
+        <br>
+        (2) <b>反向映射到分子标签</b>：wearable 信号 → plasma p-tau217 / Aβ-PET，做不抽血的大规模筛查；
+        <br>
+        (3) <b>闭环干预</b>：检测 BPSD 前兆 → 自动触发非药物干预 → 再测反应 → 更新策略。
+        <br><br>
+        这是把 Apple（规模）+ Palmqvist（分子诊断）+ Iaboni（BPSD 检测）+ Cochrane（音乐 RCT）四块拼成一个 stack，<b>正好踩在 Nature 系还没人占的中间空格</b>。
+      </div>
+    </div>
+
+    <h4 class="subhead">5 个具体可做的 idea（按可攻击性排）</h4>
+    <div class="idea-stack">
+
+      <div class="idea-card priority-now">
+        <div class="idea-head">
+          <span class="idea-no">Idea 1</span>
+          <span class="idea-title">多模态生理耦合 &gt; 单模态规模</span>
+          <span class="idea-when now">现有数据可跑</span>
+        </div>
+        <div class="idea-body">
+          <p><span class="label">对标</span>Apple/Biogen Nat Med 2025（单模态 PPG+ACC, n=23K, MCI 分类）。</p>
+          <p><span class="label">假设</span>4 通道之间的<b>耦合特征</b>（HRV-EDA coherence / 步态-语音 latency / 睡眠-自主神经 phase coupling）能在你 n=137 + 合成数据量级，达到或超过 Apple 在 n=23K 上的单模态 AUC。</p>
+          <p><span class="label">怎么测</span>head-to-head：最佳单通道分类器 vs 4 通道耦合分类器；要展示<b>耦合 gain 在前驱期最大</b>（Apple 最弱的窗口）。</p>
+          <div class="why-nature"><b>为什么 Nature 级：</b>第一次证明"4 通道耦合 ≥ 23K 单通道"在 AD 上成立——<b>多模态质量打败单模态规模</b>，这是整个数字健康领域的开门论文。<b>目标</b>：Nature Medicine / Lancet Digital Health。</div>
+        </div>
+      </div>
+
+      <div class="idea-card priority-now">
+        <div class="idea-head">
+          <span class="idea-no">Idea 5</span>
+          <span class="idea-title">多智能体在流式 sensor 上（CARE-AD 的连续版）</span>
+          <span class="idea-when now">现有数据可跑</span>
+        </div>
+        <div class="idea-body">
+          <p><span class="label">对标</span>CARE-AD npj DM 2025（4 agent EHR snapshots, AUC 0.53）+ DeepRare Nature 2025（40 tools, 64.4% 一击）。</p>
+          <p><span class="label">假设</span>你的 7-agent 在流式 4 通道 sensor 上能 beat CARE-AD 的 0.53（输入信息丰富 + 时间分辨率高 8 个数量级）。</p>
+          <p><span class="label">怎么测</span>复现 CARE-AD 的 4-specialist 设置，但替换输入 = 你的 sensor 流；同 endpoint 比 AUC。</p>
+          <div class="why-nature"><b>为什么 Nature 级：</b>第一个证明<b>多智能体在连续 sensor 上 &gt; 在 EHR snapshot 上</b>，定义"动态多智能体"的赛道。<b>目标</b>：npj Digital Medicine → Nature Medicine。</div>
+        </div>
+      </div>
+
+      <div class="idea-card priority-now">
+        <div class="idea-head">
+          <span class="idea-no">Idea 4</span>
+          <span class="idea-title">生成式患者世界模型 + 反事实 rollout</span>
+          <span class="idea-when now">修完 walking bug 后可跑</span>
+        </div>
+        <div class="idea-body">
+          <p><span class="label">对标</span>AD generator v2.1（你自己）+ WearGait-PD Sci Data 2026 预训练 + CARE-AD baseline。</p>
+          <p><span class="label">假设</span>4 通道流式 sensor → generative 世界模型 → <b>"如果不干预，此患者 30 天后状态"</b>反事实预测，校准 ECE &lt; 0.1。</p>
+          <p><span class="label">怎么测</span>合成 + 真实 137 例做 cross-validation；预测 30/60/90 天 BPSD 出现率 vs 实际。<b>前提</b>：先用 WearGait-PD pretrain 修掉 walking bug（ρ(jerk,HR)=0.13 vs 真实 0.51；HR 66 vs 真实 94 BPM）。</p>
+          <div class="why-nature"><b>为什么 Nature 级：</b>DeepRare / CARE-AD 都缺连续 sensor 所以只能在快照推理；生成式 + 流式是把多智能体从<b>静态推到动态的唯一路径</b>。<b>目标</b>：Nature Machine Intelligence / Nat Comp Science。</div>
+        </div>
+      </div>
+
+      <div class="idea-card priority-mid">
+        <div class="idea-head">
+          <span class="idea-no">Idea 2</span>
+          <span class="idea-title">可穿戴 → p-tau217 反向映射</span>
+          <span class="idea-when mid">6-12 月 · 需 partnership</span>
+        </div>
+        <div class="idea-body">
+          <p><span class="label">对标</span>Palmqvist Nat Med 2025（plasma p-tau217 AUC 0.93）+ WearGait-PD 提供的 supervised 步态预训练。</p>
+          <p><span class="label">假设</span>手套 4 通道信号能回归到 plasma p-tau217 / NfL 标签，目标 AUC &gt; 0.7。</p>
+          <p><span class="label">怎么测</span>需要既有 wearable 又有 p-tau217 抽血的配对队列。<b>路径</b>：BioFINDER / ADNI 协作；或 Imperial 走 NHS 队列 + 你 137 例量表库加抽血扩展。</p>
+          <div class="why-nature"><b>为什么 Nature 级：</b>AD 数字健康<b>最被引的开放问题</b>（§2.4 gap ②）。通了 = 不抽血不影像也能筛——直接对接 LMIC 85% 没诊断的市场。<b>目标</b>：Nature Medicine。</div>
+        </div>
+      </div>
+
+      <div class="idea-card priority-far">
+        <div class="idea-head">
+          <span class="idea-no">Idea 3</span>
+          <span class="idea-title">Sensor 触发的非药物干预 RCT</span>
+          <span class="idea-when far">18-36 月 · 需 IRB + 招募</span>
+        </div>
+        <div class="idea-body">
+          <p><span class="label">对标</span>Iaboni 2022（BPSD 检测 AUC 0.87）+ JMIR Aging 2025（6 min 前预警）+ Cochrane 2025（音乐 RCT 阳性）。</p>
+          <p><span class="label">假设</span>sensor 检测 BPSD 前兆 → 自动触发非药物干预（光 / 声 / 提示照护者）→ 60-90 天延迟入机构 6-12 个月。</p>
+          <p><span class="label">怎么测</span>cluster-RCT 在养老院（n≈80 床），3 臂：sensor-only alert / sensor + auto music / standard care。</p>
+          <div class="why-nature"><b>为什么 Nature 级：</b><b>第一个 dementia sensor-triggered 非药物干预 RCT</b>，把 Cochrane 的"音乐有效"和 Iaboni 的"sensor 测得到"合拢，直接测可计算的经济终点（institutionalization delay = 几万美元/家庭）。<b>目标</b>：NEJM / Lancet。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <h4 class="subhead">论文 roadmap（不要全做，按可攻击性排）</h4>
+    <table class="roadmap-table">
+      <thead>
+        <tr><th>阶段</th><th>时间</th><th>论文论点</th><th>对应 Idea</th><th>数据状态</th><th>目标期刊</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="stage">v1.0</td>
+          <td>6-9 月</td>
+          <td>多模态耦合 vs Apple 单模态</td>
+          <td>①</td>
+          <td>现有数据可跑</td>
+          <td class="venue">Nat Med / Lancet DH</td>
+        </tr>
+        <tr>
+          <td class="stage">v1.5</td>
+          <td>12-18 月</td>
+          <td>多智能体流式 + 生成式世界模型</td>
+          <td>⑤ + ④ 合并</td>
+          <td>修 walking bug 后可跑</td>
+          <td class="venue">Nat Mach Intel / npj DM</td>
+        </tr>
+        <tr>
+          <td class="stage">v2.0</td>
+          <td>18-24 月</td>
+          <td>wearable → p-tau217 反向映射</td>
+          <td>②</td>
+          <td>需抽血队列 partnership</td>
+          <td class="venue">Nature Medicine</td>
+        </tr>
+        <tr>
+          <td class="stage">v3.0</td>
+          <td>30-36 月</td>
+          <td>闭环 BPSD 干预 cluster RCT</td>
+          <td>③</td>
+          <td>需 IRB + 养老院招募</td>
+          <td class="venue">NEJM / Lancet</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote style="margin-top:18px;">
+      <b>一句话执行建议</b>：现在 (T = 0) 立刻能做的是 Idea 1（不用等任何外部资源）。同时启动 Idea 5（多智能体在流式上）作为 v1.5 的草稿。Idea 4（生成式世界模型）等 walking bug 修完。Idea 2 需要现在就开始找抽血队列 partnership（周期长）。Idea 3 需要 IRB 启动——也现在准备，因为审批要 6-12 个月。<b>4 篇论文不要并行做，按 1 → 5+4 → 2 → 3 的顺序，每一步成功为下一步背书。</b>
+    </blockquote>
+
+    <h3>2.6 完整论文 idea 呈现（学术评议格式）— Idea 1 当例</h3>
+    <div class="derivation">
+      <b>这一节做什么？</b>把 §2.5 的 Idea 1（多模态生理耦合 &gt; 单模态规模，v1.0 论文）按 7 段学术评议格式完整呈现：研究问题 → 文献空白 → 理论框架 → 假设 → 研究设计 → 实证发现 → 贡献和局限。这是你拿去当 paper proposal 草稿、找导师 / 评议人 / funding 沟通时<b>直接可用的版本</b>。三篇对标论文 (Apple/Biogen Nat Med 2025 · CARE-AD npj DM 2025 · WearGait-PD Sci Data 2026) 在下面都会被显式对话。
+    </div>
+
+    <div class="paper-blueprint">
+
+      <div class="pb-section">
+        <h5><span class="num">1</span>研究问题 · 为何提出 · 与哪些文献对话</h5>
+        <p><b>核心研究问题</b>：在 prodromal Alzheimer's disease (SCD + early MCI) 的体表可观测层 (L3 systems physiology)，<b>多模态生理耦合特征</b>是否能在<b>小样本 (n &lt; 200)</b> 上达到或超过<b>单模态大规模研究 (n &gt; 20,000)</b> 的诊断 / 预测性能？</p>
+        <p><b>为何提出</b>：Apple/Biogen Nat Med 2025 用单模态 (PPG+ACC, n=23,000) 把消费级 wearable AD 研究推到 Nature 级——但代价是 (1) 需要科技巨头量级 cohort, (2) 单模态意味着只看 L3 的 1-2 条通路 (心血管 + 运动), 漏掉自主神经 (EDA) 和语言 (voice)。如果<b>多模态耦合特征能在 n &lt; 200 上 match Apple 的 AUC</b>，整个数字健康领域的资源分配假设——"扩大样本 &gt; 扩大模态"——就需要被重写。这是 1 篇论文级的范式转换问题。</p>
+        <p><b>与之对话的文献</b>:</p>
+        <ul>
+          <li>Apple/Biogen Chen Nat Med 2025 · 单模态规模派, 直接挑战对象</li>
+          <li>WearGait-PD Watkinson Sci Data 2026 · 开源多模态步态资源 (提供 supervised pretrain)</li>
+          <li>CARE-AD Li npj DM 2025 · 多智能体但只用静态 EHR, 暴露"连续 sensor"的空缺</li>
+          <li>Iaboni 2022 · 多模态 BPSD 检测 PoC, 给 EDA+HR+ACC 耦合可行性</li>
+          <li>Yang npj DM 2024 · 语音单模态 AD signature</li>
+          <li>Buracchio Arch Neurol 2010 · 步态早 12y 异常的机制依据</li>
+          <li>Xie Science 2013 / Spira 2013 · 睡眠-Aβ 因果耦合的生物学基础</li>
+          <li>Juster Lancet 2020 + McEwen 1998 · Allostatic Load 理论框架来源</li>
+        </ul>
+      </div>
+
+      <div class="pb-section">
+        <h5><span class="num">2</span>过往文献的回答 · 不足与研究空白</h5>
+        <ul>
+          <li><b>单模态 + 大规模派</b>（Apple/Biogen, Yang voice, Apple iPhone-Stanford）: 证明<b>单模态在大样本可达 MCI AUC ~0.8</b>，但<b>不能解释模态之间的耦合是否携带独立信息</b>——本质是 univariate 假设。</li>
+          <li><b>多模态 PoC 派</b>（Iaboni 2022 EDA+HR+ACC）: 证明多模态在 BPSD 检测有效 (AUC 0.87), 但 (a) 没在 prodromal AD 上做, (b) 没显式抽取耦合特征 (用 concatenation), (c) 没和最佳单模态 head-to-head。</li>
+          <li><b>多模态机制派</b>（Xie 2013, Spira 2013）: 给出多模态生理学因果耦合的<b>机制基础</b>（睡眠 → Aβ 清除是 sleep × CSF × autonomic 三者耦合），但<b>没翻成 sensor-level coupling 特征工程</b>。</li>
+          <li><b>合成数据 / 预训练派</b>（AD generator v2.1, WearGait-PD）: 给出多模态数据补充和预训练工程路径，但<b>没在 AD 上证明 super-additive coupling</b>。</li>
+          <li><b>多智能体派</b>（CARE-AD, DeepRare）: 证明多 agent 协同有效，但<b>输入都是静态 snapshot</b>——没和连续多模态 sensor 流接上。</li>
+        </ul>
+        <p><b>研究空白</b>: <b>4 通道生理耦合特征在 prodromal AD 上是否 super-additive (耦合 gain &gt; 单通道最佳)，从未在 head-to-head 实验里被检验</b>。这是 §2.4 gap ① 的具体化。</p>
+      </div>
+
+      <div class="pb-section">
+        <h5><span class="num">3</span>理论视角与框架</h5>
+        <p><b>双理论框架</b>:</p>
+        <ul>
+          <li><b>Allostatic Load Theory</b>（McEwen Ann NY Acad Sci 1998; Juster Lancet 2020 综述）: AD 是慢性应激-修复系统失调的累积结果。4 个 sensor 通道各自反映一个 allostatic mediator——<b>HRV = autonomic balance</b>; <b>EDA = sympathetic arousal</b>; <b>IMU = sensorimotor regulation</b>; <b>voice = cognitive control</b>。Allostatic load 的核心论点是: <b>失调先从 mediator 间耦合断裂开始, 再到单 mediator 显性失败</b>。所以 prodromal AD 应首先在<b>耦合特征</b>而非单通道上显现——这是 H1 的理论根。</li>
+          <li><b>Embodied Cognition</b>（Glenberg WIREs Cogn Sci 2010）: 认知衰退不是单纯"大脑问题", 是嵌入在 sensorimotor + autonomic system 的整体表现。多模态耦合直接读这个 embodied 状态, 单模态不能——这是 H3 的理论根。</li>
+        </ul>
+        <p><b>理论框架图</b>：</p>
+        <p><code>{IMU, PPG-HRV, EDA, voice}</code> → <code>18 种耦合特征</code>（cross-channel coherence / phase locking / lag correlation / mutual information）→ <code>AD state</code>（CU / SCD / MCI / mild AD）</p>
+      </div>
+
+      <div class="pb-section">
+        <h5><span class="num">4</span>研究假设（逐条 + 推导）</h5>
+        <div class="h-block">
+          <span class="h-tag">H1</span><b>主假设</b>：4 通道耦合特征对 prodromal AD 的分类 AUC 显著高于<b>最佳单通道</b>特征（ΔAUC ≥ 0.05, DeLong p &lt; 0.01）。<br>
+          <i>推导</i>：直接来自 allostatic load——耦合断裂先于单 mediator 失败。
+        </div>
+        <div class="h-block">
+          <span class="h-tag">H2</span><b>窗口假设</b>：耦合 gain 在 SCD + early MCI 段最大（ΔAUC ≥ 0.10），在临床 AD 段减小（ΔAUC ≤ 0.05）。<br>
+          <i>推导</i>：AD 神经退化的<b>分布式起点假设</b>——早期是 distributed 异常（多 mediator 微弱耦合断裂），后期收敛到 cortical motor + cognitive 显性失败（单通道已饱和，gain 自然小）。
+        </div>
+        <div class="h-block">
+          <span class="h-tag">H3</span><b>机制假设</b>：耦合特征与 plasma p-tau217 / NfL 的相关性（r ≥ 0.4）高于任何单通道（r ≤ 0.3）。<br>
+          <i>推导</i>：embodied cognition——分子级病理通过 multi-system 而非单 system 表达。
+        </div>
+        <div class="h-block">
+          <span class="h-tag">H4</span><b>临床转化假设</b>：耦合特征对 18 个月内进展到 MCI 的预测优于单通道（Cox PH 耦合 HR ≥ 1.5, 单通道 HR ≤ 1.2）。<br>
+          <i>推导</i>：H1 + H2 在纵向时间上的延伸。
+        </div>
+        <div class="h-block">
+          <span class="h-tag">H5</span><b>规模换模态假设</b>：n=137 + 合成数据 + WearGait-PD pretrain 的多模态耦合 AUC ≥ Apple/Biogen n=23K 单模态 AUC。<br>
+          <i>推导</i>：信息论——每加一个独立模态约等于增加 log(n) 量级的样本信息（在通道独立性假设下）。
+        </div>
+      </div>
+
+      <div class="pb-section">
+        <h5><span class="num">5</span>研究设计 · 4 个 sub-study + 实验流程 + 统计</h5>
+        <div class="study-block">
+          <b>Study 1 — 横断主要发现（验 H1, H2）</b><br>
+          <i>被试</i>: 137 例量表库, 按 NIA-AA 2024 分 CU / SCD / MCI / mild AD 四组（每组目标 ≥ 30）。<br>
+          <i>材料</i>: 自研手套 (EDA+PPG+IMU+mic), 200 Hz 采样, 24-hr 连续记录 × 7 天 + 实验室标准化 90 min（朗读 + Stroop + 6 min walk + 静息 HRV）。<br>
+          <i>变量</i>: 4 通道原始（raw）+ 4 通道单模态 derived（HRV, gait speed/jerk, EDA tonic+phasic, voice MFCC/fluency）+ <b>18 种耦合特征</b>：HRV-EDA wavelet coherence, gait-voice latency, sleep-autonomic phase coupling, jerk-HR cross-correlation, MFCC-HRV mutual information 等。<br>
+          <i>流程</i>: D0 实验室基线 → D1-D7 家庭连续佩戴 → D8 实验室复测 → 神经心理 + 临床诊断金标准。<br>
+          <i>统计</i>: nested 5-fold cross-validation (model selection in inner, evaluation in outer), ROC-AUC + 95% CI by 2000 bootstrap; <b>DeLong test</b> 比较耦合 vs 最佳单通道 (H1)；subgroup AUC by stage (H2) + interaction test。
+        </div>
+        <div class="study-block">
+          <b>Study 2 — 机制验证（验 H3）</b><br>
+          <i>被试</i>: Study 1 子集 n=50, 配对 plasma p-tau217 / NfL 抽血（Imperial NHS 合作 / BioFINDER 数据 sharing）。<br>
+          <i>变量</i>: 同 Study 1 sensor 特征 + plasma marker。<br>
+          <i>统计</i>: partial correlation (控制年龄 / 性别 / APOE4 / 教育)；hierarchical regression: 单通道 → 加耦合 → 看 R² 增量 ΔR² 显著性 (F-test)。
+        </div>
+        <div class="study-block">
+          <b>Study 3 — 纵向预测（验 H4）</b><br>
+          <i>被试</i>: Study 1 中 baseline 为 CU+SCD 的子集 (估 n ≈ 60), 18 月随访诊断切换为 MCI。<br>
+          <i>变量</i>: baseline 耦合 vs 单通道作为预测器, 终点 = 时间到 MCI。<br>
+          <i>统计</i>: Cox proportional hazards, HR + 95% CI; Harrell C-index 比较; net reclassification improvement (NRI)。
+        </div>
+        <div class="study-block">
+          <b>Study 4 — 规模换模态 in silico（验 H5）</b><br>
+          <i>材料</i>: bootstrap subsampling 你的多模态数据 (n=20 / 50 / 100 / 137 + synth) vs 用 Apple-style 单模态 (PPG+ACC only) 在公开数据集 (e.g. UK Biobank, n &gt; 100K wearable) 重训。<br>
+          <i>统计</i>: learning curve analysis, sample efficiency = AUC / log(n); 找两条曲线交叉点 → 等效样本量。
+        </div>
+      </div>
+
+      <div class="pb-section">
+        <h5><span class="num">6</span>预期实证发现 + 如何支撑理论</h5>
+        <ul>
+          <li><b>H1 预期 ΔAUC = 0.06–0.10</b>（如单通道最佳 0.78 → 耦合 0.86）→ 支撑 allostatic load "coupling-first" 论点。</li>
+          <li><b>H2 预期</b>: prodromal 段 ΔAUC ≈ 0.12, AD 段 ΔAUC ≈ 0.03 → 支撑 AD 分布式起点假设。</li>
+          <li><b>H3 预期</b>: 耦合特征 vs p-tau217 r = 0.4–0.5, 单通道最佳 r = 0.2–0.3 → 支撑 embodied cognition——分子病理在 multi-system 上表达。</li>
+          <li><b>H4 预期</b>: 耦合 HR = 1.7 (95% CI 1.3–2.2), 单通道 HR ≤ 1.2; C-index 提升 ≥ 0.05 → 临床有用证据。</li>
+          <li><b>H5 预期</b>: n=137 多模态 AUC ≈ n=5,000–10,000 单模态 AUC（learning curve 交叉点）→ "质量打败规模"经济论证成立。</li>
+        </ul>
+        <p><b>理论闭环</b>: H1+H2 证明 allostatic load 适用于 wearable AD; H3 证明 embodied cognition 在 molecular layer 有具体表达; H4 把理论翻成临床预测器; H5 提供工程经济论证。<b>四条假设全部支撑 = 论文论点闭环</b>。</p>
+      </div>
+
+      <div class="pb-section">
+        <h5><span class="num">7</span>贡献 · 局限 · 未来方向</h5>
+        <p><b>理论贡献</b>: 第一次把 allostatic load 框架从 cortisol / blood pressure 扩到 multi-sensor coupling, 给 AD prodromal monitoring 提供新理论基础。把 embodied cognition 从认知科学带到 wearable engineering。</p>
+        <p><b>方法贡献</b>: 18 种生理耦合特征 + nested CV pipeline 开源；WearGait-PD → AD 的 transfer learning 模板；合成数据增广 pipeline (AD generator v2.1) 开源。</p>
+        <p><b>实践贡献</b>: 证明"小样本多模态可以打败大样本单模态"——改变 wearable AD 资源分配范式；把数字健康从消费级带到医疗级证据门槛；为 LMIC 不需要科技巨头 cohort 也能做 AD 研究提供 evidence。</p>
+        <p><b>局限</b>:</p>
+        <ul>
+          <li>n=137 + 合成不够大, 外部 validity 有限（需后续 n &gt; 1000 多中心复现）</li>
+          <li>单中心, 地理 + 种族 + 文化 multiplicities 未控（Imperial + 中国 cohort 已为下一篇准备）</li>
+          <li>AD generator v2.1 walking bug 未完全修复（WearGait-PD pretrain 缓解但未消除）</li>
+          <li>无 PET ground truth, 依赖临床诊断 + p-tau217（可接受替代但不是金标准）</li>
+          <li>BPSD endpoint 不在本文（留给 v3）</li>
+          <li>因果方向: 耦合断裂 vs AD 是相关还是因果, 本研究是观察设计, 不能区分</li>
+        </ul>
+        <p><b>未来方向</b>（接 §2.5 roadmap）:</p>
+        <ol>
+          <li><b>v1.5</b> (Idea 5 + 4): 把多智能体 + 生成式世界模型接到耦合特征上, 做 forward simulation</li>
+          <li><b>v2.0</b> (Idea 2): 用耦合特征做 inverse mapping 到 p-tau217 / Aβ-PET</li>
+          <li><b>v3.0</b> (Idea 3): 把耦合检测接到闭环干预 RCT（直接因果验证）</li>
+          <li>亚型层面: 不同 AD 亚型（Q7）是否有不同的耦合签名（§2.4 gap ⑤）</li>
+          <li>多中心 + LMIC 复现（§2.4 gap ⑦）</li>
+          <li>跨病种: 同样耦合框架在 PD（用 WearGait-PD）、FTD、Lewy body 是否泛化</li>
+        </ol>
+      </div>
+
+    </div>
+
+    <blockquote style="margin-top:18px;">
+      <b>这套 paper proposal 直接可用于</b>：(1) 给导师 / 合作者发的 2-pager (摘 §1+§4+§7); (2) funding 申请 background 段 (用 §2 + §3); (3) IRB 申请 method 段 (用 §5); (4) Pre-registration on OSF (用 §1-§5)。<b>是 Idea 1 从"想法"到"周一开始写 code"之间的桥</b>。
+    </blockquote>
   </div>
 </section>
 
